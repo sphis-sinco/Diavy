@@ -126,6 +126,9 @@ class ScriptsManager
 		// Effects
 		setScript("FlxFlicker", FlxFlicker);
 
+		// script exclusive stuff
+		setScript('is_debug', #if debug true #else false #end);
+
 		// init mod
 		callScript('scriptsLoaded');
 	}
