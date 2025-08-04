@@ -56,7 +56,7 @@ class ModMenu extends FlxState
 			descriptionText.alignment = CENTER;
 		}
 
-		var leText:String = 'Press [SPACE] to enable / disable the currently selected mod.\nPress [ENTER] to play';
+		var leText:String = 'Press [SPACE] to enable / disable the currently selected mod.\nPress [ENTER] to play\nPress [R] to reload';
 
 		var text:FlxText = new FlxText(0, FlxG.height - 42, FlxG.width, leText, 16);
 		text.scrollFactor.set();
@@ -111,6 +111,17 @@ class ModMenu extends FlxState
 		if (FlxG.keys.justReleased.SPACE)
 		{
 			changeEnabledMod();
+		}
+
+		if (FlxG.keys.justReleased.R)
+		{
+			FlxModding.reload();
+
+			@:privateAccess {
+				ScriptsManager.loadScripts();
+			}
+
+			FlxG.resetState();
 		}
 
 		var bruh = 0;
