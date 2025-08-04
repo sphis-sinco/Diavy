@@ -18,6 +18,7 @@ function initalizeDialogueText(dialogue_text:FlxText) {}
 function initalizePreferences(preferences:PlayStatePreferences) {
         trace(''+preferences);
 }
+function dialogueEntryNullChecks() {}
 
 function nextDialogue() {}
 function beginDialogueTyping() {}

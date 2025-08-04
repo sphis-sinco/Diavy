@@ -42,6 +42,7 @@ class PlayState extends FlxState
 		dialogueBoxInit: 'initalizeDialogueBox',
 		dialogueTextInit: 'initalizeDialogueText',
 		preferencesInit: 'initalizePreferences',
+		deNullChecks: 'dialogueEntryNullChecks',
 		nextDialogue: 'nextDialogue',
 		beginDialogueTyping: 'beginDialogueTyping',
 	};
@@ -109,6 +110,7 @@ class PlayState extends FlxState
 			}
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
+		dialogueEntryNullChecks();
 
 		initalizePreferences();
 
@@ -225,16 +227,22 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.preferencesInit, [preferences]);
 	}
 
-	public function nextDialogue()
+	public function dialogueEntryNullChecks()
 	{
-		dialogue_progress++;
-
 		for (dialogueEntry in dialogue)
 		{
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
 			dialogueEntry.character ??= 'sphisSinco';
 		}
+		ScriptsManager.callScript(scriptEventNames.deNullChecks);
+	}
+
+	public function nextDialogue()
+	{
+		dialogue_progress++;
+
+		dialogueEntryNullChecks();
 
 		if (dialogue_progress >= dialogue.length)
 		{
