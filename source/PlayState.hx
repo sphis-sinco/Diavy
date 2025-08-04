@@ -22,7 +22,7 @@ class PlayState extends FlxState
 		};
 
 	public var dialogue:Array<String> = [];
-	public var dialogue_progress:Int = 0;
+	public var dialogue_progress:Int = -1;
 
 	public var dialogue_box:FlxSprite;
 	public var dialogue_text:FlxTypeText;
@@ -50,6 +50,7 @@ class PlayState extends FlxState
 		initalizeDialogueText();
 
 		beginDialogue();
+		nextDialogue();
 
 		if (instance != null)
 		{
@@ -66,7 +67,13 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 
-		if (dialogue_text_typing_complete) {}
+		if (dialogue_text_typing_complete)
+		{
+			if (FlxG.keys.justReleased.ENTER)
+			{
+				nextDialogue();
+			}
+		}
 
 		ScriptsManager.callScript('gameplay_update', [elapsed]);
 	}
@@ -104,11 +111,10 @@ class PlayState extends FlxState
 			},
 			onComplete: tween ->
 			{
-				dialogue_text.start();
 				ScriptsManager.callScript('beginDialogue_dialogueText_tweenComplete', [dialogue_text]);
 			}
 		});
-		ScriptsManager.callScript('post_beginDialogue');
+		ScriptsManager.callScript('beginDialogue');
 	}
 
 	public function initalizeDialogueBox()
@@ -135,7 +141,7 @@ class PlayState extends FlxState
 			(dialogue_box.y + dialogue_box.height - dialogue_proceed_icon.height));
 		dialogue_proceed_icon.visible = false;
 
-		ScriptsManager.callScript('post_initalizeDialogueBox', [dialogue_box]);
+		ScriptsManager.callScript('initalizeDialogueBox', [dialogue_box]);
 	}
 
 	public function initalizeDialogueText()
@@ -167,7 +173,7 @@ class PlayState extends FlxState
 				dialogue_proceed_icon.visible = true;
 		};
 
-		ScriptsManager.callScript('post_initalizeDialogueText', [dialogue_text]);
+		ScriptsManager.callScript('initalizeDialogueText', [dialogue_text]);
 	}
 
 	public function initalizePreferences()
@@ -177,6 +183,22 @@ class PlayState extends FlxState
 		};
 		preferences.dialoguePosition ??= BOTTOM;
 
-		ScriptsManager.callScript('post_initalizePreferences', [preferences]);
+		ScriptsManager.callScript('initalizePreferences', [preferences]);
+	}
+
+	public function nextDialogue()
+	{
+		dialogue_progress++;
+
+		if (dialogue_progress >= dialogue.length)
+		{
+			dialogue_progress--;
+			return;
+		}
+
+		dialogue_text.text = dialogue[dialogue_progress];
+		dialogue_text.start();
+
+		ScriptsManager.callScript('nextDialogue', [preferences]);
 	}
 }
