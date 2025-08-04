@@ -29,6 +29,8 @@ class PlayState extends FlxState
 
 	public var dialogue_text_typing_complete:Bool = false;
 
+	public var dialogue_proceed_icon:FlxSprite;
+
 	public var addObject = function(object:FlxBasic) {};
 
 	override public function create()
@@ -63,6 +65,8 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (dialogue_text_typing_complete) {}
 
 		ScriptsManager.callScript('gameplay_update', [elapsed]);
 	}
@@ -120,6 +124,17 @@ class PlayState extends FlxState
 		if (preferences.dialoguePosition == TOP)
 			dialogue_box.y = dialogue_box.height * .25;
 
+		if (dialogue_proceed_icon == null)
+		{
+			dialogue_proceed_icon = new FlxSprite(0, 0);
+			dialogue_proceed_icon.loadGraphic(Assets.getImage('dialogue/proceed'));
+			addObject(dialogue_proceed_icon);
+		}
+
+		dialogue_proceed_icon.setPosition((dialogue_box.x + dialogue_box.width - dialogue_proceed_icon.width),
+			(dialogue_box.y + dialogue_box.height - dialogue_proceed_icon.height));
+		dialogue_proceed_icon.visible = false;
+
 		ScriptsManager.callScript('post_initalizeDialogueBox', [dialogue_box]);
 	}
 
@@ -141,10 +156,15 @@ class PlayState extends FlxState
 		dialogue_text.startCallback = () ->
 		{
 			dialogue_text_typing_complete = false;
+
+			if (dialogue_proceed_icon != null)
+				dialogue_proceed_icon.visible = false;
 		};
 		dialogue_text.completeCallback = () ->
 		{
 			dialogue_text_typing_complete = true;
+			if (dialogue_proceed_icon != null)
+				dialogue_proceed_icon.visible = true;
 		};
 
 		ScriptsManager.callScript('post_initalizeDialogueText', [dialogue_text]);
