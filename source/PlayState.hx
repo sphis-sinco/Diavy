@@ -90,6 +90,7 @@ class PlayState extends FlxState
 			addObject(dialogue_text);
 		}
 
+		dialogue_text.fieldWidth = dialogue_box.width - 10;
 		dialogue_text.color = FlxColor.BLACK;
 		dialogue_text.setPosition(dialogue_box.x + 5, dialogue_box.y + 5);
 	}
