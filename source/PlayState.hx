@@ -46,6 +46,8 @@ class PlayState extends FlxState
 		beginDialogueTyping: 'beginDialogueTyping',
 	};
 
+	public var dialogue_end_callback:Void->Void;
+
 	override public function create()
 	{
 		super.create();
@@ -147,7 +149,13 @@ class PlayState extends FlxState
 		if (dialogue_progress >= dialogue.length)
 		{
 			dialogue_progress--;
-			return;
+			if (dialogue_end_callback != null)
+				dialogue_end_callback();
+			else
+			{
+				trace('End');
+				Sys.exit(127);
+			}
 		}
 
 		beginDialogueTyping();
