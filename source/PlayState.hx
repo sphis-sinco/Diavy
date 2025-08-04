@@ -27,6 +27,8 @@ class PlayState extends FlxState
 	public var dialogue_box:FlxSprite;
 	public var dialogue_text:FlxTypeText;
 
+	public var dialogue_text_typing_complete:Bool = false;
+
 	public var addObject = function(object:FlxBasic) {};
 
 	override public function create()
@@ -61,6 +63,7 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
 		ScriptsManager.callScript('gameplay_update', [elapsed]);
 	}
 
@@ -134,6 +137,15 @@ class PlayState extends FlxState
 		dialogue_text.fieldWidth = dialogue_box.width - 10;
 		dialogue_text.color = FlxColor.BLACK;
 		dialogue_text.setPosition(dialogue_box.x + 5, dialogue_box.y + 5);
+
+		dialogue_text.startCallback = () ->
+		{
+			dialogue_text_typing_complete = false;
+		};
+		dialogue_text.completeCallback = () ->
+		{
+			dialogue_text_typing_complete = true;
+		};
 
 		ScriptsManager.callScript('post_initalizeDialogueText', [dialogue_text]);
 	}
