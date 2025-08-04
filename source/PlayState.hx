@@ -52,6 +52,9 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (FlxG.keys.justReleased.R)
+			FlxG.resetState();
 	}
 
 	public function beginDialogue()
