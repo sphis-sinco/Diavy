@@ -234,7 +234,9 @@ class PlayState extends FlxState
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
 			dialogueEntry.character ??= 'sphisSinco';
+			dialogueEntry.background ??= 'sky';
 		}
+
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);
 	}
 

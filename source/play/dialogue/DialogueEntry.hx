@@ -6,5 +6,6 @@ typedef DialogueEntry =
 {
 	var line:String;
 	var ?character:String;
+	var ?background:String;
 	var ?choices:Array<DialogueChoice>;
 }
