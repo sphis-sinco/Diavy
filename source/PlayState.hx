@@ -4,7 +4,7 @@ import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.text.FlxText;
+import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
@@ -26,7 +26,7 @@ class PlayState extends FlxState
 	public var dialogue_progress:Int = 0;
 
 	public var dialogue_box:FlxSprite;
-	public var dialogue_text:FlxText;
+	public var dialogue_text:FlxTypeText;
 
 	public var addObject = function(object:FlxBasic) {};
 
@@ -64,7 +64,11 @@ class PlayState extends FlxState
 			ease: FlxEase.sineIn
 		});
 		FlxTween.tween(dialogue_text, {alpha: 1}, 1, {
-			ease: FlxEase.sineIn
+			ease: FlxEase.sineIn,
+			onComplete: tween ->
+			{
+				dialogue_text.start();
+			}
 		});
 	}
 
@@ -86,7 +90,7 @@ class PlayState extends FlxState
 	{
 		if (dialogue_text == null)
 		{
-			dialogue_text = new FlxText(0, 0, 0, 'Coolswag Coolswag', 16);
+			dialogue_text = new FlxTypeText(0, 0, 0, 'Coolswag Coolswag', 16);
 			addObject(dialogue_text);
 		}
 
