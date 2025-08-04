@@ -1,10 +1,8 @@
 package play.dialogue.entry;
 
-import flixel.math.FlxPoint;
-
 typedef DialogueSpriteSettings =
 {
-	var ?positionOffsets:FlxPoint;
-	var ?scaleOffsets:FlxPoint;
+	var ?positionOffsets:{x:Float, y:Float};
+	var ?scaleOffsets:{x:Float, y:Float};
 	var ?id:Dynamic;
 }

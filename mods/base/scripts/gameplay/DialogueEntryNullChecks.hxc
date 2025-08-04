@@ -11,7 +11,7 @@ function dialogueEntryNullChecks()
 	for (dialogueEntry in PlayState.instance.dialogue)
 	{
 		if (dialogueEntry.background == 'sky')
-			dialogueEntry.backgroundSettings ??= {scaleOffsets: {x: 4, y: 4};
+			dialogueEntry.backgroundSettings ??= {scaleOffsets: {x: 4, y: 4}};
 		else
 			dialogueEntry.backgroundSettings ??= {};
 	}

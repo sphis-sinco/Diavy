@@ -14,6 +14,6 @@ class Main extends Sprite
 			ScriptsManager.loadScripts();
 		}
 
-		addChild(new FlxGame(0, 0, PlayState));
+		addChild(new FlxGame(0, 0, ModMenu));
 	}
 }

@@ -2,7 +2,6 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.input.keyboard.FlxKey;
-import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 import flixel.tweens.*;
 import flixel.util.FlxTimer;

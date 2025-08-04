@@ -8,9 +8,9 @@ class ModMenu extends FlxState
 {
 	public static var savedSelection:Int = 0;
 
-	var curSelected:Int = 0;
+	static var curSelected:Int = 0;
 
-	public var page:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
+	static var page:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
 
 	public static var instance:ModMenu;
 
@@ -63,7 +63,7 @@ class ModMenu extends FlxState
 		text.y = FlxG.height - text.height;
 		add(text);
 
-		changeEnabledMod();
+		changeEnabledMod(true);
 	}
 
 	function loadMods()
@@ -155,7 +155,7 @@ class ModMenu extends FlxState
 		}
 	}
 
-	function fixyfixfix()
+	public static function fixyfixfix()
 	{
 		if (curSelected < 0)
 			curSelected = page.length - 1;
@@ -164,7 +164,7 @@ class ModMenu extends FlxState
 			curSelected = 0;
 	}
 
-	function changeEnabledMod()
+	public static function changeEnabledMod(startup = false)
 	{
 		fixyfixfix();
 
@@ -175,7 +175,8 @@ class ModMenu extends FlxState
 		{
 			var x_mod = FlxModding.mods.members[x.ID];
 
-			x_mod.active = !x_mod.active;
+			if (!startup)
+				x_mod.active = !x_mod.active;
 
 			if (x_mod.active)
 				trace('Active mod: ${x_mod.name}');
