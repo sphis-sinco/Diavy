@@ -12,7 +12,7 @@ class DialogueBoxInitalizer extends Initalizer
 		this.dialogue_box = dialogue_box;
 		this.dialoguePosition = dialoguePosition;
 
-		initalize();
+		super();
 	}
 
 	override function initalize()

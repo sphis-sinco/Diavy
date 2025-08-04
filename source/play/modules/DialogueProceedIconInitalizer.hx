@@ -9,6 +9,8 @@ class DialogueProceedIconInitalizer extends Initalizer
 	{
 		this.dialogue_box = dialogue_box;
 		this.dialogue_proceed_icon = dialogue_proceed_icon;
+
+		super();
 	}
 
 	override function initalize()
