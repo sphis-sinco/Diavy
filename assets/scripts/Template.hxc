@@ -13,9 +13,7 @@ function beginDialogue_dialogueText_tweenComplete(dialogue_text:FlxText) {}
 
 function initalizeDialogueBox(dialogue_box:FlxSprite) {}
 function initalizeDialogueText(dialogue_text:FlxText) {}
-function initalizePreferences(preferences:PlayStatePreferences) {
-        trace(preferences);
-}
+function initalizePreferences(preferences:PlayStatePreferences) {}
 
 function nextDialogue() {}
 function beginDialogueTyping() {}
