@@ -245,6 +245,8 @@ class PlayState extends FlxState
 			dialogueEntry.choices ??= [];
 			dialogueEntry.character ??= 'sphisSinco';
 			dialogueEntry.background ??= 'sky';
+			dialogueEntry.characterSettings ??= {};
+			dialogueEntry.backgroundSettings ??= {};
 		}
 
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);
