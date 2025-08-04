@@ -2,6 +2,7 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.input.keyboard.FlxKey;
+import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 import flixel.tweens.*;
 import flixel.util.FlxTimer;
@@ -243,10 +244,13 @@ class PlayState extends FlxState
 		{
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
-			dialogueEntry.character ??= 'sphisSinco';
-			dialogueEntry.background ??= 'sky';
 			dialogueEntry.characterSettings ??= {};
-			dialogueEntry.backgroundSettings ??= {};
+			dialogueEntry.character ??= 'sphisSinco';
+			if (dialogueEntry.background == null)
+				dialogueEntry.backgroundSettings ??= {scaleOffsets: new FlxPoint(4, 4)};
+			else
+				dialogueEntry.backgroundSettings ??= {};
+			dialogueEntry.background ??= 'sky';
 		}
 
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);
@@ -272,6 +276,7 @@ class PlayState extends FlxState
 
 		beginDialogueTyping();
 
+		initalizeDialogueBackground();
 		initalizeDialogueCharacter();
 
 		ScriptsManager.callScript(scriptEventNames.nextDialogue);

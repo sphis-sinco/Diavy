@@ -18,21 +18,14 @@ class DialogueCharacterInitalizer extends Initalizer
 		if (PlayState.instance == null)
 			return;
 
-		final imagePath = 'dialogue/characters/' + PlayState.instance.dialogue[PlayState.instance.dialogue_progress].character;
+		final currentDialogue = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
+
+		final imagePath = 'dialogue/characters/' + currentDialogue.character;
 
 		PlayState.instance.remove(dialogue_character);
 
 		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
 			return;
-
-		if (dialogue_character != null)
-		{
-			if (dialogue_character.graphic == new FlxSprite().loadGraphic(Assets.getImagePath(imagePath)).graphic)
-			{
-				PlayState.instance.addObject(dialogue_character);
-				return;
-			}
-		}
 
 		try
 		{
@@ -40,6 +33,32 @@ class DialogueCharacterInitalizer extends Initalizer
 			dialogue_character.loadGraphic(Assets.getImagePath(imagePath));
 			dialogue_character.screenCenter(XY);
 			PlayState.instance.addObject(dialogue_character);
+		}
+		catch (e)
+		{
+			trace(e);
+		}
+
+		try
+		{
+			if (dialogue_character == null)
+				return;
+
+			if (currentDialogue.characterSettings != null)
+			{
+				if (currentDialogue.characterSettings.positionOffsets != null)
+				{
+					dialogue_character.x += currentDialogue.characterSettings.positionOffsets.x;
+					dialogue_character.y += currentDialogue.characterSettings.positionOffsets.y;
+				}
+				if (currentDialogue.characterSettings.scaleOffsets != null)
+				{
+					dialogue_character.scale.x += currentDialogue.characterSettings.scaleOffsets.x;
+					dialogue_character.scale.y += currentDialogue.characterSettings.scaleOffsets.y;
+				}
+
+				// the id is just for scripts
+			}
 		}
 		catch (e)
 		{
