@@ -13,6 +13,10 @@ import flixel.text.*;
 import flixel.tweens.*;
 import flixel.util.*;
 import haxe.PosInfos;
+import play.*;
+import play.dialogue.*;
+import play.modules.*;
+import play.modules.init.*;
 #if hscript
 import hscript.*;
 #end

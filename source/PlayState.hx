@@ -2,17 +2,14 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.tweens.*;
-import play.dialogue.*;
+import play.*;
 import play.modules.init.*;
 
 class PlayState extends FlxState
 {
 	public static var instance:PlayState;
 
-	public var preferences:
-		{
-			var dialoguePosition:DialoguePositionEnum;
-		};
+	public var preferences:PlayStatePreferences;
 
 	public var dialogue:Array<String> = [];
 	public var dialogue_progress:Int = 0;
@@ -157,13 +154,13 @@ class PlayState extends FlxState
 
 		beginDialogueTyping();
 
-		ScriptsManager.callScript(scriptEventNames.nextDialogue, [preferences]);
+		ScriptsManager.callScript(scriptEventNames.nextDialogue);
 	}
 
 	public function beginDialogueTyping()
 	{
 		dialogue_text.start(dialogue[dialogue_progress]);
 
-		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping, [preferences]);
+		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping);
 	}
 }
