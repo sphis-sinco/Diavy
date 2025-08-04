@@ -5,13 +5,9 @@ import flixel.addons.text.FlxTypeText;
 class DialogueTextInitalizer extends Initalizer
 {
 	public var dialogue_text:FlxTypeText;
-	public var dialogue_box:FlxSprite;
-	public var dialogue_proceed_icon:FlxSprite;
 
-	override public function new(dialogue_box:FlxSprite, dialogue_proceed_icon:FlxSprite, dialogue_text:FlxTypeText)
+	override public function new(dialogue_text:FlxTypeText)
 	{
-		this.dialogue_box = dialogue_box;
-		this.dialogue_proceed_icon = dialogue_proceed_icon;
 		this.dialogue_text = dialogue_text;
 		super();
 	}
@@ -30,17 +26,17 @@ class DialogueTextInitalizer extends Initalizer
 		dialogue_text.showCursor = true;
 		dialogue_text.useDefaultSound = true;
 
-		dialogue_text.fieldWidth = dialogue_box.width - 10;
+		dialogue_text.fieldWidth = PlayState.instance.dialogue_box.width - 10;
 		dialogue_text.color = FlxColor.BLACK;
-		dialogue_text.setPosition(dialogue_box.x + 5, dialogue_box.y + 5);
+		dialogue_text.setPosition(PlayState.instance.dialogue_box.x + 5, PlayState.instance.dialogue_box.y + 5);
 
 		dialogue_text.startCallback = () ->
 		{
 			if (PlayState.instance != null)
 				PlayState.instance.dialogue_text_typing_complete = false;
 
-			if (dialogue_proceed_icon != null)
-				dialogue_proceed_icon.visible = false;
+			if (PlayState.instance.dialogue_proceed_icon != null)
+				PlayState.instance.dialogue_proceed_icon.visible = false;
 		};
 		dialogue_text.completeCallback = () ->
 		{
@@ -61,9 +57,11 @@ class DialogueTextInitalizer extends Initalizer
 				{
 					trace(e);
 				}
+
+				PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
 			}
-			if (dialogue_proceed_icon != null)
-				dialogue_proceed_icon.visible = true;
+			if (PlayState.instance.dialogue_proceed_icon != null)
+				PlayState.instance.dialogue_proceed_icon.visible = true;
 		};
 	}
 

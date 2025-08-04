@@ -2,6 +2,7 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.input.keyboard.FlxKey;
+import flixel.sound.FlxSound;
 import flixel.tweens.*;
 import flixel.util.FlxTimer;
 import play.*;
@@ -20,6 +21,7 @@ class PlayState extends FlxState
 
 	public var dialogue_box:FlxSprite;
 	public var dialogue_text:FlxTypeText;
+	public var choice_text:FlxTypeText = new FlxTypeText(0, 0, 0, '', 16);
 
 	public var dialogue_text_typing_complete:Bool = false;
 
@@ -118,6 +120,16 @@ class PlayState extends FlxState
 
 		beginDialogue();
 
+		choice_text.y = 10;
+		choice_text.alignment = CENTER;
+		choice_text.sounds = [
+			new FlxSound().loadStream(Assets.getSoundPath('customType-1')),
+			new FlxSound().loadStream(Assets.getSoundPath('customType-2')),
+			new FlxSound().loadStream(Assets.getSoundPath('customType-3')),
+			new FlxSound().loadStream(Assets.getSoundPath('customType-4'))
+		];
+		add(choice_text);
+
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
 
@@ -128,6 +140,8 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		choice_text.screenCenter(X);
 
 		if (dialogue_text_typing_complete)
 		{
@@ -145,7 +159,7 @@ class PlayState extends FlxState
 							if (FlxG.keys.anyJustReleased([key]))
 								ScriptsManager.callScript(choices_events[i], [], () ->
 								{
-									FlxTimer.wait(.25, () -> nextDialogue());
+									nextDialogue();
 								});
 							i++;
 						}
@@ -191,7 +205,7 @@ class PlayState extends FlxState
 
 	public function initalizeDialogueText()
 	{
-		dialogue_text = new DialogueTextInitalizer(dialogue_box, dialogue_proceed_icon, dialogue_text).getValues();
+		dialogue_text = new DialogueTextInitalizer(dialogue_text).getValues();
 
 		ScriptsManager.callScript(scriptEventNames.dialogueTextInit, [dialogue_text]);
 	}
@@ -227,30 +241,34 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.nextDialogue);
 	}
 
+	public var dialogueLine = '';
+	public var controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
+
 	public function beginDialogueTyping()
 	{
+		choice_text.resetText('');
 		dialogue_text.resetText('');
 		try
 		{
 			choices_keys = [];
 			choices_events = [];
-			var finalLine = dialogue[dialogue_progress].line;
+			dialogueLine = dialogue[dialogue_progress].line;
+			controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
 
 			if (dialogue[dialogue_progress].choices != null)
 				if (dialogue[dialogue_progress].choices.length > 0)
 				{
-					finalLine += '\n\n';
-
+					controlsLine = 'Controls:\n\n';
 					for (choice in dialogue[dialogue_progress].choices)
 					{
 						choices_keys.push(choices_keys_map.get(choice.keyString.toUpperCase()));
 						choices_events.push(choice.script_event);
 
-						finalLine += '${choice.keyString} - ${choice.name}\n';
+						controlsLine += '${choice.keyString} - ${choice.name}\n';
 					}
 				}
 
-			dialogue_text.start(finalLine);
+			dialogue_text.start(dialogueLine, 0.05, false, false, []);
 		}
 		catch (e)
 		{
