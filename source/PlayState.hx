@@ -110,13 +110,6 @@ class PlayState extends FlxState
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 
-		for (dialogueEntry in dialogue)
-		{
-			dialogueEntry.line ??= 'Null Entry';
-			dialogueEntry.choices ??= [];
-			dialogueEntry.character ??= 'sphisSinco';
-		}
-
 		initalizePreferences();
 
 		initalizeDialogueCharacter();
@@ -235,6 +228,13 @@ class PlayState extends FlxState
 	public function nextDialogue()
 	{
 		dialogue_progress++;
+
+		for (dialogueEntry in dialogue)
+		{
+			dialogueEntry.line ??= 'Null Entry';
+			dialogueEntry.choices ??= [];
+			dialogueEntry.character ??= 'sphisSinco';
+		}
 
 		if (dialogue_progress >= dialogue.length)
 		{
