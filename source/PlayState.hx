@@ -111,6 +111,7 @@ class PlayState extends FlxState
 		{
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
+			dialogueEntry.character ??= 'sphisSinco';
 		}
 
 		initalizePreferences();
