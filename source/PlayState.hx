@@ -21,7 +21,7 @@ class PlayState extends FlxState
 		};
 
 	public var dialogue:Array<String> = [];
-	public var dialogue_progress:Int = -1;
+	public var dialogue_progress:Int = 0;
 
 	public var dialogue_box:FlxSprite;
 	public var dialogue_text:FlxTypeText;
@@ -49,7 +49,6 @@ class PlayState extends FlxState
 		initalizeDialogueText();
 
 		beginDialogue();
-		nextDialogue();
 
 		if (instance != null)
 		{
@@ -110,6 +109,7 @@ class PlayState extends FlxState
 			},
 			onComplete: tween ->
 			{
+				beginDialogueTyping();
 				ScriptsManager.callScript('beginDialogue_dialogueText_tweenComplete', [dialogue_text]);
 			}
 		});
@@ -195,9 +195,16 @@ class PlayState extends FlxState
 			return;
 		}
 
+		beginDialogueTyping();
+
+		ScriptsManager.callScript('nextDialogue', [preferences]);
+	}
+
+	public function beginDialogueTyping()
+	{
 		dialogue_text.text = dialogue[dialogue_progress];
 		dialogue_text.start();
 
-		ScriptsManager.callScript('nextDialogue', [preferences]);
+		ScriptsManager.callScript('beginDialogueTyping', [preferences]);
 	}
 }
