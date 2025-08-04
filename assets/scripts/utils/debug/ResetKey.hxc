@@ -1,0 +1,8 @@
+function gameplay_update(elapsed:Float)
+{
+    if (FlxG.keys.justReleased.R && is_debug)
+    {
+        PlayState.instance = null;
+        FlxG.resetState();
+    }
+}

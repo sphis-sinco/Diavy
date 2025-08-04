@@ -4,6 +4,7 @@ import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import haxe.exceptions.NotImplementedException;
 
 enum DialoguePositionEnum
 {
@@ -13,6 +14,8 @@ enum DialoguePositionEnum
 
 class PlayState extends FlxState
 {
+	public static var instance:PlayState;
+
 	public var preferences:
 		{
 			var dialoguePosition:DialoguePositionEnum;
@@ -44,6 +47,14 @@ class PlayState extends FlxState
 
 		beginDialogue();
 
+		if (instance != null)
+		{
+			FlxG.log.warn('Another PlayState Instance detected. Reverting to null');
+			instance = null;
+		}
+
+		instance = this;
+
 		ScriptsManager.callScript('gameplay_create');
 	}
 
@@ -60,15 +71,37 @@ class PlayState extends FlxState
 		dialogue_progress = 0;
 
 		FlxTween.tween(dialogue_box, {alpha: 1}, 1, {
-			ease: FlxEase.sineIn
+			ease: FlxEase.sineIn,
+			onStart: tween ->
+			{
+				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenStart', [dialogue_box]);
+			},
+			onUpdate: tween ->
+			{
+				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenUpdate', [dialogue_box]);
+			},
+			onComplete: tween ->
+			{
+				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenComplete', [dialogue_box]);
+			}
 		});
 		FlxTween.tween(dialogue_text, {alpha: 1}, 1, {
 			ease: FlxEase.sineIn,
+			onStart: tween ->
+			{
+				ScriptsManager.callScript('beginDialogue_dialogueText_tweenStart', [dialogue_text]);
+			},
+			onUpdate: tween ->
+			{
+				ScriptsManager.callScript('beginDialogue_dialogueText_tweenUpdate', [dialogue_text]);
+			},
 			onComplete: tween ->
 			{
 				dialogue_text.start();
+				ScriptsManager.callScript('beginDialogue_dialogueText_tweenComplete', [dialogue_text]);
 			}
 		});
+		ScriptsManager.callScript('post_beginDialogue');
 	}
 
 	public function initalizeDialogueBox()
@@ -83,6 +116,8 @@ class PlayState extends FlxState
 		dialogue_box.y = FlxG.height - dialogue_box.height - 32;
 		if (preferences.dialoguePosition == TOP)
 			dialogue_box.y = dialogue_box.height * .25;
+
+		ScriptsManager.callScript('post_initalizeDialogueBox', [dialogue_box]);
 	}
 
 	public function initalizeDialogueText()
@@ -99,6 +134,8 @@ class PlayState extends FlxState
 		dialogue_text.fieldWidth = dialogue_box.width - 10;
 		dialogue_text.color = FlxColor.BLACK;
 		dialogue_text.setPosition(dialogue_box.x + 5, dialogue_box.y + 5);
+
+		ScriptsManager.callScript('post_initalizeDialogueText', [dialogue_text]);
 	}
 
 	public function initalizePreferences()
@@ -107,5 +144,7 @@ class PlayState extends FlxState
 			dialoguePosition: null
 		};
 		preferences.dialoguePosition ??= BOTTOM;
+
+		ScriptsManager.callScript('post_initalizePreferences', [preferences]);
 	}
 }
