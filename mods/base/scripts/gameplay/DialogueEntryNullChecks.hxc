@@ -1,6 +1,6 @@
 function dialogueEntryNullChecks()
 {
-	for (dialogueEntry in dialogue)
+	for (dialogueEntry in PlayState.instance.dialogue)
 	{
 		dialogueEntry.line ??= 'Null Entry';
                 dialogueEntry.choices ??= [];

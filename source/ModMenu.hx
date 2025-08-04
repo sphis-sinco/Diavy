@@ -103,6 +103,9 @@ class ModMenu extends FlxState
 
 		if (FlxG.keys.justReleased.ENTER)
 		{
+			@:privateAccess {
+				ScriptsManager.loadScripts();
+			}
 			FlxG.switchState(() -> new PlayState());
 		}
 

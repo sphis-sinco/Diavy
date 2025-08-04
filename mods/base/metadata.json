@@ -1,0 +1,22 @@
+{
+	"name": "Base game",
+	"version": "3",
+	"description": "Base game mod",
+
+	"credits": [
+		{
+			"name": "sphis-sinco",
+			"title": "Diavy Developer",
+			"socials": "https://sphis-sinco.carrd.co"
+		},
+
+		{
+			"name": "akaFinn_",
+			"title": "flixel-modding dude",
+			"socials": "https://x.com/akaFinn_"
+		}
+	],
+
+	"priority": 10,
+	"active": true
+}

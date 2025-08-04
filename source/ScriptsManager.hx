@@ -61,6 +61,10 @@ class ScriptsManager
 			}
 		}
 		readDirectory(Assets.getAssetPath('scripts'));
+		for (mod in FlxModding.mods)
+		{
+			readDirectory(Assets.getPath('${mod.directory()}/scripts'));
+		}
 
 		for (path in scriptPaths)
 		{
