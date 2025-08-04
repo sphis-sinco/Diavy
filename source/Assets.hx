@@ -6,7 +6,6 @@ class Assets
 	public static var VIDEO_EXT:String = 'mp4'; // mayhaps
 	public static var SOUND_EXT:String = 'wav';
 
-	public static var SCRIPT_EXT:String = 'json';
 	public static var HSCRIPT_EXT:String = 'hxc';
 
 	// file paths
@@ -56,7 +55,7 @@ class Assets
 		return getFileJsonContent('$id.json', dataFolder);
 
 	public static function getScriptFile(id:String, ?dataFolder:Bool = true)
-		return getFileJsonContent('$id.$SCRIPT_EXT', dataFolder);
+		return getFileJsonContent('$id.$HSCRIPT_EXT', dataFolder);
 
 	public static function getImage(id:String, ?imageFolder:Bool = true)
 	{

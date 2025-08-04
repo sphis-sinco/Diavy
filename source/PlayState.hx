@@ -1,9 +1,5 @@
 package;
 
-import flixel.FlxBasic;
-import flixel.FlxG;
-import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -47,14 +43,14 @@ class PlayState extends FlxState
 		initalizeDialogueText();
 
 		beginDialogue();
+
+		ScriptsManager.callScript('gameplay_create');
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
-		if (FlxG.keys.justReleased.R)
-			FlxG.resetState();
+		ScriptsManager.callScript('gameplay_update', [elapsed]);
 	}
 
 	public function beginDialogue()

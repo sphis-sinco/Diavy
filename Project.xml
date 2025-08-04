@@ -50,6 +50,9 @@
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
 
+	<haxelib name="hscript" />
+	<haxelib name="hscript-iris" />
+
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Allows you to use sound paths with no extension, and the default sound type for that

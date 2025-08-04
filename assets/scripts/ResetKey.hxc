@@ -1,0 +1,5 @@
+function gameplay_update(elapsed:Float)
+{
+        if (FlxG.keys.justReleased.R)
+		FlxG.resetState();
+}
