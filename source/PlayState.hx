@@ -4,12 +4,9 @@ import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-
-enum DialoguePositionEnum
-{
-	BOTTOM;
-	TOP;
-}
+import play.dialogue.*;
+import play.modules.DialogueBoxInitalizer;
+import play.modules.DialogueProceedIconInitalizer;
 
 class PlayState extends FlxState
 {
@@ -36,6 +33,14 @@ class PlayState extends FlxState
 	{
 		super.create();
 
+		if (instance != null)
+		{
+			FlxG.log.warn('Another PlayState Instance detected. Reverting to null');
+			instance = null;
+		}
+
+		instance = this;
+
 		addObject = function(object:FlxBasic)
 		{
 			add(object);
@@ -49,14 +54,6 @@ class PlayState extends FlxState
 		initalizeDialogueText();
 
 		beginDialogue();
-
-		if (instance != null)
-		{
-			FlxG.log.warn('Another PlayState Instance detected. Reverting to null');
-			instance = null;
-		}
-
-		instance = this;
 
 		ScriptsManager.callScript('gameplay_create');
 	}
@@ -118,27 +115,8 @@ class PlayState extends FlxState
 
 	public function initalizeDialogueBox()
 	{
-		if (dialogue_box == null)
-		{
-			dialogue_box = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * .75), Std.int(FlxG.height * .25));
-			dialogue_box.screenCenter(X);
-			addObject(dialogue_box);
-		}
-
-		dialogue_box.y = FlxG.height - dialogue_box.height - 32;
-		if (preferences.dialoguePosition == TOP)
-			dialogue_box.y = dialogue_box.height * .25;
-
-		if (dialogue_proceed_icon == null)
-		{
-			dialogue_proceed_icon = new FlxSprite(0, 0);
-			dialogue_proceed_icon.loadGraphic(Assets.getImagePath('dialogue/proceed'));
-			addObject(dialogue_proceed_icon);
-		}
-
-		dialogue_proceed_icon.setPosition((dialogue_box.x + dialogue_box.width - dialogue_proceed_icon.width),
-			(dialogue_box.y + dialogue_box.height - dialogue_proceed_icon.height));
-		dialogue_proceed_icon.visible = false;
+		dialogue_box = new DialogueBoxInitalizer(dialogue_box, preferences.dialoguePosition).getValues();
+		dialogue_proceed_icon = new DialogueProceedIconInitalizer(dialogue_box, dialogue_proceed_icon).getValues();
 
 		ScriptsManager.callScript('initalizeDialogueBox', [dialogue_box]);
 	}
