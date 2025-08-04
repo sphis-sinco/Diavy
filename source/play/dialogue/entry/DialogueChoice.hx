@@ -4,7 +4,7 @@ import flixel.input.keyboard.FlxKey;
 
 typedef DialogueChoice =
 {
-	var key:FlxKey;
+	var keyString:String;
 	var name:String;
 	var script_event:String;
 }

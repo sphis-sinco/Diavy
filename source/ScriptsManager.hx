@@ -113,7 +113,7 @@ class ScriptsManager
 		// Input
 		setScript("FlxMouse", FlxMouse);
 		setScript("FlxKeyboard", FlxKeyboard);
-		setScript("FlxKey", FlxScriptKey);
+		setScript("FlxScriptKey", FlxScriptKey);
 		setScript("FlxGamepad", FlxGamepad);
 
 		// Utilities
@@ -139,7 +139,7 @@ class ScriptsManager
 		callScript('scriptsLoaded');
 	}
 
-	public static function callScript(fun:String, ?args:Array<Dynamic>, ?pos:haxe.PosInfos):Void
+	public static function callScript(fun:String, ?args:Array<Dynamic>, ?endCallBack:Void->Void, ?pos:haxe.PosInfos):Void
 	{
 		for (script in LOADED_SCRIPTS)
 		{
@@ -159,6 +159,9 @@ class ScriptsManager
 				}
 			}
 		}
+
+		if (endCallBack != null)
+			endCallBack();
 	}
 
 	public static function setScript(name:String, value:Dynamic, allowOverride:Bool = true):Void

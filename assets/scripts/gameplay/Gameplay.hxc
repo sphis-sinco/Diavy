@@ -1,5 +1,3 @@
-var feeling_good:Bool = false;
-
 function gameplay_create() {}
 function gameplay_setDialogue() {
         PlayState.instance.deleteAllDialogue();
@@ -8,8 +6,8 @@ function gameplay_setDialogue() {
         PlayState.instance.addDialogue({line: 'Wassup bro?'});
         PlayState.instance.removeDialogueLine('Wassup bro?');
         PlayState.instance.addDialogue({line: 'How are you doing?', choices:[
-                {key:FlxKey.ONE,name:'Good',script_event:'feelingGood'},
-                {key:FlxKey.TWO,name:'Bad',script_event:'notFeelingGood'}
+                {keyString:'1',name:'Good',script_event:'feelingGood'},
+                {keyString:'2',name:'Bad',script_event:'notFeelingGood'}
         ]});
 }
 function gameplay_update(elapsed:Float) {}
@@ -33,7 +31,6 @@ function beginDialogueTyping() {}
 
 function feelingGood()
 {
-        feeling_good = true;
         PlayState.instance.addDialogueArray([
                 {line: 'I\'m doing good myself honestly.'},
                 {line: 'I\'ve just been chillin.'}
@@ -41,7 +38,6 @@ function feelingGood()
 }
 function notFeelingGood()
 {
-        feeling_good = false;
         PlayState.instance.addDialogueArray([
                 {line: 'Oh.'},
                 {line: 'I\'m sorry to hear that...'}

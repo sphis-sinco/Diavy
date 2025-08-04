@@ -1,7 +1,9 @@
 package;
 
 import flixel.addons.text.FlxTypeText;
+import flixel.input.keyboard.FlxKey;
 import flixel.tweens.*;
+import flixel.util.FlxTimer;
 import play.*;
 import play.dialogue.*;
 import play.modules.init.*;
@@ -62,6 +64,8 @@ class PlayState extends FlxState
 
 		instance = this;
 
+		can_press_enter = true;
+
 		addObject = function(object:FlxBasic)
 		{
 			add(object);
@@ -118,6 +122,8 @@ class PlayState extends FlxState
 	}
 
 	public var can_press_enter:Bool = false;
+	public var choices_keys:Array<FlxKey> = [];
+	public var choices_events:Array<String> = [];
 
 	override public function update(elapsed:Float)
 	{
@@ -126,9 +132,25 @@ class PlayState extends FlxState
 		if (dialogue_text_typing_complete)
 		{
 			if (FlxG.keys.justReleased.ENTER && can_press_enter)
-			{
 				nextDialogue();
-			}
+
+			if (dialogue[dialogue_progress].choices != null)
+				if (dialogue[dialogue_progress].choices.length > 0)
+				{
+					if (FlxG.keys.anyJustReleased(choices_keys))
+					{
+						var i = 0;
+						for (key in choices_keys)
+						{
+							if (FlxG.keys.anyJustReleased([key]))
+								ScriptsManager.callScript(choices_events[i], [], () ->
+								{
+									FlxTimer.wait(.25, () -> nextDialogue());
+								});
+							i++;
+						}
+					}
+				}
 		}
 
 		ScriptsManager.callScript(scriptEventNames.update, [elapsed]);
@@ -210,7 +232,25 @@ class PlayState extends FlxState
 		dialogue_text.resetText('');
 		try
 		{
-			dialogue_text.start(dialogue[dialogue_progress].line);
+			choices_keys = [];
+			choices_events = [];
+			var finalLine = dialogue[dialogue_progress].line;
+
+			if (dialogue[dialogue_progress].choices != null)
+				if (dialogue[dialogue_progress].choices.length > 0)
+				{
+					finalLine += '\n\n';
+
+					for (choice in dialogue[dialogue_progress].choices)
+					{
+						choices_keys.push(choices_keys_map.get(choice.keyString.toUpperCase()));
+						choices_events.push(choice.script_event);
+
+						finalLine += '${choice.keyString} - ${choice.name}\n';
+					}
+				}
+
+			dialogue_text.start(finalLine);
 		}
 		catch (e)
 		{
@@ -219,4 +259,80 @@ class PlayState extends FlxState
 
 		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping);
 	}
+
+	public var choices_keys_map:Map<String, FlxKey> = [
+		// Letters
+		'A' => A,
+		'B' => B,
+		'C' => C,
+		'D' => D,
+		'E' => E,
+		'F' => F,
+		'G' => G,
+		'H' => H,
+		'I' => I,
+		'J' => J,
+		'K' => K,
+		'L' => L,
+		'M' => M,
+		'N' => N,
+		'O' => O,
+		'P' => P,
+		'Q' => Q,
+		'R' => R,
+		'S' => S,
+		'T' => T,
+		'U' => U,
+		'V' => V,
+		'W' => W,
+		'X' => X,
+		'Y' => Y,
+		'Z' => Z,
+		// Numbers (top row)
+		'0' => ZERO,
+		'1' => ONE,
+		'2' => TWO,
+		'3' => THREE,
+		'4' => FOUR,
+		'5' => FIVE,
+		'6' => SIX,
+		'7' => SEVEN,
+		'8' => EIGHT,
+		'9' => NINE,
+		// Symbols
+		'`' => GRAVEACCENT,
+		'-' => MINUS,
+		'[' => LBRACKET,
+		']' => RBRACKET,
+		'\\' => BACKSLASH,
+		';' => SEMICOLON,
+		'\'' => QUOTE,
+		',' => COMMA,
+		'.' => PERIOD,
+		'/' => SLASH,
+		// Whitespace & basic controls
+		' ' => SPACE,
+		'\t' => TAB,
+		'\n' => ENTER,
+		'BACKSPACE' => BACKSPACE,
+		'ESCAPE' => ESCAPE,
+		// Function keys
+		'F1' => F1,
+		'F2' => F2,
+		'F3' => F3,
+		'F4' => F4,
+		'F5' => F5,
+		'F6' => F6,
+		'F7' => F7,
+		'F8' => F8,
+		'F9' => F9,
+		'F10' => F10,
+		'F11' => F11,
+		'F12' => F12,
+		// Arrow keys
+		'UP' => UP,
+		'DOWN' => DOWN,
+		'LEFT' => LEFT,
+		'RIGHT' => RIGHT
+	];
 }

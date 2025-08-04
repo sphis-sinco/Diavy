@@ -22,7 +22,7 @@ class DialogueTextInitalizer extends Initalizer
 
 		if (dialogue_text == null)
 		{
-			dialogue_text = new FlxTypeText(0, 0, 0, '', 16);
+			dialogue_text = new FlxTypeText(0, 0, 0, '', 8);
 			if (PlayState.instance != null)
 				PlayState.instance.addObject(dialogue_text);
 		}
@@ -49,8 +49,18 @@ class DialogueTextInitalizer extends Initalizer
 				PlayState.instance.dialogue_text_typing_complete = true;
 				PlayState.instance.can_press_enter = true;
 
-				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
-					PlayState.instance.can_press_enter = false;
+				try
+				{
+					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
+					{
+						if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
+							PlayState.instance.can_press_enter = false;
+					}
+				}
+				catch (e)
+				{
+					trace(e);
+				}
 			}
 			if (dialogue_proceed_icon != null)
 				dialogue_proceed_icon.visible = true;
