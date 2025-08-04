@@ -150,7 +150,7 @@ class PlayState extends FlxState
 
 	public function beginDialogueTyping()
 	{
-		dialogue_text.start();
+		dialogue_text.start(dialogue[dialogue_progress]);
 
 		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping, [preferences]);
 	}
