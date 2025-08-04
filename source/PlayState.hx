@@ -7,7 +7,6 @@ import play.*;
 import play.dialogue.*;
 import play.modules.*;
 import play.modules.init.*;
-import play.modules.scripts.*;
 
 class PlayState extends FlxState
 {
@@ -30,9 +29,21 @@ class PlayState extends FlxState
 
 	public var addObject = function(object:FlxBasic) {};
 
-	public var scriptEvents = {
-		create: new GameplayCreate(),
-		update: new GameplayUpdate(),
+	public var scriptEventNames = {
+		create: 'gameplay_create',
+		update: 'gameplay_update',
+		beginDialogue: 'beginDialogue',
+		dialogueBoxInit_tweenStart: 'beginDialogue_dialogueBox_tweenStart',
+		dialogueBoxInit_tweenUpdate: 'beginDialogue_dialogueBox_tweenUpdate',
+		dialogueBoxInit_tweenComplete: 'beginDialogue_dialogueBox_tweenComplete',
+		dialogueTextInit_tweenStart: 'beginDialogue_dialogueText_tweenStart',
+		dialogueTextInit_tweenUpdate: 'beginDialogue_dialogueText_tweenUpdate',
+		dialogueTextInit_tweenComplete: 'beginDialogue_dialogueText_tweenComplete',
+		dialogueBoxInit: 'initalizeDialogueBox',
+		dialogueTextInit: 'initalizeDialogueText',
+		preferencesInit: 'initalizePreferences',
+		nextDialogue: 'nextDialogue',
+		beginDialogueTyping: 'beginDialogueTyping',
 	};
 
 	override public function create()
@@ -61,7 +72,7 @@ class PlayState extends FlxState
 
 		beginDialogue();
 
-		ScriptsManager.callScript(scriptEvents.create.getEventName());
+		ScriptsManager.callScript(scriptEventNames.create);
 	}
 
 	override public function update(elapsed:Float)
@@ -76,7 +87,7 @@ class PlayState extends FlxState
 			}
 		}
 
-		ScriptsManager.callScript(scriptEvents.create.getEventName(), [elapsed]);
+		ScriptsManager.callScript(scriptEventNames.update, [elapsed]);
 	}
 
 	public function beginDialogue()
@@ -87,36 +98,21 @@ class PlayState extends FlxState
 
 		FlxTween.tween(dialogue_box, {alpha: 1}, 1, {
 			ease: FlxEase.sineIn,
-			onStart: tween ->
-			{
-				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenStart', [dialogue_box]);
-			},
-			onUpdate: tween ->
-			{
-				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenUpdate', [dialogue_box]);
-			},
-			onComplete: tween ->
-			{
-				ScriptsManager.callScript('beginDialogue_dialogueBox_tweenComplete', [dialogue_box]);
-			}
+			onStart: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenStart, [dialogue_box]),
+			onUpdate: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenUpdate, [dialogue_box]),
+			onComplete: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenComplete, [dialogue_box])
 		});
 		FlxTween.tween(dialogue_text, {alpha: 1}, 1, {
 			ease: FlxEase.sineIn,
-			onStart: tween ->
-			{
-				ScriptsManager.callScript('beginDialogue_dialogueText_tweenStart', [dialogue_text]);
-			},
-			onUpdate: tween ->
-			{
-				ScriptsManager.callScript('beginDialogue_dialogueText_tweenUpdate', [dialogue_text]);
-			},
+			onStart: tween -> ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenStart, [dialogue_text]),
+			onUpdate: tween -> ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenUpdate, [dialogue_text]),
 			onComplete: tween ->
 			{
 				beginDialogueTyping();
-				ScriptsManager.callScript('beginDialogue_dialogueText_tweenComplete', [dialogue_text]);
+				ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenComplete, [dialogue_text]);
 			}
 		});
-		ScriptsManager.callScript('beginDialogue');
+		ScriptsManager.callScript(scriptEventNames.beginDialogue);
 	}
 
 	public function initalizeDialogueBox()
@@ -124,14 +120,14 @@ class PlayState extends FlxState
 		dialogue_box = new DialogueBoxInitalizer(dialogue_box, preferences.dialoguePosition).getValues();
 		dialogue_proceed_icon = new DialogueProceedIconInitalizer(dialogue_box, dialogue_proceed_icon).getValues();
 
-		ScriptsManager.callScript('initalizeDialogueBox', [dialogue_box]);
+		ScriptsManager.callScript(scriptEventNames.dialogueBoxInit, [dialogue_box]);
 	}
 
 	public function initalizeDialogueText()
 	{
 		dialogue_text = new DialogueTextInitalizer(dialogue_box, dialogue_proceed_icon, dialogue_text).getValues();
 
-		ScriptsManager.callScript('initalizeDialogueText', [dialogue_text]);
+		ScriptsManager.callScript(scriptEventNames.dialogueTextInit, [dialogue_text]);
 	}
 
 	public function initalizePreferences()
@@ -141,7 +137,7 @@ class PlayState extends FlxState
 		};
 		preferences.dialoguePosition ??= BOTTOM;
 
-		ScriptsManager.callScript('initalizePreferences', [preferences]);
+		ScriptsManager.callScript(scriptEventNames.preferencesInit, [preferences]);
 	}
 
 	public function nextDialogue()
@@ -156,13 +152,13 @@ class PlayState extends FlxState
 
 		beginDialogueTyping();
 
-		ScriptsManager.callScript('nextDialogue', [preferences]);
+		ScriptsManager.callScript(scriptEventNames.nextDialogue, [preferences]);
 	}
 
 	public function beginDialogueTyping()
 	{
 		dialogue_text.start();
 
-		ScriptsManager.callScript('beginDialogueTyping', [preferences]);
+		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping, [preferences]);
 	}
 }
