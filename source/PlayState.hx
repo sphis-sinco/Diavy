@@ -117,13 +117,15 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
 
+	public var can_press_enter:Bool = false;
+
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
 		if (dialogue_text_typing_complete)
 		{
-			if (FlxG.keys.justReleased.ENTER)
+			if (FlxG.keys.justReleased.ENTER && can_press_enter)
 			{
 				nextDialogue();
 			}

@@ -45,7 +45,13 @@ class DialogueTextInitalizer extends Initalizer
 		dialogue_text.completeCallback = () ->
 		{
 			if (PlayState.instance != null)
+			{
 				PlayState.instance.dialogue_text_typing_complete = true;
+				PlayState.instance.can_press_enter = true;
+
+				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
+					PlayState.instance.can_press_enter = false;
+			}
 			if (dialogue_proceed_icon != null)
 				dialogue_proceed_icon.visible = true;
 		};

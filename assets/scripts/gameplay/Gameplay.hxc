@@ -8,8 +8,8 @@ function gameplay_setDialogue() {
         PlayState.instance.addDialogue({line: 'Wassup bro?'});
         PlayState.instance.removeDialogueLine('Wassup bro?');
         PlayState.instance.addDialogue({line: 'How are you doing?', choices:[
-                {key:ONE,name:'Good',script_event:'feelingGood'},
-                {key:TWO,name:'Bad',script_event:'notFeelingGood'}
+                {key:FlxKey.ONE,name:'Good',script_event:'feelingGood'},
+                {key:FlxKey.TWO,name:'Bad',script_event:'notFeelingGood'}
         ]});
 }
 function gameplay_update(elapsed:Float) {}

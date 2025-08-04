@@ -6,7 +6,7 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.*;
 import flixel.group.*;
 import flixel.input.gamepad.FlxGamepad;
-import flixel.input.keyboard.FlxKeyboard;
+import flixel.input.keyboard.*;
 import flixel.input.mouse.FlxMouse;
 import flixel.math.*;
 import flixel.text.*;
@@ -17,6 +17,7 @@ import play.*;
 import play.dialogue.*;
 import play.modules.*;
 import play.modules.init.*;
+import play.scripts.*;
 #if hscript
 import hscript.*;
 #end
@@ -112,6 +113,7 @@ class ScriptsManager
 		// Input
 		setScript("FlxMouse", FlxMouse);
 		setScript("FlxKeyboard", FlxKeyboard);
+		setScript("FlxKey", FlxScriptKey);
 		setScript("FlxGamepad", FlxGamepad);
 
 		// Utilities
