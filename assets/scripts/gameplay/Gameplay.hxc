@@ -4,11 +4,11 @@ function gameplay_setDialogue() {
 
         PlayState.instance.addDialogue({line: 'Yo'});
         PlayState.instance.addDialogue({line: 'Wassup bro?'});
+        PlayState.instance.removeDialogueLine('Wassup bro?');
         PlayState.instance.addDialogue({line: 'How are you doing?'});
         
         PlayState.instance.addDialogueArray([{line: 'I\'m doing good myself honestly.'}, {line: 'I\'ve just been chillin.'}]);
 
-        PlayState.instance.removeDialogue({line: 'Wassup bro?'});
 }
 function gameplay_update(elapsed:Float) {}
 

@@ -47,7 +47,7 @@ class PlayState extends FlxState
 
 	public var addDialogue = function(dia:DialogueEntry) {};
 	public var addDialogueArray = function(diaList:Array<DialogueEntry>) {};
-	public var removeDialogue = function(dia:DialogueEntry) {};
+	public var removeDialogueLine = function(dia:String) {};
 	public var deleteAllDialogue = function() {};
 
 	override public function create()
@@ -76,9 +76,15 @@ class PlayState extends FlxState
 			for (dia in diaList)
 				this.dialogue.push(dia);
 		};
-		removeDialogue = function(dia:DialogueEntry)
+		removeDialogueLine = function(targettedDia:String)
 		{
-			dialogue.remove(dia);
+			for (dia in dialogue)
+			{
+				if (dia.line == targettedDia)
+				{
+					dialogue.remove(dia);
+				}
+			}
 		};
 		deleteAllDialogue = function()
 		{
