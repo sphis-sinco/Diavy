@@ -34,6 +34,7 @@ class ScriptsManager
 		for (instance in LOADED_SCRIPTS)
 		{
 			// fix multiple instances of similar scripts
+			trace('Bye bye ${instance.name}');
 			instance.destroy();
 		}
 		LOADED_SCRIPTS = [];
@@ -52,7 +53,8 @@ class ScriptsManager
 				if (file.endsWith(Assets.HSCRIPT_EXT))
 				{
 					trace(file);
-					scriptPaths.push('$dir/$file');
+					if (!scriptPaths.contains('$dir/$file'))
+						scriptPaths.push('$dir/$file');
 				}
 				else if (!file.contains('.'))
 				{
@@ -60,15 +62,14 @@ class ScriptsManager
 				}
 			}
 		}
+		readDirectory('assets/scripts');
 		readDirectory(Assets.getAssetPath('scripts'));
-		for (mod in FlxModding.mods)
-		{
-			readDirectory(Assets.getPath('${mod.directory()}/scripts'));
-		}
 
 		for (path in scriptPaths)
 		{
 			var newScript:Iris = new Iris(File.getContent(path), {name: path, autoRun: true, autoPreset: true});
+			if (LOADED_SCRIPTS.contains(newScript))
+				return;
 			FlxG.log.add('New script: $path');
 			LOADED_SCRIPTS.push(newScript);
 		}
