@@ -101,6 +101,12 @@ class PlayState extends FlxState
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 
+		for (dialogueEntry in dialogue)
+		{
+			dialogueEntry.line ??= 'Null Entry';
+			dialogueEntry.choices ??= [];
+		}
+
 		initalizePreferences();
 
 		initalizeDialogueBox();
