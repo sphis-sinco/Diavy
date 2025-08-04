@@ -147,7 +147,7 @@ class PlayState extends FlxState
 	{
 		if (dialogue_text == null)
 		{
-			dialogue_text = new FlxTypeText(0, 0, 0, 'Coolswag Coolswag', 16);
+			dialogue_text = new FlxTypeText(0, 0, 0, '', 16);
 			addObject(dialogue_text);
 		}
 
@@ -202,7 +202,6 @@ class PlayState extends FlxState
 
 	public function beginDialogueTyping()
 	{
-		dialogue_text.text = dialogue[dialogue_progress];
 		dialogue_text.start();
 
 		ScriptsManager.callScript('beginDialogueTyping', [preferences]);

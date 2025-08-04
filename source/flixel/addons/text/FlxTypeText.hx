@@ -205,6 +205,8 @@ class FlxTypeText extends FlxText
 	 */
 	public function start(?Delay:Float, ForceRestart:Bool = false, AutoErase:Bool = false, ?SkipKeys:Array<FlxKey>, ?Callback:Void->Void):Void
 	{
+		_finalText = text;
+
 		if (Delay != null)
 		{
 			delay = Delay;
