@@ -1,0 +1,15 @@
+function dialogueEntryNullChecks()
+{
+	for (dialogueEntry in dialogue)
+	{
+		dialogueEntry.line ??= 'Null Entry';
+                dialogueEntry.choices ??= [];
+		dialogueEntry.character ??= 'sphisSinco';
+		dialogueEntry.characterSettings ??= {};
+		dialogueEntry.background ??= 'sky';
+		if (dialogueEntry.background == 'sky')
+			dialogueEntry.backgroundSettings ??= {scaleOffsets: new FlxPoint(4, 4)};
+		else
+			dialogueEntry.backgroundSettings ??= {};
+	}
+}

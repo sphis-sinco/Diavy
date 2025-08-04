@@ -110,6 +110,9 @@ class PlayState extends FlxState
 			},
 			{
 				line: 'Coolswag Coolswag'
+			},
+			{
+				line: 'You should probably add a mod or something.'
 			}
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
@@ -252,12 +255,9 @@ class PlayState extends FlxState
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
 			dialogueEntry.characterSettings ??= {};
-			dialogueEntry.character ??= 'sphisSinco';
-			if (dialogueEntry.background == null)
-				dialogueEntry.backgroundSettings ??= {scaleOffsets: new FlxPoint(4, 4)};
-			else
-				dialogueEntry.backgroundSettings ??= {};
-			dialogueEntry.background ??= 'sky';
+			dialogueEntry.character ??= '';
+			dialogueEntry.backgroundSettings ??= {};
+			dialogueEntry.background ??= '';
 		}
 
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);

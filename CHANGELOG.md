@@ -1,4 +1,6 @@
 # r3 (8/4/2025)
+- Added an extra default line that says "You should probably add a mod or something."
+- Moved the gameplay items to a mod so you can now toggle on and off the main game's content
 - Fixed application version string
 - Added Mod Menu
 
