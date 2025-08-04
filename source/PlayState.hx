@@ -126,6 +126,7 @@ class PlayState extends FlxState
 
 		choice_text.y = 10;
 		choice_text.alignment = CENTER;
+		choice_text.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 1);
 		choice_text.sounds = [
 			new FlxSound().loadStream(Assets.getSoundPath('customType-1')),
 			new FlxSound().loadStream(Assets.getSoundPath('customType-2')),
