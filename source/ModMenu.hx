@@ -10,7 +10,7 @@ class ModMenu extends FlxState
 
 	static var curSelected:Int = 0;
 
-	static var page:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
+	static var page:FlxTypedGroup<FlxText>;
 
 	public static var instance:ModMenu;
 
@@ -21,6 +21,8 @@ class ModMenu extends FlxState
 	override function create()
 	{
 		instance = this;
+
+		page = new FlxTypedGroup<FlxText>();
 
 		curSelected = savedSelection;
 
