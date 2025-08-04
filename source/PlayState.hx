@@ -285,16 +285,18 @@ class PlayState extends FlxState
 
 	public var dialogueLine = '';
 	public var controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
+	// public var previousDialogueLine = '';
+	public var previousControlsLine = '';
 
 	public function beginDialogueTyping()
 	{
-		choice_text.resetText('');
 		dialogue_text.resetText('');
 		try
 		{
 			choices_keys = [];
 			choices_events = [];
 			dialogueLine = dialogue[dialogue_progress].line;
+			previousControlsLine = controlsLine;
 			controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
 
 			if (dialogue[dialogue_progress].choices != null)
@@ -309,6 +311,9 @@ class PlayState extends FlxState
 						controlsLine += '${choice.keyString} - ${choice.name}\n';
 					}
 				}
+
+			if (controlsLine != previousControlsLine)
+				choice_text.resetText('');
 
 			dialogue_text.start(dialogueLine, 0.05, false, false, []);
 		}
