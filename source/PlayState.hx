@@ -4,7 +4,6 @@ import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import haxe.exceptions.NotImplementedException;
 
 enum DialoguePositionEnum
 {
