@@ -1,4 +1,6 @@
 # r3 (8/4/2025)
+- Also Fixed duplicate script classes (hopefully)
+- Fixed dupe script paths
 - You are now sent to the mod menu on startup
 - Changed things using `FlxPoint` to use `{x, y}` so scripts can modify them
 - Added an extra default line that says "You should probably add a mod or something."
