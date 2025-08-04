@@ -1,4 +1,4 @@
-package play.modules;
+package play.modules.init;
 
 import play.dialogue.DialoguePositionEnum;
 
