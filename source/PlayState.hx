@@ -21,10 +21,9 @@ class PlayState extends FlxState
 
 	public var dialogue_proceed_icon:FlxSprite;
 
-	public var addObject = function(object:FlxBasic) {};
-
 	public var scriptEventNames = {
 		create: 'gameplay_create',
+		setdialogue: 'gameplay_setDialogue',
 		update: 'gameplay_update',
 		beginDialogue: 'beginDialogue',
 		dialogueBoxInit_tweenStart: 'beginDialogue_dialogueBox_tweenStart',
@@ -41,6 +40,13 @@ class PlayState extends FlxState
 	};
 
 	public var dialogue_end_callback:Void->Void;
+
+	public var addObject = function(object:FlxBasic) {};
+
+	public var addDialogue = function(dia:String) {};
+	public var addDialogueArray = function(diaList:Array<String>) {};
+	public var removeDialogue = function(dia:String) {};
+	public var deleteAllDialogue = function() {};
 
 	override public function create()
 	{
@@ -59,7 +65,26 @@ class PlayState extends FlxState
 			add(object);
 		}
 
+		addDialogue = function(dia:String)
+		{
+			this.dialogue.push(dia);
+		};
+		addDialogueArray = function(diaList:Array<String>)
+		{
+			for (dia in diaList)
+				this.dialogue.push(dia);
+		};
+		removeDialogue = function(dia:String)
+		{
+			dialogue.remove(dia);
+		};
+		deleteAllDialogue = function()
+		{
+			dialogue = [];
+		};
+
 		dialogue = ['Hey!', 'Coolswag. Coolswag.'];
+		ScriptsManager.callScript(scriptEventNames.setdialogue);
 
 		initalizePreferences();
 

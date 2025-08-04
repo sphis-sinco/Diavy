@@ -1,5 +1,15 @@
 function gameplay_create() {}
-function gameplay_setDialogue() {}
+function gameplay_setDialogue() {
+        PlayState.instance.deleteAllDialogue();
+
+        PlayState.instance.addDialogue('Yo');
+        PlayState.instance.addDialogue('Wassup bro?');
+        PlayState.instance.addDialogue('How are you doing?');
+        
+        PlayState.instance.addDialogueArray(['I\'m doing good myself honestly.', 'I\'ve just been chillin.']);
+
+        PlayState.instance.removeDialogue('Wassup bro?');
+}
 function gameplay_update(elapsed:Float) {}
 
 function beginDialogue() {}
@@ -14,9 +24,7 @@ function beginDialogue_dialogueText_tweenComplete(dialogue_text:FlxText) {}
 
 function initalizeDialogueBox(dialogue_box:FlxSprite) {}
 function initalizeDialogueText(dialogue_text:FlxText) {}
-function initalizePreferences(preferences:PlayStatePreferences) {
-        trace(''+preferences);
-}
+function initalizePreferences(preferences:PlayStatePreferences) {}
 
 function nextDialogue() {}
 function beginDialogueTyping() {}
