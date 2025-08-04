@@ -150,6 +150,7 @@ class PlayState extends FlxState
 
 		if (FlxG.keys.justReleased.BACKSPACE)
 		{
+			PlayState.instance = null;
 			FlxG.switchState(() -> new ModMenu());
 		}
 
