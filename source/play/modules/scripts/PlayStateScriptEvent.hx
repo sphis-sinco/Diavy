@@ -2,8 +2,8 @@ package play.modules.scripts;
 
 class PlayStateScriptEvent
 {
-	public var eventName:String = 'unimplemented_PSSE';
-	public var eventArgs:Array<Dynamic> = [];
+	var eventName:String = 'unimplemented_PSSE';
+	var eventArgs:Array<Dynamic> = [];
 
 	public function new(name:String = 'unimplemented_PSSE', ?args:Array<Dynamic>)
 	{

@@ -30,6 +30,11 @@ class PlayState extends FlxState
 
 	public var addObject = function(object:FlxBasic) {};
 
+	public var scriptEvents = {
+		create: new GameplayCreate(),
+		update: new GameplayUpdate(),
+	};
+
 	override public function create()
 	{
 		super.create();
@@ -56,7 +61,7 @@ class PlayState extends FlxState
 
 		beginDialogue();
 
-		ScriptsManager.callScript(new GameplayCreate().getEventName());
+		ScriptsManager.callScript(scriptEvents.create.getEventName());
 	}
 
 	override public function update(elapsed:Float)
@@ -71,7 +76,7 @@ class PlayState extends FlxState
 			}
 		}
 
-		ScriptsManager.callScript('gameplay_update', [elapsed]);
+		ScriptsManager.callScript(scriptEvents.create.getEventName(), [elapsed]);
 	}
 
 	public function beginDialogue()
