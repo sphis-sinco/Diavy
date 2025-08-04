@@ -129,7 +129,7 @@ class PlayState extends FlxState
 			new FlxSound().loadStream(Assets.getSoundPath('customType-3')),
 			new FlxSound().loadStream(Assets.getSoundPath('customType-4'))
 		];
-		add(choice_text);
+		addObject(choice_text);
 
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
