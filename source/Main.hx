@@ -1,5 +1,6 @@
 package;
 
+import flixel.graphics.FlxGraphic;
 import openfl.display.Sprite;
 
 class Main extends Sprite
@@ -13,6 +14,8 @@ class Main extends Sprite
 		@:privateAccess {
 			ScriptsManager.loadScripts();
 		}
+
+		FlxGraphic.defaultPersist = true;
 
 		addChild(new FlxGame(0, 0, ModMenu));
 	}
