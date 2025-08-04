@@ -1,11 +1,8 @@
 package;
 
 import flixel.addons.text.FlxTypeText;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import play.*;
+import flixel.tweens.*;
 import play.dialogue.*;
-import play.modules.*;
 import play.modules.init.*;
 
 class PlayState extends FlxState
