@@ -22,6 +22,18 @@ class DialogueCharacterInitalizer extends Initalizer
 
 		PlayState.instance.remove(dialogue_character);
 
+		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
+			return;
+
+		if (dialogue_character != null)
+		{
+			if (dialogue_character.graphic == new FlxSprite().loadGraphic(Assets.getImagePath(imagePath)).graphic)
+			{
+				PlayState.instance.addObject(dialogue_character);
+				return;
+			}
+		}
+
 		try
 		{
 			dialogue_character = new FlxSprite(0, 0);
