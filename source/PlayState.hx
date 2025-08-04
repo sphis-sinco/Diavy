@@ -7,6 +7,7 @@ import play.*;
 import play.dialogue.*;
 import play.modules.*;
 import play.modules.init.*;
+import play.modules.scripts.*;
 
 class PlayState extends FlxState
 {
@@ -55,7 +56,7 @@ class PlayState extends FlxState
 
 		beginDialogue();
 
-		ScriptsManager.callScript('gameplay_create');
+		ScriptsManager.callScript(new GameplayCreate().getEventName());
 	}
 
 	override public function update(elapsed:Float)
