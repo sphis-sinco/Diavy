@@ -3,11 +3,10 @@ package;
 import flixel.addons.text.FlxTypeText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-import flixel.util.FlxColor;
+import play.*;
 import play.dialogue.*;
-import play.modules.DialogueBoxInitalizer;
-import play.modules.DialogueProceedIconInitalizer;
-import play.modules.DialogueTextInitalizer;
+import play.modules.*;
+import play.modules.init.*;
 
 class PlayState extends FlxState
 {
