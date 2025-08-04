@@ -148,6 +148,11 @@ class PlayState extends FlxState
 
 		choice_text.screenCenter(X);
 
+		if (FlxG.keys.justReleased.BACKSPACE)
+		{
+			FlxG.switchState(() -> new ModMenu());
+		}
+
 		if (dialogue_text_typing_complete)
 		{
 			if (FlxG.keys.justReleased.ENTER && can_press_enter)
@@ -284,7 +289,7 @@ class PlayState extends FlxState
 	}
 
 	public var dialogueLine = '';
-	public var controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
+	public var controlsLine = '';
 	// public var previousDialogueLine = '';
 	public var previousControlsLine = '';
 
@@ -305,12 +310,17 @@ class PlayState extends FlxState
 					controlsLine = 'Controls:\n\n';
 					for (choice in dialogue[dialogue_progress].choices)
 					{
-						choices_keys.push(choices_keys_map.get(choice.keyString.toUpperCase()));
-						choices_events.push(choice.script_event);
+						if (choices_keys_map.exists(choice.keyString.toUpperCase()))
+						{
+							choices_keys.push(choices_keys_map.get(choice.keyString.toUpperCase()));
+							choices_events.push(choice.script_event);
 
-						controlsLine += '${choice.keyString} - ${choice.name}\n';
+							controlsLine += '${choice.keyString} - ${choice.name}\n';
+						}
 					}
 				}
+
+			controlsLine += 'BACKSPACE - Open Mod Menu\n';
 
 			if (controlsLine != previousControlsLine)
 				choice_text.resetText('');
@@ -379,7 +389,7 @@ class PlayState extends FlxState
 		' ' => SPACE,
 		'\t' => TAB,
 		'\n' => ENTER,
-		'BACKSPACE' => BACKSPACE,
+		// 'BACKSPACE' => BACKSPACE,
 		'ESCAPE' => ESCAPE,
 		// Function keys
 		'F1' => F1,
