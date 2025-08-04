@@ -57,9 +57,13 @@ class PlayState extends FlxState
 	public function beginDialogue()
 	{
 		dialogue_box.alpha = 0;
+		dialogue_text.alpha = 0;
 		dialogue_progress = 0;
 
 		FlxTween.tween(dialogue_box, {alpha: 1}, 1, {
+			ease: FlxEase.sineIn
+		});
+		FlxTween.tween(dialogue_text, {alpha: 1}, 1, {
 			ease: FlxEase.sineIn
 		});
 	}
