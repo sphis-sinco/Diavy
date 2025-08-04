@@ -22,7 +22,7 @@ class DialogueTextInitalizer extends Initalizer
 
 		if (dialogue_text == null)
 		{
-			dialogue_text = new FlxTypeText(0, 0, 0, '', 8);
+			dialogue_text = new FlxTypeText(0, 0, 0, '', 16);
 			if (PlayState.instance != null)
 				PlayState.instance.addObject(dialogue_text);
 		}
