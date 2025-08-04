@@ -52,6 +52,7 @@
 
 	<haxelib name="hscript" />
 	<haxelib name="hscript-iris" />
+	<define name="hscriptPos" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
