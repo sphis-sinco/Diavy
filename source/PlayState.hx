@@ -127,7 +127,7 @@ class PlayState extends FlxState
 		if (dialogue_proceed_icon == null)
 		{
 			dialogue_proceed_icon = new FlxSprite(0, 0);
-			dialogue_proceed_icon.loadGraphic(Assets.getImage('dialogue/proceed'));
+			dialogue_proceed_icon.loadGraphic(Assets.getImagePath('dialogue/proceed'));
 			addObject(dialogue_proceed_icon);
 		}
 

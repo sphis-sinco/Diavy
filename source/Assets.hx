@@ -53,16 +53,4 @@ class Assets
 
 	public static function getJsonFile(id:String, ?dataFolder:Bool = true)
 		return getFileJsonContent('$id.json', dataFolder);
-
-	public static function getScriptFile(id:String, ?dataFolder:Bool = true)
-		return getFileJsonContent('$id.$HSCRIPT_EXT', dataFolder);
-
-	public static function getImage(id:String, ?imageFolder:Bool = true)
-	{
-		var path = getAssetPath('$id.$IMAGE_EXT');
-		if (imageFolder)
-			path = getImagePath(id);
-
-		return FlxModding.system.getBitmapData(path);
-	}
 }
