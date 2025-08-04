@@ -38,6 +38,7 @@ class PlayState extends FlxState
 		dialogueTextInit_tweenStart: 'beginDialogue_dialogueText_tweenStart',
 		dialogueTextInit_tweenUpdate: 'beginDialogue_dialogueText_tweenUpdate',
 		dialogueTextInit_tweenComplete: 'beginDialogue_dialogueText_tweenComplete',
+		dialogueCharacterInit: 'initalizeDialogueCharacter',
 		dialogueBoxInit: 'initalizeDialogueBox',
 		dialogueTextInit: 'initalizeDialogueText',
 		preferencesInit: 'initalizePreferences',
@@ -48,6 +49,8 @@ class PlayState extends FlxState
 	public var dialogue_end_callback:Void->Void;
 
 	public var addObject = function(object:FlxBasic) {};
+
+	public var dialogue_character:FlxSprite;
 
 	public var addDialogue = function(dia:DialogueEntry) {};
 	public var addDialogueArray = function(diaList:Array<DialogueEntry>) {};
@@ -116,6 +119,7 @@ class PlayState extends FlxState
 
 		initalizePreferences();
 
+		initalizeDialogueCharacter();
 		initalizeDialogueBox();
 		initalizeDialogueText();
 
@@ -196,6 +200,13 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.beginDialogue);
 	}
 
+	public function initalizeDialogueCharacter()
+	{
+		dialogue_character = new DialogueCharacterInitalizer(dialogue_character).getValues();
+
+		ScriptsManager.callScript(scriptEventNames.dialogueCharacterInit, [dialogue_character]);
+	}
+
 	public function initalizeDialogueBox()
 	{
 		dialogue_box = new DialogueBoxInitalizer(dialogue_box, preferences.dialoguePosition).getValues();
@@ -238,6 +249,8 @@ class PlayState extends FlxState
 		}
 
 		beginDialogueTyping();
+
+		initalizeDialogueCharacter();
 
 		ScriptsManager.callScript(scriptEventNames.nextDialogue);
 	}

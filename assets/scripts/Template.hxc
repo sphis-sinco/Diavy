@@ -12,6 +12,7 @@ function beginDialogue_dialogueText_tweenStart(dialogue_text:FlxText) {}
 function beginDialogue_dialogueText_tweenUpdate(dialogue_text:FlxText) {}
 function beginDialogue_dialogueText_tweenComplete(dialogue_text:FlxText) {}
 
+function initalizeDialogueCharacter(dialogue_character:FlxSprite) {}
 function initalizeDialogueBox(dialogue_box:FlxSprite) {}
 function initalizeDialogueText(dialogue_text:FlxText) {}
 function initalizePreferences(preferences:PlayStatePreferences) {

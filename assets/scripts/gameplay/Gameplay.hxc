@@ -32,13 +32,16 @@ function beginDialogueTyping() {}
 function feelingGood()
 {
         PlayState.instance.addDialogueArray([
-                {line: 'I\'m doing good myself honestly.'},
+                {line: 'Good?', character: 'sinco'},
+                {line: 'Nice.'},
+                {line: 'I\'ve been doing good myself honestly.'},
                 {line: 'I\'ve just been chillin.'}
         ]);
 }
 function notFeelingGood()
 {
         PlayState.instance.addDialogueArray([
+                {line: 'Not that good...', character: 'sinco'},
                 {line: 'Oh.'},
                 {line: 'I\'m sorry to hear that...'}
         ]);
