@@ -123,13 +123,6 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.dialogueBoxInit, [dialogue_box]);
 	}
 
-	public function initalizeDialogueText()
-	{
-		dialogue_text = new DialogueTextInitalizer(dialogue_box, dialogue_proceed_icon, dialogue_text).getValues();
-
-		ScriptsManager.callScript(scriptEventNames.dialogueTextInit, [dialogue_text]);
-	}
-
 	public function initalizePreferences()
 	{
 		preferences = {
@@ -160,5 +153,37 @@ class PlayState extends FlxState
 		dialogue_text.start();
 
 		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping, [preferences]);
+	}
+
+	public function initalizeDialogueText()
+	{
+		if (dialogue_text == null)
+		{
+			dialogue_text = new FlxTypeText(0, 0, 0, '', 16);
+			addObject(dialogue_text);
+		}
+
+		dialogue_text.showCursor = true;
+		dialogue_text.useDefaultSound = true;
+
+		dialogue_text.fieldWidth = dialogue_box.width - 10;
+		dialogue_text.color = FlxColor.BLACK;
+		dialogue_text.setPosition(dialogue_box.x + 5, dialogue_box.y + 5);
+
+		dialogue_text.startCallback = () ->
+		{
+			dialogue_text_typing_complete = false;
+
+			if (dialogue_proceed_icon != null)
+				dialogue_proceed_icon.visible = false;
+		};
+		dialogue_text.completeCallback = () ->
+		{
+			dialogue_text_typing_complete = true;
+			if (dialogue_proceed_icon != null)
+				dialogue_proceed_icon.visible = true;
+		};
+
+		ScriptsManager.callScript(scriptEventNames.dialogueTextInit, [dialogue_text]);
 	}
 }
