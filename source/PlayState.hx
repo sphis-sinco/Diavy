@@ -104,6 +104,8 @@ class PlayState extends FlxState
 			dialogue = [];
 		};
 
+		initalizePreferences();
+
 		dialogue = [
 			{
 				line: 'Yo!'
@@ -117,8 +119,6 @@ class PlayState extends FlxState
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 		dialogueEntryNullChecks();
-
-		initalizePreferences();
 
 		initalizeDialogueBackground();
 		initalizeDialogueCharacter();
@@ -241,7 +241,13 @@ class PlayState extends FlxState
 	public function initalizePreferences()
 	{
 		preferences = {
-			dialoguePosition: null
+			dialoguePosition: null,
+
+			defaultCharacter: '',
+			defaultCharacterSettings: {},
+
+			defaultBackground: '',
+			defaultBackgroundSettings: {},
 		};
 		preferences.dialoguePosition ??= BOTTOM;
 
@@ -254,10 +260,10 @@ class PlayState extends FlxState
 		{
 			dialogueEntry.line ??= 'Null Entry';
 			dialogueEntry.choices ??= [];
-			dialogueEntry.characterSettings ??= {};
-			dialogueEntry.character ??= '';
-			dialogueEntry.backgroundSettings ??= {};
-			dialogueEntry.background ??= '';
+			dialogueEntry.characterSettings ??= preferences.defaultCharacterSettings;
+			dialogueEntry.character ??= preferences.defaultCharacter;
+			dialogueEntry.backgroundSettings ??= preferences.defaultBackgroundSettings;
+			dialogueEntry.background ??= preferences.defaultBackground;
 		}
 
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);
