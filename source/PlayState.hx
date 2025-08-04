@@ -3,15 +3,17 @@ package;
 import flixel.addons.text.FlxTypeText;
 import flixel.tweens.*;
 import play.*;
+import play.dialogue.*;
 import play.modules.init.*;
 
 class PlayState extends FlxState
 {
+	public var dialogue:Array<DialogueEntry> = [];
+
 	public static var instance:PlayState;
 
 	public var preferences:PlayStatePreferences;
 
-	public var dialogue:Array<String> = [];
 	public var dialogue_progress:Int = 0;
 
 	public var dialogue_box:FlxSprite;
@@ -43,9 +45,9 @@ class PlayState extends FlxState
 
 	public var addObject = function(object:FlxBasic) {};
 
-	public var addDialogue = function(dia:String) {};
-	public var addDialogueArray = function(diaList:Array<String>) {};
-	public var removeDialogue = function(dia:String) {};
+	public var addDialogue = function(dia:DialogueEntry) {};
+	public var addDialogueArray = function(diaList:Array<DialogueEntry>) {};
+	public var removeDialogue = function(dia:DialogueEntry) {};
 	public var deleteAllDialogue = function() {};
 
 	override public function create()
@@ -65,16 +67,16 @@ class PlayState extends FlxState
 			add(object);
 		}
 
-		addDialogue = function(dia:String)
+		addDialogue = function(dia:DialogueEntry)
 		{
 			this.dialogue.push(dia);
 		};
-		addDialogueArray = function(diaList:Array<String>)
+		addDialogueArray = function(diaList:Array<DialogueEntry>)
 		{
 			for (dia in diaList)
 				this.dialogue.push(dia);
 		};
-		removeDialogue = function(dia:String)
+		removeDialogue = function(dia:DialogueEntry)
 		{
 			dialogue.remove(dia);
 		};
@@ -83,7 +85,14 @@ class PlayState extends FlxState
 			dialogue = [];
 		};
 
-		dialogue = ['Hey!', 'Coolswag. Coolswag.'];
+		dialogue = [
+			{
+				line: 'Yo!'
+			},
+			{
+				line: 'Coolswag Coolswag'
+			}
+		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 
 		initalizePreferences();
@@ -185,7 +194,14 @@ class PlayState extends FlxState
 	public function beginDialogueTyping()
 	{
 		dialogue_text.resetText('');
-		dialogue_text.start(dialogue[dialogue_progress]);
+		try
+		{
+			dialogue_text.start(dialogue[dialogue_progress].line);
+		}
+		catch (e)
+		{
+			dialogue_text.start(e.message);
+		}
 
 		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping);
 	}
