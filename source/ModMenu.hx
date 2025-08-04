@@ -138,7 +138,6 @@ class ModMenu extends FlxState
 
 				if (curSelected == x.ID)
 				{
-					@:privateAccess
 					descriptionText.color = FlxColor.WHITE;
 					descriptionText.text = 'version ${x_mod.version}\n\n' + '${x_mod.description}\n\n' + 'CREDITS';
 

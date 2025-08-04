@@ -1,3 +1,7 @@
+# r3 (8/4/2025)
+- Fixed application version string
+- Added Mod Menu
+
 # r2 (8/4/2025)
 - The choices Text no logner types the same text
 - Added border to the choices text
