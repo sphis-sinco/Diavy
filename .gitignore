@@ -4,3 +4,4 @@ export/
 dump/
 
 .DS_Store
+.dev/ai_story_generator.py

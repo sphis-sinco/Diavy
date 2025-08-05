@@ -8,5 +8,15 @@
                 "line": "Let's go.",
                 "character": "berin-shaddup",
                 "background": "trip-intro-tree"
+        },
+        {
+                "line": "Alright!",
+                "character": "trime-aw",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Miy and Trime walk ahead and you grab the bag containing your stuff and Miy's",
+                "character": "",
+                "background": "trip-intro-tree"
         }
 ]

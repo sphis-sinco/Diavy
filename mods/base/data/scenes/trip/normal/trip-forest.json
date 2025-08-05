@@ -1,3 +1,60 @@
 [
-        
+        {
+                "line": "As all 3 of you walk through the green forest of Motoia",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "There is a tickling sensation that something is wrong.",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "Miy and Trime are too busy cuddling so of course they wouldnt feel it...",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "FREEZE!",
+                "character": "gijujakiMember/gm-regular",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "!!!",
+                "character": "",
+                "background": "tripForest/gijujakiAttack"
+        },
+        {
+                "line": "Give me everything you have!",
+                "character": "gijujakiMember/gm-regular",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "Hell no!",
+                "character": "berin-wtf",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You quickly punch the masked man",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "COME ON",
+                "character": "berin-rush",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You, Miy, and Trime all run outside of the Motoia forest into the territory of the gijujaki",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "Oh. Fuck.",
+                "character": "trime-ohfuck",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "",
+                "wait": 2.0
+        }
 ]
