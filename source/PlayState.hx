@@ -62,9 +62,6 @@ class PlayState extends FlxState
 
 		instance = this;
 
-		if (Compiler.getDefine('STARTING_LINE') != null && Compiler.getDefine('STARTING_LINE') != '1')
-			dialogue_progress = Std.parseInt(Compiler.getDefine('STARTING_LINE').split('=')[0]);
-
 		can_press_enter = true;
 
 		addObject = function(object:FlxBasic) add(object);

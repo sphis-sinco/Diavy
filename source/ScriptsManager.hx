@@ -34,7 +34,7 @@ class ScriptsManager
 		for (instance in LOADED_SCRIPTS)
 		{
 			// fix multiple instances of similar scripts
-			trace('Bye bye ${instance.name}');
+			// trace('Bye bye ${instance.name}');
 			instance.destroy();
 		}
 		LOADED_SCRIPTS = [];
@@ -45,14 +45,14 @@ class ScriptsManager
 
 		readDirectory = function(dir:String)
 		{
-			trace(dir);
+			// trace(dir);
 			if (!FileSystem.exists(dir))
 				return;
 			for (file in FileSystem.readDirectory(dir))
 			{
 				if (file.endsWith(Assets.HSCRIPT_EXT))
 				{
-					trace(file);
+					// trace(file);
 					if (!scriptPaths.contains('$dir/$file'))
 						scriptPaths.push('$dir/$file');
 				}
@@ -70,7 +70,7 @@ class ScriptsManager
 			var newScript:Iris = new Iris(File.getContent(path), {name: path, autoRun: true, autoPreset: true});
 			if (LOADED_SCRIPTS.contains(newScript))
 				return;
-			FlxG.log.add('New script: $path');
+			// FlxG.log.add('New script: $path');
 			LOADED_SCRIPTS.push(newScript);
 		}
 

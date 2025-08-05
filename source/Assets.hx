@@ -12,7 +12,7 @@ class Assets
 
 	public static function getPath(id:String)
 	{
-		FlxG.log.notice('getPath($id)');
+		// FlxG.log.notice('getPath($id)');
 		#if flixelModding
 		@:privateAccess {
 			return FlxModding.system.redirect(id);
