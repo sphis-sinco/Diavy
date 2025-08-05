@@ -1,6 +1,7 @@
 # r4 (8/4/2025)
 ## Other
 - Added true gameplay
+- Added sound: "light-switch" (Base mod)
 - Added music track: "GM" (Base mod, fun fact this is from an old project.)
 ## Events
 - Added `playSound` event
