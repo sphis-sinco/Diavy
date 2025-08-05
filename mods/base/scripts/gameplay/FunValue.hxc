@@ -1,0 +1,6 @@
+var fun:Int = 0;
+
+function generateFunValue()
+{
+        fun = FlxG.random.int(0, 250);
+}
