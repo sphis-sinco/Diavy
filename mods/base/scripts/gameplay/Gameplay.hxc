@@ -5,14 +5,13 @@ function gameplay_setDialogue()
 	PlayState.instance.addDialogue({line: 'Yo'});
 	PlayState.instance.addDialogue({line: 'Wassup bro?'});
 	PlayState.instance.removeDialogueLine('Wassup bro?');
-	PlayState.instance.addDialogue(
-		{
-			line: 'How are you doing?',
-			choices: [
-				{keyString: '1', name: 'Good', script_event: 'feelingGood'},
-				{keyString: '2', name: 'Bad', script_event: 'notFeelingGood'}
-			]
-		});
+	PlayState.instance.addDialogue({
+		line: 'How are you doing?',
+		choices: [
+			{keyString: '1', name: 'Good', script_event: 'feelingGood'},
+			{keyString: '2', name: 'Bad', script_event: 'notFeelingGood'}
+		]
+	});
 }
 
 function feelingGood()

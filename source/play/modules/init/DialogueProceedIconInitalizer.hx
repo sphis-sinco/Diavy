@@ -21,7 +21,8 @@ class DialogueProceedIconInitalizer extends Initalizer
 		{
 			dialogue_proceed_icon = new FlxSprite(0, 0);
 			dialogue_proceed_icon.loadGraphic(Assets.getImagePath('dialogue/proceed'));
-			if (PlayState.instance != null) PlayState.instance.addObject(dialogue_proceed_icon);
+			if (PlayState.instance != null)
+				PlayState.instance.addObject(dialogue_proceed_icon);
 		}
 
 		dialogue_proceed_icon.setPosition((dialogue_box.x + dialogue_box.width - dialogue_proceed_icon.width),

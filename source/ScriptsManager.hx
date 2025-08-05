@@ -43,15 +43,18 @@ class ScriptsManager
 		var scriptPaths:Array<String> = [];
 		var readDirectory = function(dir:String) {}
 
-		readDirectory = function(dir:String) {
+		readDirectory = function(dir:String)
+		{
 			trace(dir);
-			if (!FileSystem.exists(dir)) return;
+			if (!FileSystem.exists(dir))
+				return;
 			for (file in FileSystem.readDirectory(dir))
 			{
 				if (file.endsWith(Assets.HSCRIPT_EXT))
 				{
 					trace(file);
-					if (!scriptPaths.contains('$dir/$file')) scriptPaths.push('$dir/$file');
+					if (!scriptPaths.contains('$dir/$file'))
+						scriptPaths.push('$dir/$file');
 				}
 				else if (!file.contains('.'))
 				{
@@ -65,7 +68,8 @@ class ScriptsManager
 		for (path in scriptPaths)
 		{
 			var newScript:Iris = new Iris(File.getContent(path), {name: path, autoRun: true, autoPreset: true});
-			if (LOADED_SCRIPTS.contains(newScript)) return;
+			if (LOADED_SCRIPTS.contains(newScript))
+				return;
 			FlxG.log.add('New script: $path');
 			LOADED_SCRIPTS.push(newScript);
 		}
@@ -161,7 +165,8 @@ class ScriptsManager
 			}
 		}
 
-		if (endCallBack != null) endCallBack();
+		if (endCallBack != null)
+			endCallBack();
 	}
 
 	public static function setScript(name:String, value:Dynamic, allowOverride:Bool = true):Void

@@ -19,23 +19,24 @@ class BeginDialogueTyping
 
 			if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
 				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
-			{
-				controlsLine = 'Controls:\n\n';
-				for (choice in PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices)
 				{
-					if (PlayState.instance.choices_keys_map.exists(choice.keyString.toUpperCase()))
+					controlsLine = 'Controls:\n\n';
+					for (choice in PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices)
 					{
-						PlayState.instance.choices_keys.push(PlayState.instance.choices_keys_map.get(choice.keyString.toUpperCase()));
-						PlayState.instance.choices_events.push(choice.script_event);
+						if (PlayState.instance.choices_keys_map.exists(choice.keyString.toUpperCase()))
+						{
+							PlayState.instance.choices_keys.push(PlayState.instance.choices_keys_map.get(choice.keyString.toUpperCase()));
+							PlayState.instance.choices_events.push(choice.script_event);
 
-						controlsLine += '${choice.keyString} - ${choice.name}\n';
+							controlsLine += '${choice.keyString} - ${choice.name}\n';
+						}
 					}
 				}
-			}
 
 			controlsLine += 'BACKSPACE - Open Mod Menu\n';
 
-			if (controlsLine != previousControlsLine) PlayState.instance.choice_text.resetText('');
+			if (controlsLine != previousControlsLine)
+				PlayState.instance.choice_text.resetText('');
 
 			PlayState.instance.dialogue_text.start(dialogueLine, 0.05, false, false, []);
 		}

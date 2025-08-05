@@ -45,7 +45,8 @@ class Assets
 	public static function getFileTextContent(id:String, ?dataFolder:Bool = true)
 	{
 		var path = getAssetPath('$id');
-		if (dataFolder) path = getDataPath('$id');
+		if (dataFolder)
+			path = getDataPath('$id');
 
 		return FlxModding.system.getText(path);
 	}

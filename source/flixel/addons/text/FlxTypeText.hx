@@ -242,7 +242,8 @@ class FlxTypeText extends FlxText
 			loadDefaultSound();
 		}
 
-		if (startCallback != null) startCallback();
+		if (startCallback != null)
+			startCallback();
 	}
 
 	override public function applyMarkup(input:String, rules:Array<FlxTextFormatMarkerPair>):FlxText
@@ -268,7 +269,8 @@ class FlxTypeText extends FlxText
 		{
 			last = _finalText.substr(0, last).lastIndexOf(" ");
 
-			if (last <= 0) break;
+			if (last <= 0)
+				break;
 
 			text = prefix + _finalText;
 			n0 = textField.numLines;
@@ -445,13 +447,15 @@ class FlxTypeText extends FlxText
 			if (_typing && _timer >= delay)
 			{
 				_length += Std.int(_timer / delay);
-				if (_length > _finalText.length) _length = _finalText.length;
+				if (_length > _finalText.length)
+					_length = _finalText.length;
 			}
 
 			if (_erasing && _timer >= eraseDelay)
 			{
 				_length -= Std.int(_timer / eraseDelay);
-				if (_length < 0) _length = 0;
+				if (_length < 0)
+					_length = 0;
 			}
 
 			if ((_typing && _timer >= delay) || (_erasing && _timer >= eraseDelay))

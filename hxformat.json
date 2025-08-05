@@ -1,12 +1,9 @@
 {
         "disableFormatting": false,
 
-        "indentation": {
-                "tabWidth": 4,
-		"character": "tab"
-        },
         "lineEnds": {
                 "anonFunctionCurly": {
+                        "emptyCurly": "break",
                         "leftCurly": "after",
                         "rightCurly": "both"
                 },

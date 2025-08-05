@@ -23,11 +23,13 @@ class DialogueBoxInitalizer extends Initalizer
 		{
 			dialogue_box = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * .75), Std.int(FlxG.height * .25));
 			dialogue_box.screenCenter(X);
-			if (PlayState.instance != null) PlayState.instance.addObject(dialogue_box);
+			if (PlayState.instance != null)
+				PlayState.instance.addObject(dialogue_box);
 		}
 
 		dialogue_box.y = FlxG.height - dialogue_box.height - 32;
-		if (dialoguePosition == TOP) dialogue_box.y = dialogue_box.height * .25;
+		if (dialoguePosition == TOP)
+			dialogue_box.y = dialogue_box.height * .25;
 	}
 
 	override function getValues():FlxSprite

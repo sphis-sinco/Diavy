@@ -62,7 +62,8 @@ class PlayState extends FlxState
 		addDialogueArray = function(diaList:Array<DialogueEntry>) for (dia in diaList)
 			this.dialogue.push(dia);
 		removeDialogueLine = function(targettedDia:String) for (dia in dialogue)
-			if (dia.line == targettedDia) dialogue.remove(dia);
+			if (dia.line == targettedDia)
+				dialogue.remove(dia);
 
 		initalizePreferences();
 
@@ -107,7 +108,8 @@ class PlayState extends FlxState
 			FlxG.switchState(() -> new ModMenu());
 		}
 
-		if (dialogue_text_typing_complete) DTC_InputCheck.execute();
+		if (dialogue_text_typing_complete)
+			DTC_InputCheck.execute();
 
 		ScriptsManager.callScript(scriptEventNames.update, [elapsed]);
 	}
@@ -128,16 +130,15 @@ class PlayState extends FlxState
 
 	public function initalizePreferences()
 	{
-		preferences =
-			{
-				dialoguePosition: null,
+		preferences = {
+			dialoguePosition: null,
 
-				defaultCharacter: '',
-				defaultCharacterSettings: {},
+			defaultCharacter: '',
+			defaultCharacterSettings: {},
 
-				defaultBackground: '',
-				defaultBackgroundSettings: {},
-			};
+			defaultBackground: '',
+			defaultBackgroundSettings: {},
+		};
 		preferences.dialoguePosition ??= BOTTOM;
 
 		ScriptsManager.callScript(scriptEventNames.preferencesInit, [preferences]);

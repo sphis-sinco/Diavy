@@ -15,7 +15,8 @@ class DialogueBackgroundInitalizer extends Initalizer
 	{
 		super.initalize();
 
-		if (PlayState.instance == null) return;
+		if (PlayState.instance == null)
+			return;
 
 		final currentDialogue = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
 
@@ -23,7 +24,8 @@ class DialogueBackgroundInitalizer extends Initalizer
 
 		PlayState.instance.remove(dialogue_background);
 
-		if (!FileSystem.exists(Assets.getImagePath(imagePath))) return;
+		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
+			return;
 
 		try
 		{
@@ -40,7 +42,8 @@ class DialogueBackgroundInitalizer extends Initalizer
 
 		try
 		{
-			if (dialogue_background == null) return;
+			if (dialogue_background == null)
+				return;
 
 			if (currentDialogue.backgroundSettings != null)
 			{
