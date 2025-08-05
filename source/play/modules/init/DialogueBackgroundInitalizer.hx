@@ -22,7 +22,7 @@ class DialogueBackgroundInitalizer extends Initalizer
 
 		final imagePath = 'dialogue/backgrounds/' + PlayState.instance.dialogue[PlayState.instance.dialogue_progress].background;
 
-		PlayState.instance.remove(dialogue_background);
+		PlayState.instance.backLayer.remove(dialogue_background);
 
 		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
 			return;
@@ -33,7 +33,7 @@ class DialogueBackgroundInitalizer extends Initalizer
 			dialogue_background.loadGraphic(Assets.getImagePath(imagePath));
 
 			dialogue_background.screenCenter(XY);
-			PlayState.instance.addObject(dialogue_background);
+			PlayState.instance.backLayer.add(dialogue_background);
 		}
 		catch (e)
 		{
@@ -66,7 +66,6 @@ class DialogueBackgroundInitalizer extends Initalizer
 			trace(e);
 		}
 
-		PlayState.instance.initalizeChoicesText();
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueBackgroundInit, [dialogue_background]);
 	}
 

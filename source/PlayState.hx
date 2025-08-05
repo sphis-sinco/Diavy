@@ -1,6 +1,7 @@
 package;
 
 import flixel.addons.text.FlxTypeText;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.input.keyboard.FlxKey;
 import flixel.sound.FlxSound;
 import play.*;
@@ -47,6 +48,8 @@ class PlayState extends FlxState
 	public var readDialogueJsonPath = function(path:String) {};
 	public var addDialogueJsonPath = function(path:String) {};
 
+	public var backLayer:FlxTypedGroup<FlxBasic> = new FlxTypedGroup<FlxBasic>();
+
 	override public function create()
 	{
 		super.create();
@@ -88,6 +91,9 @@ class PlayState extends FlxState
 
 		initalizeDialogueBackground();
 		initalizeDialogueCharacter();
+
+		addObject(backLayer);
+
 		initalizeDialogueBox();
 		dialogue_text = new DialogueTextInitalizer(dialogue_text).getValues();
 

@@ -23,7 +23,7 @@ class DialogueCharacterInitalizer extends Initalizer
 		final imagePath = 'dialogue/characters/' + currentDialogue.character;
 
 		if (dialogue_character != null)
-			PlayState.instance.remove(dialogue_character);
+			PlayState.instance.backLayer.remove(dialogue_character);
 
 		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
 			return;
@@ -33,7 +33,7 @@ class DialogueCharacterInitalizer extends Initalizer
 			dialogue_character = new FlxSprite(0, 0);
 			dialogue_character.loadGraphic(Assets.getImagePath(imagePath));
 			dialogue_character.screenCenter(XY);
-			PlayState.instance.addObject(dialogue_character);
+			PlayState.instance.backLayer.add(dialogue_character);
 		}
 		catch (e)
 		{
@@ -66,7 +66,7 @@ class DialogueCharacterInitalizer extends Initalizer
 			trace(e);
 		}
 
-		PlayState.instance.initalizeChoicesText();
+		PlayState.instance.initalizeDialogueBox();
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueCharacterInit, [dialogue_character]);
 	}
 
