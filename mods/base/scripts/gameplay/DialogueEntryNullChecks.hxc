@@ -6,13 +6,13 @@ function initalizePreferences()
 	PlayState.instance.preferences.defaultBackgroundSettings = null;
 }
 
-var scale4Bgs = ['sky', 'room'];
+var nonscale4Bgs = [];
 
 function dialogueEntryNullChecks()
 {
 	for (dialogueEntry in PlayState.instance.dialogue)
 	{
-		if (scale4Bgs.contains(dialogueEntry.background))
+		if (!nonscale4Bgs.contains(dialogueEntry.background))
 			dialogueEntry.backgroundSettings ??= {scaleOffsets: {x: 4, y: 4}};
 		else
 			dialogueEntry.backgroundSettings ??= {};
