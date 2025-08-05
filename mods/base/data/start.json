@@ -1,11 +1,21 @@
 [
         {
+                "line": "You've just woken up",
+                "character": "",
+                "background": ""
+        },
+        {
                 "line": "Its dark.",
                 "character": "",
                 "background": ""
         },
         {
-                "line": "You dont know where you are",
+                "line": "The curtains are closed.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "What time is it..?",
                 "character": "",
                 "background": ""
         },
