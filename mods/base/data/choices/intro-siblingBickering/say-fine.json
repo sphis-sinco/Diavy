@@ -3,5 +3,36 @@
                 "line": "Fine...",
                 "character": "berin-shaddup",
                 "background": "room"
+        },
+        {
+                "line": "Okay good.",
+                "character": "miy-happy",
+                "background": "room"
+        },
+        {
+                "line": "Miy gets ready to leave",
+                "character": "",
+                "background": "room"
+        },
+        {
+                "line": "But she turns around.",
+                "character": "",
+                "background": "room"
+        },
+        {
+                "line": "Don't forget about the trip!",
+                "character": "miy-happy",
+                "background": "room"
+        },
+        {
+                "line": "And she leaves.",
+                "character": "",
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["door"] }
+        },
+        {
+                "line": "Oh right! The trip, I do need to prepare for that.",
+                "character": "berin-ohyeah",
+                "background": "room"
         }
 ]

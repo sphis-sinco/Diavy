@@ -18,6 +18,7 @@
                 "line": "As Miy leaves you notice she was walking around with just a bra and her underwear...",
                 "character": "",
                 "background": "room",
+                "script_event": { "name": "playSound", "args": ["door"] },
                 "wait": 1.0
         },
         {
