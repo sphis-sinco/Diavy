@@ -76,5 +76,22 @@
                 "character": "miy-excited",
                 "line": "YEAH!",
                 "background": "trip-intro-tree"
+        },
+        {
+                "line": "",
+                "character": "berin-shaddup",
+                "background": "trip-intro-tree",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Yeah.",
+                                "script_event": "acceptTrip"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Nah.",
+                                "script_event": "declineTrip"
+                        }
+                ]
         }
 ]

@@ -22,7 +22,7 @@ choice: keepLightOff:
 path: sibling-bickering:
 - choice: sayFuckYou
    | say-fuck-you
-   | trip-intro-fu
+   | trip-intro-fu / Fuck You Route /
 - choice: sayFine
    | say-fine
    | path trip-intro
@@ -32,3 +32,7 @@ path: sibling-bickering:
 
 path: trip-intro:
    | trimeArrival
+   - choice: acceptTrip
+     | accept-trip / Normal Route /
+   - choice: declineTrip
+     | decline-trip / Home Route /
