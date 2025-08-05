@@ -22,8 +22,6 @@ class Main extends Sprite
 		for (define in DefineManager.DEFINE_LIST)
 			trace('* ${define.name}: ${define.value()} (raw: ${define.raw_value()})');
 
-		FileTypeTracer.traceFileTypes();
-
 		addChild(new FlxGame(0, 0, CachingState));
 	}
 }

@@ -187,5 +187,7 @@ class ModMenu extends FlxState
 
 			x_mod.updateMetadata();
 		}
+
+		FileTypeTracer.traceFileTypes();
 	}
 }
