@@ -3,15 +3,13 @@ var fun:Int = 0;
 function generateFunValue()
 {
 	fun = FlxG.random.int(0, 250);
-        trace('Fun value: ' + fun);
+	trace('Fun value: ' + fun);
 }
 
 function turnOnLight()
 {
-	PlayState.instance.addDialogueJsonPath('choices/intro-light/flip-the-light-switch');
 	if (fun > 5 && fun < 8)
 	{
 		PlayState.instance.addDialogueJsonPath('fun/turn-on-light');
-		PlayState.instance.addDialogueJsonPath('choices/intro-light/flip-the-light-switch');
 	}
 }
