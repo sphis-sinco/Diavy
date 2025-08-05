@@ -10,11 +10,11 @@ function nextDialogue()
 	 * Was gonna check for the right progress index and perform shit, but then I added the `script_event` field :/
 	 */
 	/**
-	var progress = PlayState.instance.dialogue_progress;
+		var progress = PlayState.instance.dialogue_progress;
 
-	switch(progress)
-	{
-		case 
-	}
+		switch(progress)
+		{
+			case 
+		}
 	 */
 }

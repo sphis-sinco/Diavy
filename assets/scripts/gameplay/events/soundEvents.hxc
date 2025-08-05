@@ -1,0 +1,4 @@
+function playSound(sfx:String)
+{
+	FlxG.sound.play(Assets.getSoundPath(sfx));
+}

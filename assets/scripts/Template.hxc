@@ -20,3 +20,19 @@ function initalizePreferences(preferences:PlayStatePreferences)
 function dialogueEntryNullChecks() {}
 function nextDialogue() {}
 function beginDialogueTyping() {}
+
+// events
+// camera
+
+function cameraFlash(color:String = '0xFFFFFF', time:Float) {}
+
+// music
+
+function startMusic(track:String) {}
+function stopMusic() {}
+function pauseMusic() {}
+function unpauseMusic() {}
+
+// sound
+
+function playSound(sfx:String) {}
