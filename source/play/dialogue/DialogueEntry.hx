@@ -13,4 +13,6 @@ typedef DialogueEntry =
 	var ?backgroundSettings:DialogueSpriteSettings;
 
 	var ?choices:Array<DialogueChoice>;
+
+	var ?wait:Float;
 }

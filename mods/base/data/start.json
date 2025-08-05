@@ -1,0 +1,58 @@
+[
+        {
+                "line": "Its dark.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You dont know where you are",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You feel around.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "Searching...",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You are quite loud while...",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "Searching...",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "...",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You feel a light switch.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You flip the light switch.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "It's just your room.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "room",
+                "wait": 5.0
+        }
+]

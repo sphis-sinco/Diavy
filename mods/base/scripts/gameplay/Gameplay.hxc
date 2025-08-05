@@ -1,33 +1,5 @@
 function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
-
-	PlayState.instance.addDialogueJson([{line: 'Yo'}, {line: 'Wassup bro?'}]);
-	PlayState.instance.addDialogue({
-		line: 'How are you doing?',
-		choices: [
-			{keyString: '1', name: 'Good', script_event: 'feelingGood'},
-			{keyString: '2', name: 'Bad', script_event: 'notFeelingGood'}
-		]
-	});
-	PlayState.instance.removeDialogueLine('Wassup bro?');
-}
-
-function feelingGood()
-{
-	PlayState.instance.addDialogueArray([
-		{line: 'Good?', character: 'sinco'},
-		{line: 'Nice.'},
-		{line: 'I\'ve been doing good myself honestly.'},
-		{line: 'I\'ve just been chillin.'}
-	]);
-}
-
-function notFeelingGood()
-{
-	PlayState.instance.addDialogueArray([
-		{line: 'Not that good...', character: 'sinco'},
-		{line: 'Oh.'},
-		{line: 'I\'m sorry to hear that...'}
-	]);
+	PlayState.instance.addDialogueJsonPath('start');
 }
