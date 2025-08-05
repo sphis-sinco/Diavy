@@ -1,6 +1,6 @@
 function startMusic(track:String)
 {
-	FlxG.sound.music.loadStream(Assets.getMusicPath(track));
+	loadMusicTrack(track);
 	FlxG.sound.music.play();
 }
 

@@ -143,6 +143,10 @@ class ScriptsManager
 		{
 			return FlxColor.fromString(string);
 		});
+		setScript('loadMusicTrack', function(track:String)
+		{
+			FlxG.sound.music.loadStream(Assets.getMusicPath(track));
+		});
 
 		// init mod
 
