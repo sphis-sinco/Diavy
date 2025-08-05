@@ -45,5 +45,36 @@
                 "line": "...",
                 "character": "berin-ew",
                 "background": "trip-intro-tree"
+        },
+        {
+                "line": "Oh please, when you get a girlfriend you're gonna be the same exact way.",
+                "character": "miy-annoyed",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Privately.",
+                "character": "berin-yo",
+                "background": "trip-intro-tree"
+        },
+        {
+                "character": "trime-meh",
+                "line": "Who are we trying to hide our relationship from?",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Preferably me.",
+                "character": "berin-shaddup",
+                "background": "trip-intro-tree"
+        },
+        {
+                "character": "trime-smile",
+                "line": "So are we going on this trip or not!",
+                "background": "trip-intro-tree"
+        },
+        {
+                "character": "miy-excited",
+                "line": "YEAH!",
+                "background": "trip-intro-tree"
         }
 ]
