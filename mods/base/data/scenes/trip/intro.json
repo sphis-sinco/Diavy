@@ -5,27 +5,27 @@
                 "background": "sky-orange"
         },
         {
-                "line": "\"How long is she gonna take?\"",
+                "line": "How long is she gonna take?",
                 "character": "",
                 "background": "trip/slide1"
         },
         {
-                "line": "\"He\"",
+                "line": "He",
                 "character": "",
                 "background": "trip/slide1"
         },
         {
-                "line": "\"...\"",
+                "line": "...",
                 "character": "",
                 "background": "trip/slide2"
         },
         {
-                "line": "\"Don't give me attitude because you can't remember that someone wants to be refered to as a boy.\"",
+                "line": "Don't give me attitude because you can't remember that someone wants to be refered to as a boy.",
                 "character": "",
                 "background": "trip/slide3"
         },
         {
-                "line": "\"Whatever\"",
+                "line": "Whatever",
                 "character": "",
                 "background": "trip/slide4",
                 "script_event": { "name": "tripIntro_trimeArrival", "args": [false]}
