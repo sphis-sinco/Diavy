@@ -3,17 +3,26 @@
 start
 choice: turnOnLight:
  | turn-on-light
- | sibling-bickering
- - choice: sayFuckYou
-   | say-fuck-you
- - choice: sayFine
-   | say-fine
- - choice: keepSilent
-   | keep-silent
+ | path sibling-bickering
 choice: keepLightOff:
  | keep-light-off
  - choice: backUp:
    | back-up
-   | sibling-bickering
+   | path sibling-bickering / I'm not going to repeat this. /
  - choice: dontBackup:
    | sibling-converse
+   | path trip-intro
+
+
+path: sibling-bickering:
+- choice: sayFuckYou
+   | say-fuck-you
+   | trip-intro-fu
+- choice: sayFine
+   | say-fine
+   | path trip-intro
+- choice: keepSilent
+   | keep-silent
+   | path trip-intro
+
+path: trip-intro:

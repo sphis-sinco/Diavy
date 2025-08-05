@@ -1,14 +1,22 @@
+function tripIntro()
+{
+	PlayState.instance.addDialogueJsonPath('scenes/trip/intro');
+}
+
 function sayFuckYou()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fuck-you');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/intro-fu');
 }
 
 function sayFine()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fine');
+	tripIntro();
 }
 
 function keepSilent()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/keep-silent');
+	tripIntro();
 }

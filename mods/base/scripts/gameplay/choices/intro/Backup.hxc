@@ -7,4 +7,5 @@ function backUp()
 function dontBackup()
 {
 	PlayState.instance.addDialogueJsonPath('scenes/intro/sibling-converse');
+	PlayState.instance.addDialogueJsonPath('scenes/trip-intro');
 }
