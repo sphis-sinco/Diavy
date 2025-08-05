@@ -33,7 +33,7 @@
 	<set name="BUILD_DIR" value="export/release" unless="debug"/>
 
 	<source path="source" />
-	<source path="mdos/base" />
+	<source path="mods/base" />
 	<assets path="assets" />
 	<assets path="mods" />
 

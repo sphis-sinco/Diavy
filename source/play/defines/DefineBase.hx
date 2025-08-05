@@ -5,7 +5,7 @@ class DefineBase
 	public var name:String = 'DefineBase';
 
 	public function value():String
-		return raw_value().split('=')[0];
+		return raw_value() != null ? raw_value().split('=')[0] : null;
 
 	public function valid():Bool
 	{
