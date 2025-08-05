@@ -1,6 +1,6 @@
 # r4 (8/?/2025)
 ## Other
-- Overwrote the original dummy game with the full game. (Base mod)
+- Overwrote the original dummy game with chapter 1 of the full game. (Base mod)
 - Added Caching State
 - You can only have 1 mod enabled at once now
 - Added sound: "light-switch" (Base mod)
