@@ -70,12 +70,13 @@ class DialogueTextInitalizer extends Initalizer
 							PlayState.instance.can_press_enter = true;
 							if (PlayState.instance.dialogue_proceed_icon != null)
 								PlayState.instance.dialogue_proceed_icon.visible = true;
-							PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
+							PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
 						});
 					}
-
-					if (PlayState.instance.can_press_enter)
-						PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
+					else
+					{
+						PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
+					}
 				}
 				catch (e)
 				{

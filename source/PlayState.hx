@@ -190,6 +190,10 @@ class PlayState extends FlxState
 		ScriptsManager.callScript(scriptEventNames.deNullChecks);
 	}
 
+	public var dialogueLine = '';
+	public var controlsLine = '';
+	public var previousControlsLine = '.';
+
 	public function nextDialogue()
 		NextDialogue.execute();
 
