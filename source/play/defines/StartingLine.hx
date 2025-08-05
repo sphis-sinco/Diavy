@@ -7,6 +7,8 @@ class StartingLine extends DefineBase
 		super('STARTING_LINE');
 	}
 
-	override function value():String
-		return Compiler.getDefine('STARTING_LINE').split('=')[0];
+	override function raw_value():String
+	{
+		return Compiler.getDefine('STARTING_LINE');
+	}
 }
