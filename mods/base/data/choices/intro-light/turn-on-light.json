@@ -23,7 +23,7 @@
                 "line": "The door opens and closes as someone comes in.",
                 "character": "",
                 "background": "room",
-                "script_event": { "name": "playSound", "args": ["door"] }
+                "script_event": { "name": "playSound", "args": ["door-open"] }
         },
         {
                 "line": "Berin? You okay?",

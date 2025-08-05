@@ -12,14 +12,14 @@
         },
         {
                 "line": "Don't forget about the trip!",
-                "character": "miy-happy",
+                "character": "miy-mumble",
                 "background": "room"
         },
         {
                 "line": "Miy gets ready leaves.",
                 "character": "",
                 "background": "room",
-                "script_event": { "name": "playSound", "args": ["door"] }
+                "script_event": { "name": "playSound", "args": ["door-close"] }
         },
         {
                 "line": "Right.",

@@ -8,7 +8,7 @@
                 "line": "You hear someone, something.",
                 "character": "",
                 "background": "",
-                "script_event": { "name": "playSound", "args": ["door"] }
+                "script_event": { "name": "playSound", "args": ["door-open"] }
         },
         {
                 "line": "They get closer",

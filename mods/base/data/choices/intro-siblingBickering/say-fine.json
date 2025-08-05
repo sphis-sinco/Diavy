@@ -28,7 +28,7 @@
                 "line": "And she leaves.",
                 "character": "",
                 "background": "room",
-                "script_event": { "name": "playSound", "args": ["door"] }
+                "script_event": { "name": "playSound", "args": ["door-close"] }
         },
         {
                 "line": "Oh right! The trip, I do need to prepare for that.",
