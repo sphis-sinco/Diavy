@@ -6,6 +6,9 @@ class CachingState extends FlxState
 {
 	public static var goToPlayState:Bool = false;
 
+	public var assetAmount:Int = 0;
+	public var cachingProgress:Int = 0;
+
 	override function create()
 	{
 		var imagePaths:Array<String> = [];
@@ -21,7 +24,10 @@ class CachingState extends FlxState
 				{
 					// trace('$dir/$file');
 					if (!imagePaths.contains('$dir/$file'))
+					{
 						imagePaths.push('$dir/$file');
+						assetAmount++;
+					}
 				}
 				else if (!file.contains('.'))
 				{
@@ -34,7 +40,14 @@ class CachingState extends FlxState
 
 		for (image in imagePaths)
 		{
-			cacheTexture(image);
+			cacheTexture(image, () ->
+			{
+				cachingProgress++;
+				if (currentCachedTextures.exists(image))
+					trace('Cached $image');
+				else
+					trace('Didn\'t cache $image');
+			});
 		}
 
 		super.create();
@@ -43,12 +56,20 @@ class CachingState extends FlxState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (cachingProgress >= assetAmount)
+		{
+			if (goToPlayState)
+				FlxG.switchState(() -> new PlayState());
+			else
+				FlxG.switchState(() -> new ModMenu());
+		}
 	}
 
 	static var currentCachedTextures:Map<String, FlxGraphic> = [];
 	static var previousCachedTextures:Map<String, FlxGraphic> = [];
 
-	public static function cacheTexture(key:String):Void
+	public static function cacheTexture(key:String, ?onFinished:Void->Void):Void
 	{
 		var tpSplit:Array<String>;
 		tpSplit = key.split('/');
@@ -69,16 +90,20 @@ class CachingState extends FlxState
 		// Else, texture is currently uncached.
 		var graphic:FlxGraphic = FlxGraphic.fromAssetKey(key, false, null, true);
 		var fail = graphic == null;
+
 		if (fail)
 		{
-			FlxG.log.warn('Failed to cache graphic: $key');
+			// FlxG.log.warn('Failed to cache graphic: $key');
 		}
 		else
 		{
-			trace('Successfully cached graphic: $key');
+			// trace('Successfully cached graphic: $key');
 			graphic.persist = true;
 			currentCachedTextures.set(key, graphic);
 		}
+
+		if (onFinished != null)
+			onFinished();
 	}
 
 	/**
