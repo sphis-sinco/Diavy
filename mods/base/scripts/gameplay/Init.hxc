@@ -2,4 +2,6 @@ function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
 	PlayState.instance.addDialogueJsonPath('start');
+
+	ScriptManager.callScript('generateFunValue');
 }
