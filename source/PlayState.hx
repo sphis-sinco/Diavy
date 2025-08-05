@@ -41,6 +41,11 @@ class PlayState extends FlxState
 	public var removeDialogueLine = function(dia:String) {};
 	public var deleteAllDialogue = function() {};
 
+	public var readDialogueJson = function(json:Array<DialogueEntry>) {};
+	public var addDialogueJson = function(json:Array<DialogueEntry>) {};
+	public var readDialogueJsonPath = function(path:String) {};
+	public var addDialogueJsonPath = function(path:String) {};
+
 	override public function create()
 	{
 		super.create();
@@ -58,12 +63,17 @@ class PlayState extends FlxState
 		addObject = function(object:FlxBasic) add(object);
 		addDialogue = function(dia:DialogueEntry) this.dialogue.push(dia);
 		deleteAllDialogue = function() dialogue = [];
+		readDialogueJson = function(json:Array<DialogueEntry>) dialogue = json;
+		readDialogueJsonPath = function(path:String) readDialogueJson(Assets.getJsonFile(path));
+		addDialogueJsonPath = function(path:String) addDialogueJson(Assets.getJsonFile(path));
 
 		addDialogueArray = function(diaList:Array<DialogueEntry>) for (dia in diaList)
 			this.dialogue.push(dia);
 		removeDialogueLine = function(targettedDia:String) for (dia in dialogue)
 			if (dia.line == targettedDia)
 				dialogue.remove(dia);
+		addDialogueJson = function(json:Array<DialogueEntry>) for (dia in json)
+			dialogue.push(dia);
 
 		initalizePreferences();
 

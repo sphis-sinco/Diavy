@@ -1,5 +1,9 @@
 # r4 (8/4/2025)
 - Added true gameplay
+- Added `addDialogueJsonPath` PlayState function for scripts
+- Added `readDialogueJsonPath` PlayState function for scripts
+- Added `addDialogueJson` PlayState function for scripts
+- Added `readDialogueJson` PlayState function for scripts
 
 # r3 (8/4/2025)
 - More abstractions have been done.
