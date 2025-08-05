@@ -54,14 +54,66 @@
                 "line": "",
                 "character": "",
                 "background": "room",
-                "backgroundSettings": {
-                        "scaleOffsets": { "x": 4, "y": 4 }
-                },
                 "wait": 3.0,
                 "script_events": [
                         { "name": "playSound", "args": ["light-switch"] },
                         { "name": "cameraFlash", "args": ["0xFFFFFF", 1] },
                         { "name": "startMusic", "args": ["GM"] }
                 ]
+        },
+        {
+                "line": "The door opens and closes as someone comes in.",
+                "character": "",
+                "background": "room"
+        },
+        {
+                "line": "Berin? You okay?",
+                "character": "miy-confused",
+                "background": "room"
+        },
+        {
+                "line": "Miy, what the fuck?",
+                "character": "berin-wtf",
+                "background": "room"
+        },
+        {
+                "line": "?",
+                "character": "miy-huh",
+                "background": "room"
+        },
+        {
+                "line": "WHY ARE YOU WALKING AROUND IN YOUR FUCKING UNDERWEAR",
+                "character": "berin-embarassed",
+                "background": "room"
+        },
+        {
+                "line": "It's hot in here!",
+                "character": "miy-mumble",
+                "background": "room"
+        },
+        {
+                "line": "And also you've been living in MY house for like 3 years.",
+                "character": "miy-mumble",
+                "background": "room"
+        },
+        {
+                "line": "AND?",
+                "character": "berin-wtf",
+                "background": "room"
+        },
+        {
+                "line": "How are you not used to it?",
+                "character": "miy-mumble",
+                "background": "room"
+        },
+        {
+                "line": "!",
+                "character": "berin-wtf",
+                "background": "room"
+        },
+        {
+                "line": "I don't actually know.",
+                "character": "berin-shaddup",
+                "background": "room"
         }
 ]
