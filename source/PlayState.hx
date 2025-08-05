@@ -2,11 +2,11 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.input.keyboard.FlxKey;
-import flixel.sound.FlxSound;
-import flixel.tweens.*;
 import play.*;
 import play.dialogue.*;
-import play.modules.choices.ChoicesKeyMap;
+import play.modules.*;
+import play.modules.choices.*;
+import play.modules.dialogue.*;
 import play.modules.init.*;
 
 class PlayState extends FlxState
@@ -27,26 +27,7 @@ class PlayState extends FlxState
 
 	public var dialogue_proceed_icon:FlxSprite;
 
-	public var scriptEventNames = {
-		create: 'gameplay_create',
-		setdialogue: 'gameplay_setDialogue',
-		update: 'gameplay_update',
-		beginDialogue: 'beginDialogue',
-		dialogueBoxInit_tweenStart: 'beginDialogue_dialogueBox_tweenStart',
-		dialogueBoxInit_tweenUpdate: 'beginDialogue_dialogueBox_tweenUpdate',
-		dialogueBoxInit_tweenComplete: 'beginDialogue_dialogueBox_tweenComplete',
-		dialogueTextInit_tweenStart: 'beginDialogue_dialogueText_tweenStart',
-		dialogueTextInit_tweenUpdate: 'beginDialogue_dialogueText_tweenUpdate',
-		dialogueTextInit_tweenComplete: 'beginDialogue_dialogueText_tweenComplete',
-		dialogueBackgroundInit: 'initalizeDialogueBackground',
-		dialogueCharacterInit: 'initalizeDialogueCharacter',
-		dialogueBoxInit: 'initalizeDialogueBox',
-		dialogueTextInit: 'initalizeDialogueText',
-		preferencesInit: 'initalizePreferences',
-		deNullChecks: 'dialogueEntryNullChecks',
-		nextDialogue: 'nextDialogue',
-		beginDialogueTyping: 'beginDialogueTyping',
-	};
+	public var scriptEventNames = PlayStateScriptEventNames.list;
 
 	public var dialogue_end_callback:Void->Void;
 
@@ -74,47 +55,22 @@ class PlayState extends FlxState
 
 		can_press_enter = true;
 
-		addObject = function(object:FlxBasic)
-		{
-			add(object);
-		}
+		addObject = function(object:FlxBasic) add(object);
+		addDialogue = function(dia:DialogueEntry) this.dialogue.push(dia);
+		deleteAllDialogue = function() dialogue = [];
 
-		addDialogue = function(dia:DialogueEntry)
-		{
+		addDialogueArray = function(diaList:Array<DialogueEntry>) for (dia in diaList)
 			this.dialogue.push(dia);
-		};
-		addDialogueArray = function(diaList:Array<DialogueEntry>)
-		{
-			for (dia in diaList)
-				this.dialogue.push(dia);
-		};
-		removeDialogueLine = function(targettedDia:String)
-		{
-			for (dia in dialogue)
-			{
-				if (dia.line == targettedDia)
-				{
-					dialogue.remove(dia);
-				}
-			}
-		};
-		deleteAllDialogue = function()
-		{
-			dialogue = [];
-		};
+		removeDialogueLine = function(targettedDia:String) for (dia in dialogue)
+			if (dia.line == targettedDia)
+				dialogue.remove(dia);
 
 		initalizePreferences();
 
 		dialogue = [
-			{
-				line: 'Yo!'
-			},
-			{
-				line: 'Coolswag Coolswag'
-			},
-			{
-				line: 'You should probably add a mod or something.'
-			}
+			{line: 'Yo!'},
+			{line: 'Coolswag Coolswag'},
+			{line: 'You should probably add a mod or something.'}
 		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 		dialogueEntryNullChecks();
@@ -122,19 +78,14 @@ class PlayState extends FlxState
 		initalizeDialogueBackground();
 		initalizeDialogueCharacter();
 		initalizeDialogueBox();
-		initalizeDialogueText();
+		dialogue_text = new DialogueTextInitalizer(dialogue_text).getValues();
 
-		beginDialogue();
+		BeginDialogue.execute();
 
 		choice_text.y = 10;
 		choice_text.alignment = CENTER;
 		choice_text.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 1);
-		choice_text.sounds = [
-			new FlxSound().loadStream(Assets.getSoundPath('customType-1')),
-			new FlxSound().loadStream(Assets.getSoundPath('customType-2')),
-			new FlxSound().loadStream(Assets.getSoundPath('customType-3')),
-			new FlxSound().loadStream(Assets.getSoundPath('customType-4'))
-		];
+		choice_text.sounds = ChoiceTextSounds.getList();
 		addObject(choice_text);
 
 		ScriptsManager.callScript(scriptEventNames.create);
@@ -158,70 +109,16 @@ class PlayState extends FlxState
 		}
 
 		if (dialogue_text_typing_complete)
-		{
-			if (FlxG.keys.justReleased.ENTER && can_press_enter)
-				nextDialogue();
-
-			if (dialogue[dialogue_progress].choices != null)
-				if (dialogue[dialogue_progress].choices.length > 0)
-				{
-					if (FlxG.keys.anyJustReleased(choices_keys))
-					{
-						var i = 0;
-						for (key in choices_keys)
-						{
-							if (FlxG.keys.anyJustReleased([key]))
-								ScriptsManager.callScript(choices_events[i], [], () ->
-								{
-									nextDialogue();
-								});
-							i++;
-						}
-					}
-				}
-		}
+			DTC_InputCheck.execute();
 
 		ScriptsManager.callScript(scriptEventNames.update, [elapsed]);
 	}
 
-	public function beginDialogue()
-	{
-		dialogue_box.alpha = 0;
-		dialogue_text.alpha = 0;
-		dialogue_progress = 0;
-
-		FlxTween.tween(dialogue_box, {alpha: 1}, 1, {
-			ease: FlxEase.sineIn,
-			onStart: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenStart, [dialogue_box]),
-			onUpdate: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenUpdate, [dialogue_box]),
-			onComplete: tween -> ScriptsManager.callScript(scriptEventNames.dialogueBoxInit_tweenComplete, [dialogue_box])
-		});
-		FlxTween.tween(dialogue_text, {alpha: 1}, 1, {
-			ease: FlxEase.sineIn,
-			onStart: tween -> ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenStart, [dialogue_text]),
-			onUpdate: tween -> ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenUpdate, [dialogue_text]),
-			onComplete: tween ->
-			{
-				beginDialogueTyping();
-				ScriptsManager.callScript(scriptEventNames.dialogueTextInit_tweenComplete, [dialogue_text]);
-			}
-		});
-		ScriptsManager.callScript(scriptEventNames.beginDialogue);
-	}
-
 	public function initalizeDialogueBackground()
-	{
 		dialogue_background = new DialogueBackgroundInitalizer(dialogue_background).getValues();
 
-		ScriptsManager.callScript(scriptEventNames.dialogueBackgroundInit, [dialogue_background]);
-	}
-
 	public function initalizeDialogueCharacter()
-	{
 		dialogue_character = new DialogueCharacterInitalizer(dialogue_character).getValues();
-
-		ScriptsManager.callScript(scriptEventNames.dialogueCharacterInit, [dialogue_character]);
-	}
 
 	public function initalizeDialogueBox()
 	{
@@ -229,13 +126,6 @@ class PlayState extends FlxState
 		dialogue_proceed_icon = new DialogueProceedIconInitalizer(dialogue_box, dialogue_proceed_icon).getValues();
 
 		ScriptsManager.callScript(scriptEventNames.dialogueBoxInit, [dialogue_box]);
-	}
-
-	public function initalizeDialogueText()
-	{
-		dialogue_text = new DialogueTextInitalizer(dialogue_text).getValues();
-
-		ScriptsManager.callScript(scriptEventNames.dialogueTextInit, [dialogue_text]);
 	}
 
 	public function initalizePreferences()
@@ -270,75 +160,8 @@ class PlayState extends FlxState
 	}
 
 	public function nextDialogue()
-	{
-		dialogue_progress++;
-
-		dialogueEntryNullChecks();
-
-		if (dialogue_progress >= dialogue.length)
-		{
-			dialogue_progress--;
-			if (dialogue_end_callback != null)
-				dialogue_end_callback();
-			else
-			{
-				trace('End');
-				Sys.exit(127);
-			}
-		}
-
-		beginDialogueTyping();
-
-		initalizeDialogueBackground();
-		initalizeDialogueCharacter();
-
-		ScriptsManager.callScript(scriptEventNames.nextDialogue);
-	}
-
-	public var dialogueLine = '';
-	public var controlsLine = '';
-	// public var previousDialogueLine = '';
-	public var previousControlsLine = '';
+		NextDialogue.execute();
 
 	public function beginDialogueTyping()
-	{
-		dialogue_text.resetText('');
-		try
-		{
-			choices_keys = [];
-			choices_events = [];
-			dialogueLine = dialogue[dialogue_progress].line;
-			previousControlsLine = controlsLine;
-			controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
-
-			if (dialogue[dialogue_progress].choices != null)
-				if (dialogue[dialogue_progress].choices.length > 0)
-				{
-					controlsLine = 'Controls:\n\n';
-					for (choice in dialogue[dialogue_progress].choices)
-					{
-						if (choices_keys_map.exists(choice.keyString.toUpperCase()))
-						{
-							choices_keys.push(choices_keys_map.get(choice.keyString.toUpperCase()));
-							choices_events.push(choice.script_event);
-
-							controlsLine += '${choice.keyString} - ${choice.name}\n';
-						}
-					}
-				}
-
-			controlsLine += 'BACKSPACE - Open Mod Menu\n';
-
-			if (controlsLine != previousControlsLine)
-				choice_text.resetText('');
-
-			dialogue_text.start(dialogueLine, 0.05, false, false, []);
-		}
-		catch (e)
-		{
-			dialogue_text.start(e.message);
-		}
-
-		ScriptsManager.callScript(scriptEventNames.beginDialogueTyping);
-	}
+		BeginDialogueTyping.execute();
 }

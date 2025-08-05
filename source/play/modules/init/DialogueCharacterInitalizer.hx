@@ -64,6 +64,8 @@ class DialogueCharacterInitalizer extends Initalizer
 		{
 			trace(e);
 		}
+
+		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueCharacterInit, [dialogue_character]);
 	}
 
 	override function getValues():FlxSprite

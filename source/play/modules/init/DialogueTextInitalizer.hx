@@ -1,6 +1,7 @@
 package play.modules.init;
 
 import flixel.addons.text.FlxTypeText;
+import play.modules.dialogue.BeginDialogueTyping;
 
 class DialogueTextInitalizer extends Initalizer
 {
@@ -58,11 +59,13 @@ class DialogueTextInitalizer extends Initalizer
 					trace(e);
 				}
 
-				PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
+				PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
 			}
 			if (PlayState.instance.dialogue_proceed_icon != null)
 				PlayState.instance.dialogue_proceed_icon.visible = true;
 		};
+
+		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueTextInit, [dialogue_text]);
 	}
 
 	override function getValues():FlxTypeText

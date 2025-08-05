@@ -65,6 +65,8 @@ class DialogueBackgroundInitalizer extends Initalizer
 		{
 			trace(e);
 		}
+
+		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueBackgroundInit, [dialogue_background]);
 	}
 
 	override function getValues():FlxSprite
