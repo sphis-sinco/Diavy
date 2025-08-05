@@ -2,6 +2,7 @@ package;
 
 import flixel.graphics.FlxGraphic;
 import openfl.display.Sprite;
+import play.defines.DefineManager;
 
 class Main extends Sprite
 {
@@ -17,7 +18,9 @@ class Main extends Sprite
 
 		FlxGraphic.defaultPersist = true;
 
-		trace('STARTING_LINE: ' + Compiler.getDefine('STARTING_LINE').split('=')[0]);
+		trace('Define list: ');
+		for (define in DefineManager.DEFINE_LIST)
+			trace('* ${define.name}: ${define.value()}');
 
 		addChild(new FlxGame(0, 0, ModMenu));
 	}
