@@ -1,0 +1,15 @@
+function addSiblingBickering()
+{
+	PlayState.instance.addDialogueJsonPath('scenes/sibling-bickering');
+}
+
+function turnOnLight()
+{
+	PlayState.instance.addDialogueJsonPath('choices/intro-light/turn-on-light');
+        addSiblingBickering();
+}
+function keepLightOff()
+{
+	PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');
+        addSiblingBickering();
+}

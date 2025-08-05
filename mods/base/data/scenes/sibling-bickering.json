@@ -1,0 +1,54 @@
+[
+        {
+                "line": "Berin? You okay?",
+                "character": "miy-confused",
+                "background": "room"
+        },
+        {
+                "line": "Miy, what the fuck?",
+                "character": "berin-wtf",
+                "background": "room"
+        },
+        {
+                "line": "?",
+                "character": "miy-huh",
+                "background": "room"
+        },
+        {
+                "line": "WHY ARE YOU WALKING AROUND IN YOUR FUCKING UNDERWEAR",
+                "character": "berin-embarassed",
+                "background": "room"
+        },
+        {
+                "line": "You've been living in MY house for like 3 years.",
+                "character": "miy-mumble",
+                "background": "room"
+        },
+        {
+                "line": "Deal with it.",
+                "character": "miy-stfu",
+                "background": "room"
+        },
+        {
+                "line": "!",
+                "character": "berin-wtf",
+                "background": "room",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Say \"Fuck you\"",
+                                "script_event": "sayFuckYou"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Say \"Fine\"",
+                                "script_event": "sayFine"
+                        },
+                        {
+                                "keyString": "3",
+                                "name": "Keep silent",
+                                "script_event": "keepSilent"
+                        }
+                ]
+        }
+]

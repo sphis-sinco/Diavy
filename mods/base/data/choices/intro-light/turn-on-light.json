@@ -1,0 +1,28 @@
+[
+        {
+                "line": "You flip the light switch.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "It's just your room.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "room",
+                "wait": 3.0,
+                "script_events": [
+                        { "name": "playSound", "args": ["light-switch"] },
+                        { "name": "cameraFlash", "args": ["0xFFFFFF", 1] }
+                ]
+        },
+        {
+                "line": "The door opens and closes as someone comes in.",
+                "character": "",
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["door"] }
+        }
+]

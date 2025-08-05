@@ -38,72 +38,18 @@
         {
                 "line": "You feel a light switch.",
                 "character": "",
-                "background": ""
-        },
-        {
-                "line": "You flip the light switch.",
-                "character": "",
-                "background": ""
-        },
-        {
-                "line": "It's just your room.",
-                "character": "",
-                "background": ""
-        },
-        {
-                "line": "",
-                "character": "",
-                "background": "room",
-                "wait": 3.0,
-                "script_events": [
-                        { "name": "playSound", "args": ["light-switch"] },
-                        { "name": "cameraFlash", "args": ["0xFFFFFF", 1] }
+                "background": "",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Flip the light switch",
+                                "script_event": "turnOnLight"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Don't flip the light switch",
+                                "script_event": "keepLightOff"
+                        }
                 ]
-        },
-        {
-                "line": "The door opens and closes as someone comes in.",
-                "character": "",
-                "background": "room",
-                "script_event": { "name": "playSound", "args": ["door"] }
-        },
-        {
-                "line": "Berin? You okay?",
-                "character": "miy-confused",
-                "background": "room"
-        },
-        {
-                "line": "Miy, what the fuck?",
-                "character": "berin-wtf",
-                "background": "room"
-        },
-        {
-                "line": "?",
-                "character": "miy-huh",
-                "background": "room"
-        },
-        {
-                "line": "WHY ARE YOU WALKING AROUND IN YOUR FUCKING UNDERWEAR",
-                "character": "berin-embarassed",
-                "background": "room"
-        },
-        {
-                "line": "You've been living in MY house for like 3 years.",
-                "character": "miy-mumble",
-                "background": "room"
-        },
-        {
-                "line": "Deal with it.",
-                "character": "miy-stfu",
-                "background": "room"
-        },
-        {
-                "line": "!",
-                "character": "berin-wtf",
-                "background": "room"
-        },
-        {
-                "line": "Fuck you.",
-                "character": "berin-shaddup",
-                "background": "room"
         }
 ]
