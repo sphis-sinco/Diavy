@@ -22,6 +22,9 @@ class DialogueCharacterInitalizer extends Initalizer
 
 		final imagePath = 'dialogue/characters/' + currentDialogue.character;
 
+		if (dialogue_character != null)
+			PlayState.instance.remove(dialogue_character);
+
 		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
 			return;
 
@@ -30,8 +33,7 @@ class DialogueCharacterInitalizer extends Initalizer
 			dialogue_character = new FlxSprite(0, 0);
 			dialogue_character.loadGraphic(Assets.getImagePath(imagePath));
 			dialogue_character.screenCenter(XY);
-			if (dialogue_character == null)
-				PlayState.instance.addObject(dialogue_character);
+			PlayState.instance.addObject(dialogue_character);
 		}
 		catch (e)
 		{

@@ -63,7 +63,8 @@
         {
                 "line": "The door opens and closes as someone comes in.",
                 "character": "",
-                "background": "room"
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["door"] }
         },
         {
                 "line": "Berin? You okay?",

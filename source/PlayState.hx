@@ -90,10 +90,10 @@ class PlayState extends FlxState
 		dialogueEntryNullChecks();
 
 		initalizeDialogueBackground();
-		initalizeDialogueCharacter();
 
 		addObject(backLayer);
 
+		initalizeDialogueCharacter();
 		initalizeDialogueBox();
 		dialogue_text = new DialogueTextInitalizer(dialogue_text).getValues();
 
