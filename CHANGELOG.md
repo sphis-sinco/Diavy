@@ -1,7 +1,17 @@
 # r4 (8/4/2025)
+## Other
 - Added true gameplay
+- Added music track: "GM" (Base mod)
+## Events
+- Added `startMusic` event
+- - arg: track (ex. "GM")
+- Added `cameraFlash` event
+- - arg: color (ex. "0xFFFFFF")
+## Dialogue Entries
+- Added `script_events` field to dialogue entries (optional)
 - Added `script_event` field to dialogue entries (optional)
 - Added `wait` field to dialogue entries (optional)
+## Script functions
 - Added `addDialogueJsonPath` PlayState function for scripts
 - Added `readDialogueJsonPath` PlayState function for scripts
 - Added `addDialogueJson` PlayState function for scripts

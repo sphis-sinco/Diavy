@@ -1,0 +1,4 @@
+function cameraFlash(color:String = '0xFFFFFF', time:Float)
+{
+	FlxG.camera.flash(colorFromString(color), time);
+}

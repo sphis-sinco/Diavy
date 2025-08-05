@@ -139,8 +139,13 @@ class ScriptsManager
 
 		// script exclusive stuff
 		setScript('is_debug', #if debug true #else false #end);
+		setScript('colorFromString', function(string:String)
+		{
+			return FlxColor.fromString(string);
+		});
 
 		// init mod
+
 		callScript('scriptsLoaded');
 	}
 

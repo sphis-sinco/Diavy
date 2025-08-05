@@ -54,7 +54,11 @@
                 "line": "",
                 "character": "",
                 "background": "room",
-                "wait": 2.0,
-                "script_event": "thinkFastChucklenuts"
+                "backgroundSettings": {
+                        "scaleOffsets": {"x": 4, "y": 4}
+                },
+                "wait": 3.0,
+                "script_events": [{"name": "playSound", "args": ["light-switch"]}, {"name": "cameraFlash", "args": ["0xFFFFFF", 1]}, {"name": "startMusic", "args": ["GM"]}]
         }
+
 ]

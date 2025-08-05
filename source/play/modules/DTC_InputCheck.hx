@@ -4,6 +4,12 @@ class DTC_InputCheck
 {
 	public static function execute()
 	{
+		if (PlayState.instance == null)
+			return;
+
+		if (FlxG.keys.justReleased.NONE)
+			return;
+
 		if (FlxG.keys.justReleased.ENTER && PlayState.instance.can_press_enter)
 			PlayState.instance.nextDialogue();
 

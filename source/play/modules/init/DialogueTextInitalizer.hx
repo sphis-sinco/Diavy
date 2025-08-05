@@ -47,6 +47,9 @@ class DialogueTextInitalizer extends Initalizer
 				PlayState.instance.dialogue_text_typing_complete = true;
 				PlayState.instance.can_press_enter = true;
 
+				if (PlayState.instance.dialogue_proceed_icon != null)
+					PlayState.instance.dialogue_proceed_icon.visible = true;
+
 				try
 				{
 					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
@@ -57,22 +60,28 @@ class DialogueTextInitalizer extends Initalizer
 
 					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait != null)
 					{
+						if (PlayState.instance.dialogue_proceed_icon != null)
+							PlayState.instance.dialogue_proceed_icon.visible = false;
 						PlayState.instance.can_press_enter = false;
+						PlayState.instance.dialogue_text_typing_complete = false;
 						FlxTimer.wait(PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait, () ->
 						{
-							PlayState.instance.can_press_enter = false;
+							PlayState.instance.dialogue_text_typing_complete = true;
+							PlayState.instance.can_press_enter = true;
+							if (PlayState.instance.dialogue_proceed_icon != null)
+								PlayState.instance.dialogue_proceed_icon.visible = true;
+							PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
 						});
 					}
+
+					if (PlayState.instance.can_press_enter)
+						PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
 				}
 				catch (e)
 				{
 					trace(e);
 				}
-
-				PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
 			}
-			if (PlayState.instance.dialogue_proceed_icon != null)
-				PlayState.instance.dialogue_proceed_icon.visible = true;
 		};
 
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueTextInit, [dialogue_text]);

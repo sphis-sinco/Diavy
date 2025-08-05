@@ -6,7 +6,8 @@ typedef DialogueEntry =
 {
 	var line:String;
 
-	var ?script_event:String;
+	var ?script_event:ScriptEventEntry;
+	var ?script_events:Array<ScriptEventEntry>;
 
 	var ?character:String;
 	var ?background:String;
