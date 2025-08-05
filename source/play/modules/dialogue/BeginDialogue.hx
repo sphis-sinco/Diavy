@@ -10,7 +10,7 @@ class BeginDialogue
 		PlayState.instance.dialogue_text.alpha = 0;
 		PlayState.instance.dialogue_progress = 0;
 
-		if (DefineManager.STARTING_LINE.valid())
+		if (DefineManager.STARTING_LINE.valid() && Std.parseInt(DefineManager.STARTING_LINE.value()) < PlayState.instance.dialogue.length)
 			PlayState.instance.dialogue_progress = Std.parseInt(DefineManager.STARTING_LINE.value());
 
 		BeginDialogueTween.execute();
