@@ -1,4 +1,6 @@
 # r3 (8/4/2025)
+- More abstractions have been done.
+- Enabled `defaultPersist` in `FlxGraphic` (This apparently Prevents all assets from being cleared from the cache when changing state)
 - Also Fixed duplicate script classes (hopefully)
 - Fixed dupe script paths
 - You are now sent to the mod menu on startup
