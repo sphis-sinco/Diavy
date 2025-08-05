@@ -39,5 +39,41 @@
                 "character": "",
                 "background": "room",
                 "script_event": { "name": "playSound", "args": ["door-slam"] }
+        },
+        {
+                "line": "...",
+                "character": "berin-ohyeah-turnt",
+                "background": "room"
+        },
+        {
+                "line": "...",
+                "character": "berin-ohyeah",
+                "background": "room"
+        },
+        {
+                "line": "...",
+                "character": "berin-ohyeah-turnt",
+                "background": "room"
+        },
+        {
+                "line": "Weren't we supposed to be doing something today?",
+                "character": "berin-ohyeah",
+                "background": "room"
+        },
+        {
+                "line": "...",
+                "character": "berin-thinking",
+                "background": "room",
+                "wait": 5.0
+        },
+        {
+                "line": "Oh yeah the trip.",
+                "character": "berin-ohyeah",
+                "background": "room"
+        },
+        {
+                "line": "This is defenitely gonna be a fun trip...",
+                "character": "berin-ohno",
+                "background": "room"
         }
 ]
