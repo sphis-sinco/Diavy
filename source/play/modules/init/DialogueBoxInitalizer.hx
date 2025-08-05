@@ -24,7 +24,10 @@ class DialogueBoxInitalizer extends Initalizer
 			dialogue_box = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * .75), Std.int(FlxG.height * .25));
 			dialogue_box.screenCenter(X);
 			if (PlayState.instance != null)
+			{
 				PlayState.instance.addObject(dialogue_box);
+				PlayState.instance.initalizeChoicesText();
+			}
 		}
 
 		dialogue_box.y = FlxG.height - dialogue_box.height - 32;

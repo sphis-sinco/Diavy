@@ -22,7 +22,8 @@ class DialogueCharacterInitalizer extends Initalizer
 
 		final imagePath = 'dialogue/characters/' + currentDialogue.character;
 
-		PlayState.instance.remove(dialogue_character);
+		if (dialogue_character != null)
+			PlayState.instance.remove(dialogue_character);
 
 		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
 			return;
@@ -65,6 +66,7 @@ class DialogueCharacterInitalizer extends Initalizer
 			trace(e);
 		}
 
+		PlayState.instance.initalizeChoicesText();
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueCharacterInit, [dialogue_character]);
 	}
 

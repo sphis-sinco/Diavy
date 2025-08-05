@@ -66,6 +66,7 @@ class DialogueBackgroundInitalizer extends Initalizer
 			trace(e);
 		}
 
+		PlayState.instance.initalizeChoicesText();
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueBackgroundInit, [dialogue_background]);
 	}
 

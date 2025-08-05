@@ -1,9 +1,3 @@
-function startMusic(track:String)
-{
-	loadMusicTrack(track);
-	FlxG.sound.music.play();
-}
-
 function stopMusic()
 {
 	FlxG.sound.music.stop();

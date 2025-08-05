@@ -2,6 +2,7 @@ package;
 
 import flixel.addons.text.FlxTypeText;
 import flixel.input.keyboard.FlxKey;
+import flixel.sound.FlxSound;
 import play.*;
 import play.dialogue.*;
 import play.modules.*;
@@ -92,11 +93,7 @@ class PlayState extends FlxState
 
 		BeginDialogue.execute();
 
-		choice_text.y = 10;
-		choice_text.alignment = CENTER;
-		choice_text.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 1);
-		choice_text.sounds = ChoiceTextSounds.getList();
-		addObject(choice_text);
+		initalizeChoicesText();
 
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
@@ -105,6 +102,24 @@ class PlayState extends FlxState
 	public var choices_keys_map:Map<String, FlxKey> = ChoicesKeyMap.default_choices_key_map;
 	public var choices_keys:Array<FlxKey> = [];
 	public var choices_events:Array<String> = [];
+
+	public static function startMusic(track:String)
+	{
+		FlxG.sound.music = new FlxSound().loadStream(Assets.getMusicPath(track), true);
+		FlxG.sound.music.play();
+	}
+
+	public function initalizeChoicesText()
+	{
+		if (choice_text != null)
+			remove(choice_text);
+
+		choice_text.y = 10;
+		choice_text.alignment = CENTER;
+		choice_text.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 1);
+		choice_text.sounds = ChoiceTextSounds.getList();
+		addObject(choice_text);
+	}
 
 	override public function update(elapsed:Float)
 	{
