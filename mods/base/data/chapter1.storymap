@@ -31,11 +31,20 @@ path: sibling-bickering:
    | path trip-intro
 
 path: trip-intro:
-   | trimeArrival
-   - choice: acceptTrip
-     | accept-trip / Normal Route /
-   - choice: declineTrip
-     | decline-trip / Home Route /
+ | trimeArrival
+ - choice: acceptTrip
+   | path: accept-trip / Normal Route /
+ - choice: declineTrip
+   | path: decline-trip / Home Route /
 
 path: trip-intro-fu:
-   | trimeArrival-fu
+ | path: trimeArrival-fu
+   
+path: accept-trip
+ | trip-forest
+
+path: decline-trip
+ | home-intruders
+
+path: trimeArrival-fu
+ | trip-forest-fu
