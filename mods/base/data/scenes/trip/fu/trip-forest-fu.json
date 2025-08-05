@@ -1,3 +1,102 @@
 [
-        
+        {
+                "line": "As all 3 of you walk through the green forest of Motoia",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You stagger behind...",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "But...",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "It doesn't feel right.",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "There is a tickling sensation that something is wrong.",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "What is it?",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "FREEZE!",
+                "character": "gijujakiMember/gm-regular",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "!!!",
+                "character": "",
+                "background": "tripForest/gijujakiAttack"
+        },
+        {
+                "line": "Give me everything you have!",
+                "character": "gijujakiMember/gm-regular",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You quickly toss the back to the man!",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "He looks over to Miy",
+                "character": "",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You look like you'd be fun.",
+                "character": "gijujakiMember/gm-perverted",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You're coming with me!",
+                "character": "gijujakiMember/gm-perverted",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "No!",
+                "character": "trime-tears",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "Miy gets grabbed and Trime was shoved to the floor",
+                "character": "trime-tears",
+                "background": "tripForest/Motoia1"
+        },
+        {
+                "line": "You just stand there. Watching.",
+                "character": "",
+                "background": "tripForest/gijujakiAttack-fu"
+        },
+        {
+                "line": "In any other scenario you would've probably beat up the guy...\nRun away...",
+                "character": "",
+                "background": "tripForest/gijujakiAttack-fu"
+        },
+        {
+                "line": "But this time...",
+                "character": "",
+                "background": "tripForest/gijujakiAttack-fu"
+        },
+        {
+                "line": "You just let it happen.",
+                "character": "",
+                "background": "tripForest/gijujakiAttack-fu"
+        },
+        {
+                "line": "You let them take your sister.",
+                "character": "",
+                "background": "tripForest/gijujakiAttack-fu2"
+        }
 ]
