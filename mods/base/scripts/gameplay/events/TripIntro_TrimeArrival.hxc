@@ -2,7 +2,7 @@ function tripIntro_trimeArrival(fuRoute:Bool)
 {
 	if (fuRoute)
 	{
-		PlayState.instance.addDialogueJsonPath('scenes/trip/intro/trimeArrival');
+		PlayState.instance.addDialogueJsonPath('scenes/trip/intro/trimeArrival-fu');
 	}
 	else
 	{

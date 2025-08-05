@@ -1,0 +1,69 @@
+[
+        {
+                "line": "Heya!",
+                "character": "",
+                "background": "trip/trimeSlide"
+        },
+        {
+                "line": "TRIME!",
+                "character": "miy-excited",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "...",
+                "character": "berin-ohno",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "You hide in the shadows",
+                "character": "",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Miy!",
+                "character": "trime-smile",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "It's so nice to see you again babe!",
+                "character": "trime-aw",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Hehe",
+                "character": "miy-blushing",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "(They're kissing.)",
+                "character": "berin-ew",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "(French Kissing.)",
+                "character": "berin-embarassed",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "(Fucking disgusting.)",
+                "character": "berin-uncomfortable",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "BERIN.",
+                "character": "miy-annoyed-side",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Come on.",
+                "character": "miy-annoyed-side",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "K.",
+                "character": "berin-ohno",
+                "background": "trip-intro-tree"
+        }
+]
