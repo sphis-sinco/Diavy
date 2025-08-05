@@ -1,4 +1,7 @@
 // replace the .haxelib/formatter/1,18,0/run.js with this and make sure to rename it
+// especally to a .js file
+
+// its a .txt file because the file alone made github say that the repo was 91.1% javascript
 
 // if you want another haxe file type look for .hxc (CTRL + F) and then add
 // || StringTools.endsWith(path,".yourhaxefiletype")
