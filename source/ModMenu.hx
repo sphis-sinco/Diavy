@@ -180,6 +180,8 @@ class ModMenu extends FlxState
 			if (!startup)
 				x_mod.active = !x_mod.active;
 
+			x_mod.active = x.ID == curSelected;
+
 			if (x_mod.active)
 				trace('Active mod: ${x_mod.name}');
 
