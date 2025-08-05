@@ -32,7 +32,8 @@
         {
                 "line": "...",
                 "character": "",
-                "background": ""
+                "background": "",
+                "wait": 1.0
         },
         {
                 "line": "You feel a light switch.",
@@ -53,6 +54,7 @@
                 "line": "",
                 "character": "",
                 "background": "room",
-                "wait": 5.0
+                "wait": 2.0,
+                "script_event": "thinkFastChucklenuts"
         }
 ]

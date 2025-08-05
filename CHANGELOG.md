@@ -1,5 +1,7 @@
 # r4 (8/4/2025)
 - Added true gameplay
+- Added `script_event` field to dialogue entries (optional)
+- Added `wait` field to dialogue entries (optional)
 - Added `addDialogueJsonPath` PlayState function for scripts
 - Added `readDialogueJsonPath` PlayState function for scripts
 - Added `addDialogueJson` PlayState function for scripts

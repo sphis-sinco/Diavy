@@ -15,6 +15,9 @@ class NextDialogue
 		PlayState.instance.initalizeDialogueBackground();
 		PlayState.instance.initalizeDialogueCharacter();
 
+		if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].script_event != null)
+			ScriptsManager.callScript(PlayState.instance.dialogue[PlayState.instance.dialogue_progress].script_event);
+
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.nextDialogue);
 	}
 }

@@ -1,6 +1,7 @@
 package play.modules.init;
 
 import flixel.addons.text.FlxTypeText;
+import flixel.util.FlxTimer;
 import play.modules.dialogue.BeginDialogueTyping;
 
 class DialogueTextInitalizer extends Initalizer
@@ -52,6 +53,15 @@ class DialogueTextInitalizer extends Initalizer
 					{
 						if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
 							PlayState.instance.can_press_enter = false;
+					}
+
+					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait != null)
+					{
+						PlayState.instance.can_press_enter = false;
+						FlxTimer.wait(PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait, () ->
+						{
+							PlayState.instance.can_press_enter = false;
+						});
 					}
 				}
 				catch (e)
