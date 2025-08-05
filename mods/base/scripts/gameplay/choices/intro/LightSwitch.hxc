@@ -1,6 +1,6 @@
 function addSiblingBickering()
 {
-	PlayState.instance.addDialogueJsonPath('scenes/sibling-bickering');
+	PlayState.instance.addDialogueJsonPath('scenes/intro/sibling-bickering');
 }
 
 function turnOnLight()
