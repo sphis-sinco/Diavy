@@ -58,7 +58,6 @@
                 "script_events": [
                         { "name": "playSound", "args": ["light-switch"] },
                         { "name": "cameraFlash", "args": ["0xFFFFFF", 1] },
-                        { "name": "startMusic", "args": ["GM"] }
                 ]
         },
         {
