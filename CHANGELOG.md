@@ -1,8 +1,13 @@
 # r4 (8/4/2025)
 ## Other
 - Added true gameplay
-- Added music track: "GM" (Base mod)
+- Added music track: "GM" (Base mod, fun fact this is from an old project.)
 ## Events
+- Added `playSound` event
+- - arg: sfx (ex. "light-switch")
+- Added `unpauseMusic` event
+- Added `pauseMusic` event
+- Added `stopMusic` event
 - Added `startMusic` event
 - - arg: track (ex. "GM")
 - Added `cameraFlash` event
