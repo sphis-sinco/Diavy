@@ -2,10 +2,12 @@ function sayFuckYou()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fuck-you');
 }
+
 function sayFine()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fine');
 }
+
 function keepSilent()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/keep-silent');

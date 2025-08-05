@@ -6,8 +6,9 @@ function addSiblingBickering()
 function turnOnLight()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-light/turn-on-light');
-        addSiblingBickering();
+	addSiblingBickering();
 }
+
 function keepLightOff()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');

@@ -3,6 +3,7 @@ function backUp()
 	PlayState.instance.addDialogueJsonPath('choices/intro-backUp/back-up');
 	PlayState.instance.addDialogueJsonPath('scenes/intro/sibling-bickering');
 }
+
 function dontBackup()
 {
 	PlayState.instance.addDialogueJsonPath('scenes/intro/sibling-converse');
