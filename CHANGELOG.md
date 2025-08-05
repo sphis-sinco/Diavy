@@ -1,3 +1,6 @@
+# r4 (8/4/2025)
+- Added true gameplay
+
 # r3 (8/4/2025)
 - More abstractions have been done.
 - Enabled `defaultPersist` in `FlxGraphic` (This apparently Prevents all assets from being cleared from the cache when changing state)
