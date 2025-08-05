@@ -57,6 +57,11 @@ class DialogueBackgroundInitalizer extends Initalizer
 					dialogue_background.scale.x += currentDialogue.backgroundSettings.scaleOffsets.x;
 					dialogue_background.scale.y += currentDialogue.backgroundSettings.scaleOffsets.y;
 				}
+				if (currentDialogue.backgroundSettings.flipped != null)
+				{
+					dialogue_background.flipX = currentDialogue.backgroundSettings.flipped.x;
+					dialogue_background.flipY = currentDialogue.backgroundSettings.flipped.y;
+				}
 
 				// the id is just for scripts
 			}

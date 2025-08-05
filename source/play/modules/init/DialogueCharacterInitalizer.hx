@@ -57,6 +57,11 @@ class DialogueCharacterInitalizer extends Initalizer
 					dialogue_character.scale.x += currentDialogue.characterSettings.scaleOffsets.x;
 					dialogue_character.scale.y += currentDialogue.characterSettings.scaleOffsets.y;
 				}
+				if (currentDialogue.characterSettings.flipped != null)
+				{
+					dialogue_character.flipX = currentDialogue.characterSettings.flipped.x;
+					dialogue_character.flipY = currentDialogue.characterSettings.flipped.y;
+				}
 
 				// the id is just for scripts
 			}

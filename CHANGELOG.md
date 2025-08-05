@@ -15,6 +15,9 @@
 - Added `cameraFlash` event
 - - arg: color (ex. "0xFFFFFF")
 ## Dialogue Entries
+- Added `flipped` field to dialogue entry fields `backgroundSettings` and `characterSettings` (optional)
+- - field: x: Bool
+- - field: y: Bool
 - Added `script_events` field to dialogue entries (optional)
 - Added `script_event` field to dialogue entries (optional)
 - Added `wait` field to dialogue entries (optional)
