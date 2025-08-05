@@ -8,7 +8,20 @@ class NextDialogue
 
 		PlayState.instance.dialogueEntryNullChecks();
 
-		NextDialogueEndCheck.execute();
+		if (PlayState.instance.dialogue_progress >= PlayState.instance.dialogue.length)
+		{
+			PlayState.instance.dialogue_progress--;
+			if (PlayState.instance.dialogue_end_callback != null)
+			{
+				PlayState.instance.dialogue_end_callback();
+				return;
+			}
+			else
+			{
+				trace('End');
+				Sys.exit(127);
+			}
+		}
 
 		PlayState.instance.beginDialogueTyping();
 
