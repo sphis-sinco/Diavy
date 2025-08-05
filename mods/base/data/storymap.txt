@@ -1,0 +1,19 @@
+/ Im getting confused with the amount of files so this exists /
+
+start
+choice: turnOnLight:
+ | turn-on-light
+ | sibling-bickering
+ - choice: sayFuckYou
+   | say-fuck-you
+ - choice: sayFine
+   | say-fine
+ - choice: keepSilent
+   | keep-silent
+choice: keepLightOff:
+ | keep-light-off
+ - choice: backUp:
+   | back-up
+   | sibling-bickering
+ - choice: dontBackup:
+   | sibling-converse
