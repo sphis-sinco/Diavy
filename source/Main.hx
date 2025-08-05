@@ -22,6 +22,6 @@ class Main extends Sprite
 		for (define in DefineManager.DEFINE_LIST)
 			trace('* ${define.name}: ${define.value()} (raw: ${define.raw_value()})');
 
-		addChild(new FlxGame(0, 0, ModMenu));
+		addChild(new FlxGame(0, 0, CachingState));
 	}
 }
