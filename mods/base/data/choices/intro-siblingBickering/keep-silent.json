@@ -4,5 +4,26 @@
                 "character": "berin-shaddup",
                 "background": "room",
                 "wait": 2.0
+        },
+        {
+                "line": "Okay quiet kid.",
+                "character": "miy-mumble",
+                "background": "room"
+        },
+        {
+                "line": "Don't forget about the trip!",
+                "character": "miy-happy",
+                "background": "room"
+        },
+        {
+                "line": "Miy gets ready leaves.",
+                "character": "",
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["door"] }
+        },
+        {
+                "line": "Oh right! The trip, I do need to prepare for that.",
+                "character": "berin-ohyeah",
+                "background": "room"
         }
 ]
