@@ -1,6 +1,6 @@
 # r4 (8/?/2025)
 ## Other
-- Added true gameplay
+- Overwrote the original dummy game with the full game. (Base mod)
 - You can only have 1 mod enabled at once now
 - Added sound: "light-switch" (Base mod)
 - Added music track: "GM" (Base mod, this is from an old project. Sucks tho.)
