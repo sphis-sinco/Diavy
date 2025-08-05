@@ -1,24 +1,22 @@
 function gameplay_create() {}
 function gameplay_setDialogue() {}
 function gameplay_update(elapsed:Float) {}
-
 function beginDialogue() {}
-
 function beginDialogue_dialogueBox_tweenStart(dialogue_box:FlxSprite) {}
 function beginDialogue_dialogueBox_tweenUpdate(dialogue_box:FlxSprite) {}
 function beginDialogue_dialogueBox_tweenComplete(dialogue_box:FlxSprite) {}
-
 function beginDialogue_dialogueText_tweenStart(dialogue_text:FlxText) {}
 function beginDialogue_dialogueText_tweenUpdate(dialogue_text:FlxText) {}
 function beginDialogue_dialogueText_tweenComplete(dialogue_text:FlxText) {}
-
 function initalizeDialogueCharacter(dialogue_character:FlxSprite) {}
 function initalizeDialogueBox(dialogue_box:FlxSprite) {}
 function initalizeDialogueText(dialogue_text:FlxText) {}
-function initalizePreferences(preferences:PlayStatePreferences) {
-        trace(''+preferences);
-}
-function dialogueEntryNullChecks() {}
 
+function initalizePreferences(preferences:PlayStatePreferences)
+{
+	trace('' + preferences);
+}
+
+function dialogueEntryNullChecks() {}
 function nextDialogue() {}
 function beginDialogueTyping() {}
