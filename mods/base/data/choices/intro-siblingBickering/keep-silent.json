@@ -22,7 +22,7 @@
                 "script_event": { "name": "playSound", "args": ["door"] }
         },
         {
-                "line": "Oh right! The trip, I do need to prepare for that.",
+                "line": "Right.",
                 "character": "berin-ohyeah",
                 "background": "room"
         }
