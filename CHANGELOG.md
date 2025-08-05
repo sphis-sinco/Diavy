@@ -3,7 +3,7 @@
 - Added true gameplay
 - You can only have 1 mod enabled at once now
 - Added sound: "light-switch" (Base mod)
-- Added music track: "GM" (Base mod, fun fact this is from an old project.)
+- Added music track: "GM" (Base mod, this is from an old project. Sucks tho.)
 ## Events
 - Added `playSound` event
 - - arg: sfx (ex. "light-switch")
