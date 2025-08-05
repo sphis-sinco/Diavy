@@ -6,7 +6,44 @@
         },
         {
                 "line": "TRIME!",
-                "character": "",
+                "character": "miy-excited",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Yo",
+                "character": "berin-yo",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Miy!",
+                "character": "trime-smile",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Berin!",
+                "character": "trime-smile",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "It's so nice to see you guys again!",
+                "character": "trime-aw",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Especally you Miy!",
+                "character": "trime-aw",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Hehe",
+                "character": "miy-blushing",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "...",
+                "character": "berin-ew",
                 "background": "trip-intro-tree"
         }
 ]
