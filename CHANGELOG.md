@@ -1,6 +1,7 @@
 # r4 (8/?/2025)
 ## Other
 - Overwrote the original dummy game with the full game. (Base mod)
+- Added Caching State
 - You can only have 1 mod enabled at once now
 - Added sound: "light-switch" (Base mod)
 - Added music track: "GM" (Base mod, this is from an old project. Sucks tho.)
@@ -23,7 +24,7 @@
 - Added `wait` field to dialogue entries (optional)
 ## Script functions
 - Added `addDialogueJsonPath` PlayState function for scripts
-- Added `readDialogueJsonPath` PlayState function for scripts
+- Added readDialogueJsonPath` PlayState function for scripts
 - Added `addDialogueJson` PlayState function for scripts
 - Added `readDialogueJson` PlayState function for scripts
 
