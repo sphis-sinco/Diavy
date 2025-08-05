@@ -1,6 +1,6 @@
 // replace the .haxelib/formatter/1,18,0/run.js with this and make sure to rename it
 
-// if you want another haxe file type look for .hxc and then add
+// if you want another haxe file type look for .hxc (CTRL + F) and then add
 // || StringTools.endsWith(path,".yourhaxefiletype")
 // and boom.
 
