@@ -4,6 +4,8 @@ import flixel.graphics.FlxGraphic;
 
 class CachingState extends FlxState
 {
+	public static var goToPlayState:Bool = false;
+
 	override function create()
 	{
 		var imagePaths:Array<String> = [];
