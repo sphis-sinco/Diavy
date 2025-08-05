@@ -15,8 +15,7 @@ class DialogueCharacterInitalizer extends Initalizer
 	{
 		super.initalize();
 
-		if (PlayState.instance == null)
-			return;
+		if (PlayState.instance == null) return;
 
 		final currentDialogue = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
 
@@ -24,8 +23,7 @@ class DialogueCharacterInitalizer extends Initalizer
 
 		PlayState.instance.remove(dialogue_character);
 
-		if (!FileSystem.exists(Assets.getImagePath(imagePath)))
-			return;
+		if (!FileSystem.exists(Assets.getImagePath(imagePath))) return;
 
 		try
 		{
@@ -41,8 +39,7 @@ class DialogueCharacterInitalizer extends Initalizer
 
 		try
 		{
-			if (dialogue_character == null)
-				return;
+			if (dialogue_character == null) return;
 
 			if (currentDialogue.characterSettings != null)
 			{

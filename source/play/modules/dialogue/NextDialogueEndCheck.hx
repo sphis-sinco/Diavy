@@ -7,8 +7,7 @@ class NextDialogueEndCheck
 		if (PlayState.instance.dialogue_progress >= PlayState.instance.dialogue.length)
 		{
 			PlayState.instance.dialogue_progress--;
-			if (PlayState.instance.dialogue_end_callback != null)
-				PlayState.instance.dialogue_end_callback();
+			if (PlayState.instance.dialogue_end_callback != null) PlayState.instance.dialogue_end_callback();
 			else
 			{
 				trace('End');

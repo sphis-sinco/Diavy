@@ -43,8 +43,7 @@ class Iris
 	public static var instances:StringMap<Iris> = new StringMap<Iris>();
 
 	public static var registeredUsingEntries:Array<UsingEntry> = [
-		new UsingEntry("StringTools", function(o:Dynamic, f:String, args:Array<Dynamic>):Dynamic
-		{
+		new UsingEntry("StringTools", function(o:Dynamic, f:String, args:Array<Dynamic>):Dynamic {
 			if (f == "isEof") // has @:noUsing
 				return null;
 			switch (Type.typeof(o))
@@ -64,8 +63,7 @@ class Iris
 			}
 			return null;
 		}),
-		new UsingEntry("Lambda", function(o:Dynamic, f:String, args:Array<Dynamic>):Dynamic
-		{
+		new UsingEntry("Lambda", function(o:Dynamic, f:String, args:Array<Dynamic>):Dynamic {
 			if (Tools.isIterable(o))
 			{
 				// TODO: Check if the values are Iterable<T>
@@ -133,9 +131,8 @@ class Iris
 		}
 
 		var out = Std.string(x);
-		if (pos != null && pos.customParams != null)
-			for (i in pos.customParams)
-				out += "," + i;
+		if (pos != null && pos.customParams != null) for (i in pos.customParams)
+			out += "," + i;
 
 		var prefix = ErrorSeverityTools.getPrefix(level);
 		if (prefix != "" && prefix != null)
@@ -143,8 +140,7 @@ class Iris
 			prefix = '$prefix:';
 		}
 		var posPrefix = '$prefix${pos.fileName}';
-		if (pos.lineNumber != -1)
-			posPrefix = '$prefix${pos.fileName}:${pos.lineNumber}';
+		if (pos.lineNumber != -1) posPrefix = '$prefix${pos.fileName}:${pos.lineNumber}';
 
 		if (prefix != "" && prefix != null)
 		{
@@ -248,8 +244,7 @@ class Iris
 	 */
 	public function new(scriptCode:String, ?config:AutoIrisConfig):Void
 	{
-		if (config == null)
-			config = new IrisConfig("Iris", true, true, []);
+		if (config == null) config = new IrisConfig("Iris", true, true, []);
 		this.scriptCode = scriptCode;
 		this.config = IrisConfig.from(config);
 		this.config.name = fixScriptName(this.name);
@@ -263,11 +258,9 @@ class Iris
 		parser.allowJSON = true;
 
 		// set variables to the interpreter.
-		if (this.config.autoPreset)
-			preset();
+		if (this.config.autoPreset) preset();
 		// run the script.
-		if (this.config.autoRun)
-			execute();
+		if (this.config.autoRun) execute();
 	}
 
 	private static function fixScriptName(toFix:String):String
@@ -289,11 +282,9 @@ class Iris
 	public function execute():Dynamic
 	{
 		// I'm sorry but if you just decide to destroy the script at will, that's your fault
-		if (interp == null)
-			throw "Attempt to run script failed, script is probably destroyed.";
+		if (interp == null) throw "Attempt to run script failed, script is probably destroyed.";
 
-		if (expr == null)
-			expr = parse();
+		if (expr == null) expr = parse();
 
 		Iris.instances.set(this.name, this);
 		this.config.packageName = parser.packageName;
@@ -326,14 +317,12 @@ class Iris
 		// overriding trace for good measure.
 		// if you're a game developer or a fnf modder (hi guys || hi),
 		// you might wanna use Iris.print for your on-screen consoles and such.
-		set("trace", Reflect.makeVarArgs(function(x:Array<Dynamic>)
-		{
+		set("trace", Reflect.makeVarArgs(function(x:Array<Dynamic>) {
 			var pos = this.interp != null ? this.interp.posInfos() : Iris.getDefaultPos(this.name);
 			// trace(pos);
 
 			var v = x.shift();
-			if (x.length > 0)
-				pos.customParams = x;
+			if (x.length > 0) pos.customParams = x;
 			Iris.print(v, pos);
 		}));
 		#end
@@ -346,8 +335,7 @@ class Iris
 	public function get(field:String):Dynamic
 	{
 		#if IRIS_DEBUG
-		if (interp == null)
-			Iris.fatal("[Iris:get()]: " + interpErrStr + ", when trying to get variable \"" + field + "\", returning false...");
+		if (interp == null) Iris.fatal("[Iris:get()]: " + interpErrStr + ", when trying to get variable \"" + field + "\", returning false...");
 		#end
 		return interp != null ? interp.variables.get(field) : false;
 	}
@@ -368,8 +356,7 @@ class Iris
 			return;
 		}
 
-		if (allowOverride || !interp.variables.exists(name))
-			interp.variables.set(name, value);
+		if (allowOverride || !interp.variables.exists(name)) interp.variables.set(name, value);
 	}
 
 	/**
@@ -387,8 +374,7 @@ class Iris
 			return null;
 		}
 
-		if (args == null)
-			args = [];
+		if (args == null) args = [];
 
 		// fun-ny
 		var ny:Dynamic = interp.variables.get(fun); // function signature
@@ -396,8 +382,7 @@ class Iris
 		try
 		{
 			isFunction = ny != null && Reflect.isFunction(ny);
-			if (!isFunction)
-				throw 'Tried to call a non-function, for "$fun"';
+			if (!isFunction) throw 'Tried to call a non-function, for "$fun"';
 			// throw "Variable not found or not callable, for \"" + fun + "\"";
 
 			final ret = Reflect.callMethod(null, ny, args);
@@ -424,8 +409,7 @@ class Iris
 	public function exists(field:String):Bool
 	{
 		#if IRIS_DEBUG
-		if (interp == null)
-			trace("[Iris:exists()]: " + interpErrStr + ", returning false...");
+		if (interp == null) trace("[Iris:exists()]: " + interpErrStr + ", returning false...");
 		#end
 		return (interp != null) ? interp.variables.exists(field) : false;
 	}
@@ -438,8 +422,7 @@ class Iris
 	**/
 	public function destroy():Void
 	{
-		if (Iris.instances.exists(this.name))
-			Iris.instances.remove(this.name);
+		if (Iris.instances.exists(this.name)) Iris.instances.remove(this.name);
 		interp = null;
 		parser = null;
 	}
@@ -454,8 +437,7 @@ class Iris
 		for (key in Iris.instances.keys())
 		{
 			var iris = Iris.instances.get(key);
-			if (iris.interp == null)
-				continue;
+			if (iris.interp == null) continue;
 			iris.destroy();
 		}
 

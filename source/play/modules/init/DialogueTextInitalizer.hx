@@ -20,8 +20,7 @@ class DialogueTextInitalizer extends Initalizer
 		if (dialogue_text == null)
 		{
 			dialogue_text = new FlxTypeText(0, 0, 0, '', 16);
-			if (PlayState.instance != null)
-				PlayState.instance.addObject(dialogue_text);
+			if (PlayState.instance != null) PlayState.instance.addObject(dialogue_text);
 		}
 
 		dialogue_text.showCursor = true;
@@ -31,16 +30,12 @@ class DialogueTextInitalizer extends Initalizer
 		dialogue_text.color = FlxColor.BLACK;
 		dialogue_text.setPosition(PlayState.instance.dialogue_box.x + 5, PlayState.instance.dialogue_box.y + 5);
 
-		dialogue_text.startCallback = () ->
-		{
-			if (PlayState.instance != null)
-				PlayState.instance.dialogue_text_typing_complete = false;
+		dialogue_text.startCallback = () -> {
+			if (PlayState.instance != null) PlayState.instance.dialogue_text_typing_complete = false;
 
-			if (PlayState.instance.dialogue_proceed_icon != null)
-				PlayState.instance.dialogue_proceed_icon.visible = false;
+			if (PlayState.instance.dialogue_proceed_icon != null) PlayState.instance.dialogue_proceed_icon.visible = false;
 		};
-		dialogue_text.completeCallback = () ->
-		{
+		dialogue_text.completeCallback = () -> {
 			if (PlayState.instance != null)
 			{
 				PlayState.instance.dialogue_text_typing_complete = true;
@@ -50,8 +45,7 @@ class DialogueTextInitalizer extends Initalizer
 				{
 					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
 					{
-						if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
-							PlayState.instance.can_press_enter = false;
+						if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0) PlayState.instance.can_press_enter = false;
 					}
 				}
 				catch (e)
@@ -61,8 +55,7 @@ class DialogueTextInitalizer extends Initalizer
 
 				PlayState.instance.choice_text.start(BeginDialogueTyping.controlsLine);
 			}
-			if (PlayState.instance.dialogue_proceed_icon != null)
-				PlayState.instance.dialogue_proceed_icon.visible = true;
+			if (PlayState.instance.dialogue_proceed_icon != null) PlayState.instance.dialogue_proceed_icon.visible = true;
 		};
 
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueTextInit, [dialogue_text]);

@@ -70,8 +70,7 @@ class ModMenu extends FlxState
 
 	function loadMods()
 	{
-		page.forEachExists(function(option:FlxText)
-		{
+		page.forEachExists(function(option:FlxText) {
 			page.remove(option);
 			option.kill();
 			option.destroy();
@@ -79,8 +78,7 @@ class ModMenu extends FlxState
 
 		var optionLoopNum:Int = 0;
 
-		if (FlxModding.mods.members.length < 1)
-			return;
+		if (FlxModding.mods.members.length < 1) return;
 
 		for (mod in FlxModding.mods.members)
 		{
@@ -98,10 +96,8 @@ class ModMenu extends FlxState
 	{
 		super.update(elapsed);
 
-		if (FlxG.keys.justReleased.UP)
-			curSelected--;
-		if (FlxG.keys.justReleased.DOWN)
-			curSelected++;
+		if (FlxG.keys.justReleased.UP) curSelected--;
+		if (FlxG.keys.justReleased.DOWN) curSelected++;
 
 		if (FlxG.keys.justReleased.ENTER)
 		{
@@ -159,29 +155,24 @@ class ModMenu extends FlxState
 
 	public static function fixyfixfix()
 	{
-		if (curSelected < 0)
-			curSelected = page.length - 1;
+		if (curSelected < 0) curSelected = page.length - 1;
 
-		if (curSelected >= page.length)
-			curSelected = 0;
+		if (curSelected >= page.length) curSelected = 0;
 	}
 
 	public static function changeEnabledMod(startup = false)
 	{
 		fixyfixfix();
 
-		if (page.members.length <= 0)
-			return;
+		if (page.members.length <= 0) return;
 
 		for (x in page.members)
 		{
 			var x_mod = FlxModding.mods.members[x.ID];
 
-			if (!startup)
-				x_mod.active = !x_mod.active;
+			if (!startup) x_mod.active = !x_mod.active;
 
-			if (x_mod.active)
-				trace('Active mod: ${x_mod.name}');
+			if (x_mod.active) trace('Active mod: ${x_mod.name}');
 
 			x_mod.updateMetadata();
 		}
