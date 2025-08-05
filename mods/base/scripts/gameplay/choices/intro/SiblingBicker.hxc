@@ -7,7 +7,7 @@ function sayFuckYou()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fuck-you');
 	PlayState.instance.addDialogueJsonPath('scenes/trip/intro-fu');
-	PlayState.instance.addDialogueJsonPath('choices/trip/fu/trip-forest-fu');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/fu/trip-forest-fu');
 }
 
 function sayFine()
