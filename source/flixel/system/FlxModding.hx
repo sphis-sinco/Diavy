@@ -615,6 +615,8 @@ class FlxModding
 		}
 	}
 
+	var seenIt = [];
+
 	/**
 	 * Resolves the correct file path for a given asset ID, checking active mods first.
 	 */
@@ -631,7 +633,12 @@ class FlxModding
 			}
 		}
 
-		trace(directory + "/" + id);
+		if (!seenIt.contains(directory + "/" + id))
+		{
+			trace(directory + "/" + id);
+			seenIt.push(directory + "/" + id);
+		}
+
 		return directory + "/" + id;
 		#end
 
