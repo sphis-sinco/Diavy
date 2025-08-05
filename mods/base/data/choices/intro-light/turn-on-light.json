@@ -24,5 +24,10 @@
                 "character": "",
                 "background": "room",
                 "script_event": { "name": "playSound", "args": ["door"] }
+        },
+        {
+                "line": "Berin? You okay?",
+                "character": "miy-confused",
+                "background": "room"
         }
 ]

@@ -1,0 +1,33 @@
+[
+        {
+                "line": "Yeah. I'm fine.",
+                "character": "berin-uncomfortable",
+                "background": "room"
+        },
+        {
+                "line": "Okay good, just came to check on my lil brother! Make sure he's doing okay!",
+                "character": "miy-happy",
+                "background": "room"
+        },
+        {
+                "line": "Don't forget about the trip!",
+                "character": "miy-happy",
+                "background": "room"
+        },
+        {
+                "line": "As Miy leaves you notice she was walking around with just a bra and her underwear...",
+                "character": "",
+                "background": "room",
+                "wait": 1.0
+        },
+        {
+                "line": "(Dont think about it. Dont think about it. Dont think about it. Dont think about it. Dont think about it.)",
+                "character": "berin-embarassed",
+                "background": "room"
+        },
+        {
+                "line": "Oh right! The trip, I do need to prepare for that.",
+                "character": "berin-ohyeah",
+                "background": "room"
+        }
+]

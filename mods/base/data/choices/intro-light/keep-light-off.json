@@ -1,1 +1,54 @@
-[]
+[
+        {
+                "line": "You decide to keep the light off.",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "You hear someone, something.",
+                "character": "",
+                "background": "",
+                "script_event": { "name": "playSound", "args": ["door"] }
+        },
+        {
+                "line": "They get closer",
+                "character": "",
+                "background": ""
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "room",
+                "script_events": [
+                        { "name": "playSound", "args": ["light-switch"] },
+                        { "name": "cameraFlash", "args": ["0xFFFFFF", 1] }
+                ]
+        },
+        {
+                "line": "It's your sister Miy",
+                "character": "",
+                "background": "room"
+        },
+        {
+                "line": "Berin? You okay?",
+                "character": "miy-confused",
+                "background": "room"
+        },
+        {
+                "line": "She's very close. Making you uncomfortable.",
+                "character": "",
+                "background": "room",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Backup",
+                                "script_event": "backUp"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Stay",
+                                "script_event": "dontBackup"
+                        }
+                ]
+        }
+]

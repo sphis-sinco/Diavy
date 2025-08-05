@@ -1,10 +1,5 @@
 [
         {
-                "line": "Berin? You okay?",
-                "character": "miy-confused",
-                "background": "room"
-        },
-        {
                 "line": "Miy, what the fuck?",
                 "character": "berin-wtf",
                 "background": "room"

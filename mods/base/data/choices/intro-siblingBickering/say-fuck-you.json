@@ -3,5 +3,41 @@
                 "line": "Fuck you.",
                 "character": "berin-shaddup",
                 "background": "room"
+        },
+        {
+                "line": "FUCK YOU!",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "Came in here to fucking CHECK ON YOU.",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "And all you wanna fucking do is yell at me.",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "I'M THE OLDEST.",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "NOT YOU.",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "UGH",
+                "character": "miy-fuckyou",
+                "background": "room"
+        },
+        {
+                "line": "Miy storms out.",
+                "character": "",
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["door-slam"] }
         }
 ]
