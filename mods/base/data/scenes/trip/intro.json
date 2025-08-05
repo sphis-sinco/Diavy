@@ -23,5 +23,11 @@
                 "line": "\"Don't give me attitude because you can't remember that someone wants to be refered to as a boy.\"",
                 "character": "",
                 "background": "trip/slide3"
+        },
+        {
+                "line": "\"Whatever\"",
+                "character": "",
+                "background": "trip/slide4",
+                "script_event": { "name": "tripIntro_trimeArrival", "args": [false]}
         }
 ]

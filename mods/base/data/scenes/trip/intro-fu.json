@@ -7,31 +7,37 @@
         {
                 "line": "Both you and your sister stand in silence.",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
         },
         {
                 "line": "Waiting for her...boyfriend...",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
         },
         {
                 "line": "...girlfriend...",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
         },
         {
                 "line": "her transgender romantical partner that was born a female but identifies as a male.",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
         },
         {
                 "line": "Yeah no I think it should be boyfriend.",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
         },
         {
                 "line": "IDK.",
                 "character": "",
-                "background": "trip/slide-FU"
+                "background": "trip/slide1-FU"
+        },
+        {
+                "line": "Anyway...",
+                "character": "",
+                "background": "trip/slide2-FU",
+                "script_event": { "name": "tripIntro_trimeArrival", "args": [true]}
         }
 ]

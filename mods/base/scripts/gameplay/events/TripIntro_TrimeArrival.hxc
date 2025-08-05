@@ -1,0 +1,11 @@
+function tripIntro_trimeArrival(fuRoute:Bool)
+{
+	if (fuRoute)
+	{
+		PlayState.instance.addDialogueJsonPath('scenes/trip/intro/trimeArrival');
+	}
+	else
+	{
+		PlayState.instance.addDialogueJsonPath('scenes/trip/intro/trimeArrival');
+	}
+}
