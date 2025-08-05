@@ -635,7 +635,9 @@ class FlxModding
 
 		if (!seenIt.contains(directory + "/" + id))
 		{
+			#if flxModdingPathwayTraces
 			trace(directory + "/" + id);
+			#end
 			seenIt.push(directory + "/" + id);
 		}
 
