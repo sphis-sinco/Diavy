@@ -87,23 +87,13 @@
                 "background": "room"
         },
         {
-                "line": "It's hot in here!",
+                "line": "You've been living in MY house for like 3 years.",
                 "character": "miy-mumble",
                 "background": "room"
         },
         {
-                "line": "And also you've been living in MY house for like 3 years.",
-                "character": "miy-mumble",
-                "background": "room"
-        },
-        {
-                "line": "AND?",
-                "character": "berin-wtf",
-                "background": "room"
-        },
-        {
-                "line": "How are you not used to it?",
-                "character": "miy-mumble",
+                "line": "Deal with it.",
+                "character": "miy-stfu",
                 "background": "room"
         },
         {
@@ -112,7 +102,7 @@
                 "background": "room"
         },
         {
-                "line": "I don't actually know.",
+                "line": "Fuck you.",
                 "character": "berin-shaddup",
                 "background": "room"
         }
