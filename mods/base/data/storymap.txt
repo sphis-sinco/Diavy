@@ -1,14 +1,19 @@
 / Im getting confused with the amount of files so this exists /
 
+nickname: trip-intro | trip//intro
+nickname: fun-turn-on-light | fun//turn-on-light
+
 start
 choice: turnOnLight:
+ - condition: funValue: >5<8:
+   | fun-turn-on-light
  | turn-on-light
  | path sibling-bickering
 choice: keepLightOff:
  | keep-light-off
  - choice: backUp:
    | back-up
-   | path sibling-bickering / I'm not going to repeat this. /
+   | path sibling-bickering
  - choice: dontBackup:
    | sibling-converse
    | path trip-intro
@@ -26,3 +31,4 @@ path: sibling-bickering:
    | path trip-intro
 
 path: trip-intro:
+   | trimeArrival

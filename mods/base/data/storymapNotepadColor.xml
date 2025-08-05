@@ -24,7 +24,7 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">choice&#x000D;&#x000A;path</Keywords>
+            <Keywords name="Keywords1">choice&#x000D;&#x000A;path&#x000D;&#x000A;condition&#x000D;&#x000A;nickname</Keywords>
             <Keywords name="Keywords2">|&#x000D;&#x000A;-</Keywords>
             <Keywords name="Keywords3"></Keywords>
             <Keywords name="Keywords4"></Keywords>
