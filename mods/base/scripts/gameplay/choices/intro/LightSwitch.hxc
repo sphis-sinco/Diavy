@@ -6,5 +6,5 @@ function turnOnLightEvent()
 
 function keepLightOff()
 {
-	// PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');
+	PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');
 }
