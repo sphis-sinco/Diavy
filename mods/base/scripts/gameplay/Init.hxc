@@ -37,17 +37,20 @@ function gameplay_setDialogue()
 			});
 		}
 
-		waitAndSetText(5.05, 'You');
-		waitAndSetText(5.1, 'You can');
-		waitAndSetText(5.15, 'You can press');
-		waitAndSetText(5.2, 'You can press [BACKSPACE]');
-		waitAndSetText(5.25, 'You can press [BACKSPACE]\nto');
-		waitAndSetText(5.3, 'You can press [BACKSPACE]\nto go');
-		waitAndSetText(5.35, 'You can press [BACKSPACE]\nto go to');
-		waitAndSetText(5.4, 'You can press [BACKSPACE]\nto go to the');
-		waitAndSetText(5.45, 'You can press [BACKSPACE]\nto go to the mods');
-		waitAndSetText(5.5, 'You can press [BACKSPACE]\nto go to the mods menu');
-		waitAndSetText(6.5, 'You can press [BACKSPACE]\nto go to the mods menu.');
+		var startingNumber = 5;
+		var increamentNumber = .05;
+
+		waitAndSetText(startingNumber + increamentNumber, 'You');
+		waitAndSetText(startingNumber + increamentNumber * 2, 'You can');
+		waitAndSetText(startingNumber + increamentNumber * 3, 'You can press');
+		waitAndSetText(startingNumber + increamentNumber * 4, 'You can press [BACKSPACE]');
+		waitAndSetText(startingNumber + increamentNumber * 5, 'You can press [BACKSPACE]\nto');
+		waitAndSetText(startingNumber + increamentNumber * 6, 'You can press [BACKSPACE]\nto go');
+		waitAndSetText(startingNumber + increamentNumber * 7, 'You can press [BACKSPACE]\nto go to');
+		waitAndSetText(startingNumber + increamentNumber * 8, 'You can press [BACKSPACE]\nto go to the');
+		waitAndSetText(startingNumber + increamentNumber * 9, 'You can press [BACKSPACE]\nto go to the mods');
+		waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
+		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');
 	}
 
 	ScriptsManager.callScript('generateFunValue');
