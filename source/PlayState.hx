@@ -49,6 +49,7 @@ class PlayState extends FlxState
 	public var addDialogueJsonPath = function(path:String) {};
 
 	public var backLayer:FlxTypedGroup<FlxBasic> = new FlxTypedGroup<FlxBasic>();
+	public var frontLayer:FlxTypedGroup<FlxBasic> = new FlxTypedGroup<FlxBasic>();
 
 	override public function create()
 	{
@@ -100,6 +101,13 @@ class PlayState extends FlxState
 		BeginDialogue.execute();
 
 		initalizeChoicesText();
+
+		addObject(frontLayer);
+
+		var watermark:FlxText = new FlxText(0, 0, 0, 'Diavy || Release ${Main.gameRelease}', 16);
+		frontLayer.add(watermark);
+		watermark.x = 5;
+		watermark.y = FlxG.height - watermark.height;
 
 		ScriptsManager.callScript(scriptEventNames.create);
 	}

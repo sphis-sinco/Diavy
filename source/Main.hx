@@ -6,6 +6,8 @@ import play.defines.DefineManager;
 
 class Main extends Sprite
 {
+	public static var gameRelease:Int = 6;
+
 	public function new()
 	{
 		super();

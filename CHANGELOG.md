@@ -1,4 +1,6 @@
 # r6 (8/6/2025)
+- Added watermark to gameplay that displays the game release number
+- Added `frontLayer` to `PlayState` (modifyable by scripts if you want to make sure that something is on the main layer)
 
 # r5 (8/6/2025)
 - Removed `socials` field from the playtesters credit in the base mod
