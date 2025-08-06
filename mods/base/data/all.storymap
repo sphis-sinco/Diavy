@@ -40,10 +40,11 @@ path: trip-intro:
 path: trip-intro-fu:
  | path: trimeArrival-fu
    
-path: accept-trip
+path: accept-trip:
  | trip-forest
+ | path: gijujaki-attack
 
-path: decline-trip
+path: decline-trip:
  - choice: changedMind:
    | changed-mind
  - choice: didItForTheRoute:
@@ -53,6 +54,18 @@ path: decline-trip
  - choice: neverWantedToGo:
    | never-wanted-to-go
  | home-intruders
+ | path: gijujaki-home-attack
 
-path: trimeArrival-fu
+path: trimeArrival-fu:
  | trip-forest-fu
+ - choice: helpThem:
+   | path: forest-help-fu
+ - choice: dontHelpThem:
+   | forest-dont-help-fu / Bad ending /
+ 
+path: gijujaki-attack:
+
+path: gijujaki-home-attack:
+
+path: forest-help-fu: / Restoration Route /
+ | restoration-run-away
