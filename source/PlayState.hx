@@ -108,7 +108,7 @@ class PlayState extends FlxState
 		frontLayer.add(watermark);
 		watermark.x = 5;
 		watermark.y = FlxG.height - watermark.height;
-		watermark.setBorderStyle(OUTLINE, 0x000000, 1, 8);
+		watermark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 8);
 
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
