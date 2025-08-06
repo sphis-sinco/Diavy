@@ -1,7 +1,8 @@
 function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
-	PlayState.instance.addDialogueJsonPath('start');
+	// PlayState.instance.addDialogueJsonPath('start');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/fu/trip-forest-fu');
 
 	PlayState.instance.dialogue_end_callback = () ->
 	{

@@ -83,24 +83,31 @@
                 "line": "In any other scenario you would've probably beat up the guy...\nRun away...",
                 "character": "",
                 "background": "tripForest/gijujakiAttack-fu",
-                "text_speed": 0.06
+                "text_speed": 0.06,
+                "script_event": { "name": "TripForestFu" }
         },
         {
                 "line": "But this time...",
                 "character": "",
                 "background": "tripForest/gijujakiAttack-fu",
-                "text_speed": 0.08
+                "text_speed": 0.08,
+                "script_event": { "name": "decreaseTFFSaturation" }
         },
         {
                 "line": "You just let it happen.",
                 "character": "",
                 "background": "tripForest/gijujakiAttack-fu",
-                "text_speed": 0.1
+                "text_speed": 0.1,
+                "script_event": { "name": "decreaseTFFSaturation" }
         },
         {
                 "line": "You let them take your sister.",
                 "character": "",
                 "background": "tripForest/gijujakiAttack-fu2",
-                "text_speed": 0.2
+                "text_speed": 0.2,
+                "script_events": [
+                        { "name": "decreaseTFFHue" },
+                        { "name": "decreaseTFFHue" }
+                ]
         }
 ]

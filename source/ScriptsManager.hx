@@ -18,6 +18,7 @@ import play.dialogue.*;
 import play.modules.*;
 import play.modules.init.*;
 import play.scripts.*;
+import shaders.AdjustColorShader;
 #if hscript
 import hscript.*;
 #end
@@ -80,6 +81,7 @@ class ScriptsManager
 		setScript('File', File);
 		#end
 
+		setScript('AdjustColorShader', AdjustColorShader);
 		setScript('PlayState', PlayState);
 
 		setScript('Assets', Assets);
