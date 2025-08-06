@@ -6,5 +6,5 @@ function acceptTrip()
 
 function declineTrip()
 {
-	PlayState.instance.addDialogueJsonPath('scenes/trip/decline-trip');
+	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip');
 }
