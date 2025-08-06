@@ -1,3 +1,5 @@
+# r6 (8/6/2025)
+
 # r5 (8/6/2025)
 - Removed `socials` field from the playtesters credit in the base mod
 - Added Paul leps to the list of playtesters in the base mod credits.
