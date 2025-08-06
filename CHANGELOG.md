@@ -1,3 +1,5 @@
+# r8 (8/2025)
+
 # r7 (8/6/2025)
 This is the release of 1.1 for base mod
 - The to-be-continued now says the route you are on.
