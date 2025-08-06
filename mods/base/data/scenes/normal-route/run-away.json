@@ -4,5 +4,12 @@
                 "line": "",
                 "character": "berin-back",
                 "background": ""
+        },
+        {
+                
+                "line": "COME ON.",
+                "character": "berin-back-turnt-screaming",
+                "background": "gijujakiBase",
+                "script_event": { "name": "BG_FadeIn" }
         }
 ]

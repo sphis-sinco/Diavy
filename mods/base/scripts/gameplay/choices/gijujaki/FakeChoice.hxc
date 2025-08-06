@@ -1,20 +1,22 @@
 function YouArentInControlForThis()
 {
-        centerText = true;
-        var blackScreen:FlxSprite = new FlxSprite();
-        blackScreen.makeGraphic(FlxG.width, FlxG.height, 0xFFFFFFFF); // white looks better
-        PlayState.instance.backLayer.add(blackScreen);
-        PlayState.instance.dialogue_character.visible = false;
-        PlayState.instance.can_press_enter = false;
+	centerText = true;
+	var blackScreen:FlxSprite = new FlxSprite();
+	blackScreen.makeGraphic(FlxG.width, FlxG.height, 0xFFFFFFFF); // white looks better
+	PlayState.instance.backLayer.add(blackScreen);
+	PlayState.instance.dialogue_character.visible = false;
+	PlayState.instance.can_press_enter = false;
 
 	ScriptsManager.callScript('playSound', ['snd_noise']);
-        PlayState.instance.dialogue_text.completeCallback = () -> {
-                FlxTimer.wait(1, () -> {
-                        PlayState.instance.backLayer.remove(blackScreen);
-                        PlayState.instance.dialogue_character.visible = true;
-                        PlayState.instance.nextDialogue();
-                });
-        }
-	
-        PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
+	PlayState.instance.dialogue_text.completeCallback = () ->
+	{
+		FlxTimer.wait(1, () ->
+		{
+			PlayState.instance.backLayer.remove(blackScreen);
+			PlayState.instance.dialogue_character.visible = true;
+			PlayState.instance.nextDialogue();
+		});
+	}
+
+	PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
 }

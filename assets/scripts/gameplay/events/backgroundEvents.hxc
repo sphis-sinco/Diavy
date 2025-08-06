@@ -1,0 +1,15 @@
+function BG_FadeIn()
+{
+	PlayState.instance.dialogue_background.alpha = 0.0;
+	FlxTween.tween(PlayState.instance.dialogue_background, {alpha: 1}, 1, {
+		ease: FlxEase.sineIn,
+	});
+}
+
+function BG_FadeOut()
+{
+	PlayState.instance.dialogue_background.alpha = 1.0;
+	FlxTween.tween(PlayState.instance.dialogue_background, {alpha: 0}, 1, {
+		ease: FlxEase.sineOut,
+	});
+}
