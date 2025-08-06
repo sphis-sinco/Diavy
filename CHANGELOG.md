@@ -1,4 +1,4 @@
-# r4 (8/?/2025)
+# r4 (8/5/2025)
 ## Other
 - Changed size of mod menu text
 - Overwrote the original dummy game with chapter 1 of the full game. (Base mod)
