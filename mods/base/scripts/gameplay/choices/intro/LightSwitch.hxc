@@ -1,4 +1,4 @@
-function turnOnLight()
+function turnOnLightEvent()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-light/turn-on-light');
 	PlayState.instance.addDialogueJsonPath('scenes/intro/sibling-bickering');
@@ -6,5 +6,5 @@ function turnOnLight()
 
 function keepLightOff()
 {
-	PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');
+	// PlayState.instance.addDialogueJsonPath('choices/intro-light/keep-light-off');
 }

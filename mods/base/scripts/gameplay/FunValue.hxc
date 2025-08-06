@@ -2,14 +2,15 @@ var fun:Int = 0;
 
 function generateFunValue()
 {
-	fun = FlxG.random.int(0, 250);
+	fun = FlxG.random.int(5, 8);
 	trace('Fun value: ' + fun);
 }
 
 function turnOnLight()
 {
-	if (fun > 5 && fun < 8)
+	if (fun == 6 || fun == 7)
 	{
 		PlayState.instance.addDialogueJsonPath('fun/turn-on-light');
 	}
+	ScriptsManager.callScript('turnOnLightEvent');
 }

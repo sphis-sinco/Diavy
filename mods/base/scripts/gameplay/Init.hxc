@@ -26,6 +26,28 @@ function gameplay_setDialogue()
 		PlayState.instance.choices_events = [];
 
 		PlayState.instance.addObject(endingText);
+
+		var waitAndSetText = function(time:Float, text:String)
+		{
+			FlxTimer.wait(time, () ->
+			{
+				ScriptsManager.callScript('playSound', ['customType-' + FlxG.random.int(1, 4)]);
+				endingText.text = text;
+				endingText.screenCenter();
+			});
+		}
+
+		waitAndSetText(5.05, 'You');
+		waitAndSetText(5.1, 'You can');
+		waitAndSetText(5.15, 'You can press');
+		waitAndSetText(5.2, 'You can press [BACKSPACE]');
+		waitAndSetText(5.25, 'You can press [BACKSPACE]\nto');
+		waitAndSetText(5.3, 'You can press [BACKSPACE]\nto go');
+		waitAndSetText(5.35, 'You can press [BACKSPACE]\nto go to');
+		waitAndSetText(5.4, 'You can press [BACKSPACE]\nto go to the');
+		waitAndSetText(5.45, 'You can press [BACKSPACE]\nto go to the mods');
+		waitAndSetText(5.5, 'You can press [BACKSPACE]\nto go to the mods menu');
+		waitAndSetText(6.5, 'You can press [BACKSPACE]\nto go to the mods menu.');
 	}
 
 	ScriptsManager.callScript('generateFunValue');
