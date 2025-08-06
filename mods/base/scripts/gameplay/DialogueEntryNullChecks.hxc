@@ -5,16 +5,3 @@ function initalizePreferences()
 	PlayState.instance.preferences.defaultCharacterSettings = {};
 	PlayState.instance.preferences.defaultBackgroundSettings = null;
 }
-
-var nonscale4Bgs = [];
-
-function dialogueEntryNullChecks()
-{
-	for (dialogueEntry in PlayState.instance.dialogue)
-	{
-		if (!nonscale4Bgs.contains(dialogueEntry.background))
-			dialogueEntry.backgroundSettings ??= {scaleOffsets: {x: 4, y: 4}};
-		else
-			dialogueEntry.backgroundSettings ??= {};
-	}
-}

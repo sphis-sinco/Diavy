@@ -45,7 +45,7 @@
                 "background": "tripForest/Motoia1"
         },
         {
-                "line": "You quickly toss the back to the man!",
+                "line": "You quickly toss the bag to the man before he does anything.",
                 "character": "",
                 "background": "tripForest/Motoia1"
         },
@@ -71,7 +71,7 @@
         },
         {
                 "line": "Miy gets grabbed and Trime was shoved to the floor",
-                "character": "trime-tears",
+                "character": "",
                 "background": "tripForest/Motoia1"
         },
         {

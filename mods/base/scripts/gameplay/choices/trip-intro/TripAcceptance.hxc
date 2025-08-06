@@ -1,10 +1,10 @@
 function acceptTrip()
 {
 	PlayState.instance.addDialogueJsonPath('choices/trip/accept-trip');
-	PlayState.instance.addDialogueJsonPath('choices/trip/normal/trip-forest');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/normal/trip-forest');
 }
 
 function declineTrip()
 {
-	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/decline-trip');
 }
