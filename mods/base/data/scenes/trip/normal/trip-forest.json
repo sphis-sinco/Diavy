@@ -54,7 +54,7 @@
                 "line": "Oh. Fuck.",
                 "character": "trime-ohfuck",
                 "characterSettings": { "flipped": { "x": true }},
-                "background": "",
+                "background": "gijujakiBase",
                 "wait": 2.0
         }
 ]
