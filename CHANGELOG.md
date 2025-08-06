@@ -1,15 +1,16 @@
 # unreleased
-- Added chapter 2 of the full game
+- Added chapter 2 of the full game (base mod)
+- Removed vase_crash .mp3 (base mod)
 - Added `lastLoadedJSONPath` variable to `PlayState` that allows for scripts to read that and perform actions based on it's value
-- Applied Adjust Color Shader to the F.U. route forest trip ending section
+- Applied Adjust Color Shader to the F.U. route forest trip ending section (base mod)
 - Added Adjust Color Shader: usable by scripts
-- Changed text in the intro of the trip for the normal route to now more easily difference Miy's dialogue from Berin's (using 2 of the new dialogue entry fields)
+- Changed text in the intro of the trip for the normal route to now more easily difference Miy's dialogue from Berin's (using 2 of the new dialogue entry fields) (base mod)
 - Fixed Watermark outline
 - Added `text_outline_color` field to dialogue entries (optional)
 - Added `text_outline` field to dialogue entries (optional)
 - Added `text_color` field to dialogue entries (optional)
 - Added `text_speed` field to dialogue entries (optional)
-- Edited the background in the last line of the Chapter 1 normal route
+- Edited the background in the last line of the Chapter 1 normal route (base mod)
 
 # r6 (8/6/2025)
 - Added watermark to gameplay that displays the game release number
