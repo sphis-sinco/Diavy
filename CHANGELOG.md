@@ -1,5 +1,6 @@
 # unreleased
 - Added chapter 2 of the full game
+- Added Adjust Color Shader: usable by scripts
 - Changed text in the intro of the trip for the normal route to now more easily difference Miy's dialogue from Berin's (using 2 of the new dialogue entry fields)
 - Fixed Watermark outline
 - Added `text_outline_color` field to dialogue entries (optional)
