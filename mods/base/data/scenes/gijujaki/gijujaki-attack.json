@@ -2,27 +2,56 @@
         {
                 "line": "WHAT NOW!?",
                 "character": "berin-wtf",
-                "characterSettings": { "flipped": { "x": true }},
+                "characterSettings": { "flipped": { "x": true } },
                 "background": "gijujakiBase"
         },
         {
                 "line": "Are you fucking kidding me!?",
                 "character": "trime-holyfuck",
-                "characterSettings": { "flipped": { "x": true }},
+                "characterSettings": { "flipped": { "x": true } },
                 "background": "gijujakiBase",
                 "text_speed": 0.01
         },
         {
                 "line": "That's the fucking gijujaki base you idiot!",
                 "character": "trime-holyfuck",
-                "characterSettings": { "flipped": { "x": true }},
+                "characterSettings": { "flipped": { "x": true } },
                 "background": "gijujakiBase",
                 "text_speed": 0.01
         },
         {
                 "line": "THE GIJU-WHAT!?",
                 "character": "berin-wtf",
-                "characterSettings": { "flipped": { "x": true }},
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "THE GIJUJAKI.",
+                "character": "miy-fuckyou",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "THE FUCKING CRIMINALS.",
+                "character": "miy-wtf",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "YOU!",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "Y-YOU!",
+                "character": "berin-pissed",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "Berin rushes the gijujaki member but then they pull out a gun.",
+                "character": "",
                 "background": "gijujakiBase"
         }
 ]
