@@ -3,25 +3,27 @@ var hue = 0;
 
 function TripForestFu()
 {
-var coolioShader:AdjustColorShader = new AdjustColorShader();
-        coolioShader.saturation = sat;
-        coolioShader.hue = hue;
+	var coolioShader:AdjustColorShader = new AdjustColorShader();
+	coolioShader.saturation = sat;
+	coolioShader.hue = hue;
 
-        PlayState.instance.dialogue_background.shader = coolioShader;
+	PlayState.instance.dialogue_background.shader = coolioShader;
 }
 
 function decreaseTFFSaturation()
 {
-        sat -= 15;
-        TripForestFu();
+	sat -= 15;
+	TripForestFu();
 }
+
 function increaseTFFSaturation()
 {
-        sat += 15;
-        TripForestFu();
+	sat += 15;
+	TripForestFu();
 }
+
 function decreaseTFFHue()
 {
-        hue -= 15;
-        TripForestFu();
+	hue -= 15;
+	TripForestFu();
 }

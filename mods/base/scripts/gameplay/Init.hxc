@@ -12,9 +12,9 @@ function gameplay_setDialogue()
 		endingText.alignment = 'center';
 		endingText.screenCenter();
 		if (PlayState.instance.lastLoadedJSONPath == 'trip-forest-fu')
-				ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
-			else
-				ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
+			ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
+		else
+			ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)
