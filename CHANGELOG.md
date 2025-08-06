@@ -1,6 +1,9 @@
 # unreleased
 - Added chapter 2 of the full game
 - Fixed Watermark outline
+- Added `text_outline_color` field to dialogue entries (optional)
+- Added `text_outline` field to dialogue entries (optional)
+- Added `text_color` field to dialogue entries (optional)
 - Added `text_speed` field to dialogue entries (optional)
 - Edited the background in the last line of the Chapter 1 normal route
 

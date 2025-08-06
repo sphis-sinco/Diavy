@@ -20,4 +20,8 @@ typedef DialogueEntry =
 	var ?wait:Float;
 
 	var ?text_speed:Float;
+	var ?text_color:String;
+
+	var ?text_outline:Bool;
+	var ?text_outline_color:String;
 }
