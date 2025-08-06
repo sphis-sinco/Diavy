@@ -9,7 +9,7 @@
                 "character": "miy-excited",
                 "characterSettings": { "flipped": { "x": true } },
                 "background": "trip-intro-tree",
-                "speed": 0.025
+                "text_speed": 0.025
         },
         {
                 "line": "Yo",

@@ -18,25 +18,25 @@
                 "line": "Waiting for her...boyfriend...",
                 "character": "",
                 "background": "trip/slide1-FU",
-                "speed": 0.06
+                "text_speed": 0.06
         },
         {
                 "line": "...girlfriend...",
                 "character": "",
                 "background": "trip/slide1-FU",
-                "speed": 0.08
+                "text_speed": 0.08
         },
         {
                 "line": "her transgender romantical partner that was born a female but identifies as a male.",
                 "character": "",
                 "background": "trip/slide1-FU",
-                "speed": 0.04
+                "text_speed": 0.04
         },
         {
                 "line": "Yeah no I think it should be boyfriend.",
                 "character": "",
                 "background": "trip/slide1-FU",
-                "speed": 0.02
+                "text_speed": 0.02
         },
         {
                 "line": "IDK.",

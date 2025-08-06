@@ -23,13 +23,13 @@
                 "line": "BYE BEAR.",
                 "character": "miy-embarassed",
                 "background": "trip-intro-tree",
-                "speed": 0.025
+                "text_speed": 0.025
         },
         {
                 "line": "BERIN.",
                 "character": "miy-very-embarassed",
                 "background": "trip-intro-tree",
-                "speed": 0.3
+                "text_speed": 0.3
         },
         {
                 "line": "HAHAHA!",
@@ -45,13 +45,13 @@
                 "line": "NO!",
                 "character": "miy-very-embarassed-squeal",
                 "background": "trip-intro-tree",
-                "speed": 0.025
+                "text_speed": 0.025
         },
         {
                 "line": "BERIN WAKING UP TO IT IS!",
                 "character": "miy-very-embarassed-squeal",
                 "background": "trip-intro-tree",
-                "speed": 0.025
+                "text_speed": 0.025
         },
         {
                 "line": "hehe!",
@@ -87,6 +87,6 @@
                 "line": "Bye...",
                 "character": "berin-uncomfortable",
                 "background": "trip-intro-tree",
-                "speed": 0.06
+                "text_speed": 0.06
         }
 ]

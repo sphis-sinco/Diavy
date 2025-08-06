@@ -3,7 +3,7 @@
                 "line": "Miy, what the fuck?",
                 "character": "berin-wtf",
                 "background": "room",
-                "speed": 0.01
+                "text_speed": 0.01
         },
         {
                 "line": "?",
@@ -14,7 +14,7 @@
                 "line": "WHY ARE YOU WALKING AROUND IN YOUR FUCKING UNDERWEAR AND BRA GOD DAMMIT!?",
                 "character": "berin-embarassed",
                 "background": "room",
-                "speed": 0.0125
+                "text_speed": 0.0125
         },
         {
                 "line": "You've been living in MY house for like 3 years.",

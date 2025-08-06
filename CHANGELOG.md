@@ -1,7 +1,7 @@
 # unreleased
 - Added chapter 2 of the full game
 - Fixed Watermark outline
-- Added `speed` field to dialogue entries (optional)
+- Added `text_speed` field to dialogue entries (optional)
 - Edited the background in the last line of the Chapter 1 normal route
 
 # r6 (8/6/2025)

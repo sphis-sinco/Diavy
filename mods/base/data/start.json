@@ -3,7 +3,7 @@
                 "line": "You've just woken up",
                 "character": "",
                 "background": "",
-                "speed": 0.1
+                "text_speed": 0.1
         },
         {
                 "line": "Its dark.",

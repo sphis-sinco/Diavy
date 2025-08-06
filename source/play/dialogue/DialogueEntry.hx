@@ -19,5 +19,5 @@ typedef DialogueEntry =
 
 	var ?wait:Float;
 
-	var ?speed:Float;
+	var ?text_speed:Float;
 }

@@ -18,7 +18,7 @@
                 "line": "...",
                 "character": "",
                 "background": "trip/slide2",
-                "speed": 0.1
+                "text_speed": 0.1
         },
         {
                 "line": "Don't give me attitude because you can't remember that someone wants to be refered to as a boy.",

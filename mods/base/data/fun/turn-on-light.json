@@ -23,7 +23,7 @@
                 "line": "...",
                 "character": "",
                 "background": "",
-                "speed": 0.1
+                "text_speed": 0.1
         },
         {
                 "line": "Again.",
@@ -34,7 +34,7 @@
                 "line": "...",
                 "character": "",
                 "background": "",
-                "speed": 0.2
+                "text_speed": 0.2
         },
         {
                 "line": "If this doesn't work you might have to just find the curtains...",
