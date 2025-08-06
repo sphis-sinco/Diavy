@@ -1,10 +1,6 @@
 function gameplay_setDialogue()
 {
-	PlayState.instance.deleteAllDialogue();
-	PlayState.instance.addDialogueJsonPath('start');
-	// PlayState.instance.addDialogueJsonPath('scenes/trip/fu/trip-forest-fu');
-
-	PlayState.instance.dialogue_end_callback = () ->
+        PlayState.instance.dialogue_end_callback = () ->
 	{
 		trace(PlayState.instance.lastLoadedJSONPath);
 
@@ -67,6 +63,4 @@ function gameplay_setDialogue()
 		waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
 		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');
 	}
-
-	ScriptsManager.callScript('generateFunValue');
 }

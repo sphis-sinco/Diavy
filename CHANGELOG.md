@@ -1,4 +1,5 @@
 # r8 (8/2025)
+- `Init.hxc` has been split into `Start.hxc` and `EndCallback.hxc` (base mod)
 
 # r7 (8/6/2025)
 This is the release of 1.1 for base mod
