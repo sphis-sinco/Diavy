@@ -1,5 +1,5 @@
 # unreleased
-- Added chapter 2 of the full game (base mod)
+This is the release of 1.1 for base mod
 - The to-be-continued of the F.U. route now ends with the weird route jingle from Deltarune (base mod)
 - Removed vase_crash .mp3 (base mod)
 - Added `lastLoadedJSONPath` variable to `PlayState` that allows for scripts to read that and perform actions based on it's value
