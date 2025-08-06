@@ -6,6 +6,8 @@ function gameplay_setDialogue()
 
 	PlayState.instance.dialogue_end_callback = () ->
 	{
+		trace(PlayState.instance.lastLoadedJSONPath);
+
 		var endingText = new FlxText(0, 0, 0, 'TO\nBE\nCONTINUED', 16);
 		endingText.alignment = 'center';
 		endingText.screenCenter();

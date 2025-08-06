@@ -1,5 +1,6 @@
 # unreleased
 - Added chapter 2 of the full game
+- Added `lastLoadedJSONPath` variable to `PlayState` that allows for scripts to read that and perform actions based on it's value
 - Applied Adjust Color Shader to the F.U. route forest trip ending section
 - Added Adjust Color Shader: usable by scripts
 - Changed text in the intro of the trip for the normal route to now more easily difference Miy's dialogue from Berin's (using 2 of the new dialogue entry fields)

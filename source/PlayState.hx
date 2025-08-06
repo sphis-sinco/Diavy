@@ -51,6 +51,8 @@ class PlayState extends FlxState
 	public var backLayer:FlxTypedGroup<FlxBasic> = new FlxTypedGroup<FlxBasic>();
 	public var frontLayer:FlxTypedGroup<FlxBasic> = new FlxTypedGroup<FlxBasic>();
 
+	public var lastLoadedJSONPath:String = '';
+
 	override public function create()
 	{
 		super.create();
@@ -69,8 +71,16 @@ class PlayState extends FlxState
 		addDialogue = function(dia:DialogueEntry) this.dialogue.push(dia);
 		deleteAllDialogue = function() dialogue = [];
 		readDialogueJson = function(json:Array<DialogueEntry>) dialogue = json;
-		readDialogueJsonPath = function(path:String) readDialogueJson(Assets.getJsonFile(path));
-		addDialogueJsonPath = function(path:String) addDialogueJson(Assets.getJsonFile(path));
+		readDialogueJsonPath = function(path:String)
+		{
+			lastLoadedJSONPath = path.split('/')[path.split('/').length - 1];
+			readDialogueJson(Assets.getJsonFile(path));
+		}
+		addDialogueJsonPath = function(path:String)
+		{
+			lastLoadedJSONPath = path.split('/')[path.split('/').length - 1];
+			addDialogueJson(Assets.getJsonFile(path));
+		}
 
 		addDialogueArray = function(diaList:Array<DialogueEntry>) for (dia in diaList)
 			this.dialogue.push(dia);
