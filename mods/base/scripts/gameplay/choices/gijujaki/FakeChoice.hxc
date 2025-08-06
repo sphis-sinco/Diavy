@@ -7,6 +7,7 @@ function YouArentInControlForThis()
         PlayState.instance.dialogue_character.visible = false;
         PlayState.instance.can_press_enter = false;
 
+	ScriptsManager.callScript('playSound', ['snd_noise']);
         PlayState.instance.dialogue_text.completeCallback = () -> {
                 FlxTimer.wait(1, () -> {
                         PlayState.instance.can_press_enter = true;
@@ -16,4 +17,6 @@ function YouArentInControlForThis()
                         PlayState.instance.dialogue_text = new DialogueTextInitalizer(PlayState.instance.dialogue_text).getValues();
                 });
         }
+	
+        PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
 }

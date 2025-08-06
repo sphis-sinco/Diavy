@@ -64,6 +64,8 @@ path: trimeArrival-fu:
    | forest-dont-help-fu / Bad ending /
  
 path: gijujaki-attack:
+ - choice: YouArentInControlForThis (Obey and Disobey : Fake Choice)
+ | run-away
 
 path: gijujaki-home-attack:
 

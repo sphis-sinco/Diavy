@@ -1,0 +1,16 @@
+function Slash()
+{
+	ScriptsManager.callScript('playSound', ['snd_damage']);
+        PlayState.instance.can_press_enter = false;
+
+        PlayState.instance.dialogue_text.completeCallback = () -> {
+                FlxFlicker.flicker(PlayState.instance.dialogue_character, 1);
+                FlxTimer.wait(1, () -> {
+                        ScriptsManager.callScript('playSound', ['snd_noise']);
+                        PlayState.instance.can_press_enter = true;
+                        PlayState.instance.dialogue_character.visible = true;
+                        PlayState.instance.nextDialogue();
+                        PlayState.instance.dialogue_text = new DialogueTextInitalizer(PlayState.instance.dialogue_text).getValues();
+                });
+        }
+}
