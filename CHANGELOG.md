@@ -1,4 +1,5 @@
 # unreleased
+- Added chapter 2 of the full game
 
 # r6 (8/6/2025)
 - Added watermark to gameplay that displays the game release number
