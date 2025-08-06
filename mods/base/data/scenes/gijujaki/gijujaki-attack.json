@@ -1,0 +1,26 @@
+[
+        {
+                "line": "WHAT NOW!?",
+                "character": "berin-wtf",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "Are you fucking kidding me!?",
+                "character": "trime-holyfuck",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "That's the fucking gijujaki base you idiot!",
+                "character": "trime-holyfuck",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "THE GIJU-WHAT!?",
+                "character": "berin-wtf",
+                "characterSettings": { "flipped": { "x": true }},
+                "background": "gijujakiBase"
+        }
+]
