@@ -34,7 +34,8 @@ class BeginDialogueTyping
 			if (PlayState.instance.controlsLine != PlayState.instance.previousControlsLine)
 				PlayState.instance.choice_text.resetText('');
 
-			PlayState.instance.dialogue_text.start(PlayState.instance.dialogueLine, 0.05, false, false, []);
+			PlayState.instance.dialogue_text.start(PlayState.instance.dialogueLine,
+				PlayState.instance.dialogue[PlayState.instance.dialogue_progress].speed ?? 0.05, false, false, []);
 		}
 		catch (e)
 		{

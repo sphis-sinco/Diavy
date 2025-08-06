@@ -18,4 +18,6 @@ typedef DialogueEntry =
 	var ?choices:Array<DialogueChoice>;
 
 	var ?wait:Float;
+
+	var ?speed:Float;
 }
