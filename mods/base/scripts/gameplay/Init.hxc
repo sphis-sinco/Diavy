@@ -12,9 +12,18 @@ function gameplay_setDialogue()
 		endingText.alignment = 'center';
 		endingText.screenCenter();
 		if (PlayState.instance.lastLoadedJSONPath == 'trip-forest-fu')
+		{
 			ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
+			endingText.text = 'F.U. Route:\n\n' + endingText.text;
+		}
 		else
+		{
+			if (PlayState.instance.lastLoadedJSONPath == 'home-intruders')
+				endingText.text = 'Home Route:\n\n' + endingText.text;
+			else
+				endingText.text = 'Normal Route:\n\n' + endingText.text;
 			ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
+		}
 
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)
