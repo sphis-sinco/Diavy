@@ -123,7 +123,8 @@ class PlayState extends FlxState
 		choice_text.y = 10;
 		choice_text.alignment = CENTER;
 		choice_text.setBorderStyle(OUTLINE, FlxColor.BLACK, 2, 1);
-		choice_text.sounds = ChoiceTextSounds.getList();
+		if (preferences.choiceTextSounds)
+			choice_text.sounds = ChoiceTextSounds.getList();
 		addObject(choice_text);
 	}
 
@@ -164,13 +165,17 @@ class PlayState extends FlxState
 		preferences = {
 			dialoguePosition: null,
 
+			choiceTextSounds: null,
+
 			defaultCharacter: '',
 			defaultCharacterSettings: {},
 
 			defaultBackground: '',
 			defaultBackgroundSettings: {},
 		};
+
 		preferences.dialoguePosition ??= BOTTOM;
+		preferences.choiceTextSounds ??= false;
 
 		ScriptsManager.callScript(scriptEventNames.preferencesInit, [preferences]);
 	}

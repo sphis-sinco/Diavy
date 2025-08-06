@@ -7,6 +7,8 @@ typedef PlayStatePreferences =
 {
 	var dialoguePosition:DialoguePositionEnum;
 
+	var ?choiceTextSounds:Bool;
+
 	var ?defaultCharacter:String;
 	var ?defaultBackground:String;
 	var ?defaultCharacterSettings:DialogueSpriteSettings;
