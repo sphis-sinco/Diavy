@@ -7,17 +7,23 @@ class BeginDialogueTyping
 		PlayState.instance.dialogue_text.resetText('');
 		try
 		{
+			final dialogue = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
+
+			PlayState.instance.dialogue_text.setBorderStyle((dialogue.text_outline != null && dialogue.text_outline ? OUTLINE : NONE), FlxColor.BLACK, 2, 8);
+			PlayState.instance.dialogue_text.color = FlxColor.fromString(dialogue.text_color ?? 'BLACK');
+			PlayState.instance.dialogue_text.borderColor = FlxColor.fromString(dialogue.text_color ?? 'BLACK');
+
 			PlayState.instance.choices_keys = [];
 			PlayState.instance.choices_events = [];
-			PlayState.instance.dialogueLine = PlayState.instance.dialogue[PlayState.instance.dialogue_progress].line;
+			PlayState.instance.dialogueLine = dialogue.line;
 			PlayState.instance.previousControlsLine = PlayState.instance.controlsLine;
 			PlayState.instance.controlsLine = 'Controls:\n\nENTER - CONTINUE\n';
 
-			if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
-				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
+			if (dialogue.choices != null)
+				if (dialogue.choices.length > 0)
 				{
 					PlayState.instance.controlsLine = 'Controls:\n\n';
-					for (choice in PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices)
+					for (choice in dialogue.choices)
 					{
 						if (PlayState.instance.choices_keys_map.exists(choice.keyString.toUpperCase()))
 						{
@@ -34,8 +40,7 @@ class BeginDialogueTyping
 			if (PlayState.instance.controlsLine != PlayState.instance.previousControlsLine)
 				PlayState.instance.choice_text.resetText('');
 
-			PlayState.instance.dialogue_text.start(PlayState.instance.dialogueLine,
-				PlayState.instance.dialogue[PlayState.instance.dialogue_progress].text_speed ?? 0.05, false, false, []);
+			PlayState.instance.dialogue_text.start(PlayState.instance.dialogueLine, dialogue.text_speed ?? 0.05, false, false, []);
 		}
 		catch (e)
 		{
