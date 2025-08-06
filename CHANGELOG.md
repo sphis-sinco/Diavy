@@ -1,6 +1,8 @@
 # r8 (8/2025)
 This is the release of 1.2 for base mod
 - Added chapter 2 of the normal route (base mod)
+- Some changes has been made to chapter 1 of the F.U. route (base mod)
+- Some changes has been made to chapter 1 of the normal route (base mod)
 - `Init.hxc` has been split into `Start.hxc` and `EndCallback.hxc` (base mod)
 - In debug builds the base mod will send you to the `gijujaki-attack` scene from the normal route (base mod)
 

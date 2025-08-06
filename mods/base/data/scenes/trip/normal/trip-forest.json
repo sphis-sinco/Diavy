@@ -1,11 +1,11 @@
 [
         {
-                "line": "As all 3 of you walk through the green forest of Motoia",
+                "line": "As all 3 of them walk through the green forest of Motoia",
                 "character": "",
                 "background": "tripForest/Motoia1"
         },
         {
-                "line": "There is a tickling sensation that something is wrong.",
+                "line": "But Berin has a tickling sensation that something is wrong.",
                 "character": "",
                 "background": "tripForest/Motoia1"
         },
@@ -36,7 +36,7 @@
                 "text_speed": 0.01
         },
         {
-                "line": "You quickly punch the masked man as hard as you can. Knocking him out.",
+                "line": "Berin quickly punches the masked man as hard as you can. Knocking him out.",
                 "character": "",
                 "background": "tripForest/Motoia1",
                 "text_speed": 0.02
@@ -49,7 +49,7 @@
                 "text_speed": 0.01
         },
         {
-                "line": "You, Miy, and Trime all run outside of the Motoia forest into the territory of the gijujaki",
+                "line": "Berin, Miy, and Trime all run outside of the Motoia forest into the territory of the gijujaki",
                 "character": "",
                 "background": ""
         },

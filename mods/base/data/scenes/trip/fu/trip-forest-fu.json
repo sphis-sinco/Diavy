@@ -104,7 +104,7 @@
                 "script_event": { "name": "decrease_background_saturation" }
         },
         {
-                "line": "You let them take your sister.",
+                "line": "You let them take his sister.",
                 "character": "",
                 "background": "tripForest/gijujakiAttack-fu2",
                 "text_speed": 0.2,
