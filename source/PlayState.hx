@@ -104,10 +104,11 @@ class PlayState extends FlxState
 
 		addObject(frontLayer);
 
-		var watermark:FlxText = new FlxText(0, 0, 0, 'Diavy || Release ${Main.gameRelease}', 16);
+		var watermark:FlxText = new FlxText(0, 0, 0, 'Diavy || Release ${Main.gameRelease}', 8);
 		frontLayer.add(watermark);
 		watermark.x = 5;
 		watermark.y = FlxG.height - watermark.height;
+		watermark.setBorderStyle(OUTLINE, 0x000000, 1, 8);
 
 		ScriptsManager.callScript(scriptEventNames.create);
 	}
