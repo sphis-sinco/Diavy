@@ -48,7 +48,7 @@ class ModMenu extends FlxState
 		descBg.alpha = 1;
 		add(descBg);
 
-		descriptionText = new FlxText(descBg.x, descBg.y + 4, FlxG.width, "Template Description", 16);
+		descriptionText = new FlxText(descBg.x, descBg.y + 4, FlxG.width, "Template Description", 12);
 		descriptionText.scrollFactor.set();
 		add(descriptionText);
 
@@ -59,7 +59,7 @@ class ModMenu extends FlxState
 		}
 
 		var leText:String = 'Press [SPACE] to enable the currently selected mod.\nPress [ENTER] to play\nPress [R] to reload';
-		var text:FlxText = new FlxText(0, FlxG.height - 42, FlxG.width, leText, 16);
+		var text:FlxText = new FlxText(0, FlxG.height - 42, FlxG.width, leText, 12);
 		text.scrollFactor.set();
 		text.y = FlxG.height - text.height;
 		add(text);
