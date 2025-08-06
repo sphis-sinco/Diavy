@@ -11,7 +11,10 @@ function gameplay_setDialogue()
 		var endingText = new FlxText(0, 0, 0, 'TO\nBE\nCONTINUED', 16);
 		endingText.alignment = 'center';
 		endingText.screenCenter();
-		ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
+		if (PlayState.instance.lastLoadedJSONPath == 'trip-forest-fu')
+				ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
+			else
+				ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)

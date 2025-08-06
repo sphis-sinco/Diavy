@@ -1,5 +1,6 @@
 # unreleased
 - Added chapter 2 of the full game (base mod)
+- The to-be-continued of the F.U. route now ends with the weird route jingle from Deltarune (base mod)
 - Removed vase_crash .mp3 (base mod)
 - Added `lastLoadedJSONPath` variable to `PlayState` that allows for scripts to read that and perform actions based on it's value
 - Applied Adjust Color Shader to the F.U. route forest trip ending section (base mod)
