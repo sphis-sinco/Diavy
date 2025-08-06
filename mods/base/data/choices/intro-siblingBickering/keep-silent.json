@@ -3,7 +3,8 @@
                 "line": "...",
                 "character": "berin-shaddup",
                 "background": "room",
-                "wait": 2.0
+                "wait": 2.0,
+                "speed": 0.1
         },
         {
                 "line": "Okay quiet kid.",

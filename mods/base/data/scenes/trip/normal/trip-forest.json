@@ -32,18 +32,21 @@
         {
                 "line": "Hell no!",
                 "character": "berin-wtf",
-                "background": "tripForest/Motoia1"
+                "background": "tripForest/Motoia1",
+                "speed": 0.01
         },
         {
                 "line": "You quickly punch the masked man as hard as you can. Knocking him out.",
                 "character": "",
-                "background": "tripForest/Motoia1"
+                "background": "tripForest/Motoia1",
+                "speed": 0.02
         },
         {
                 "line": "COME ON",
                 "character": "berin-rush",
                 "characterSettings": { "flipped": { "x": true }},
-                "background": "tripForest/Motoia1"
+                "background": "tripForest/Motoia1",
+                "speed": 0.01
         },
         {
                 "line": "You, Miy, and Trime all run outside of the Motoia forest into the territory of the gijujaki",

@@ -17,7 +17,8 @@
         {
                 "line": "BOYFRIEND'S",
                 "character": "berin-rush",
-                "background": "trip-intro-tree"
+                "background": "trip-intro-tree",
+                "speed": 0.025
         },
         {
                 "line": "house.",

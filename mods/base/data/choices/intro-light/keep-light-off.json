@@ -13,7 +13,8 @@
         {
                 "line": "They get closer",
                 "character": "",
-                "background": ""
+                "background": "",
+                "speed": 0.1
         },
         {
                 "line": "",

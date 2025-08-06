@@ -54,7 +54,8 @@
         {
                 "line": "BERIN.",
                 "character": "miy-annoyed-side",
-                "background": "trip-intro-tree"
+                "background": "trip-intro-tree",
+                "speed": 0.1
         },
         {
                 "line": "Come on.",

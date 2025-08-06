@@ -9,13 +9,15 @@
                 "line": "Are you fucking kidding me!?",
                 "character": "trime-holyfuck",
                 "characterSettings": { "flipped": { "x": true }},
-                "background": "gijujakiBase"
+                "background": "gijujakiBase",
+                "speed": 0.01
         },
         {
                 "line": "That's the fucking gijujaki base you idiot!",
                 "character": "trime-holyfuck",
                 "characterSettings": { "flipped": { "x": true }},
-                "background": "gijujakiBase"
+                "background": "gijujakiBase",
+                "speed": 0.01
         },
         {
                 "line": "THE GIJU-WHAT!?",

@@ -7,32 +7,38 @@
         {
                 "line": "FUCK YOU!",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.025
         },
         {
                 "line": "Came in here to fucking CHECK ON YOU.",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.0125
         },
         {
                 "line": "And all you wanna fucking do is yell at me.",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.025
         },
         {
                 "line": "I'M THE OLDEST.",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.0125
         },
         {
                 "line": "NOT YOU.",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.025
         },
         {
                 "line": "UGH",
                 "character": "miy-fuckyou",
-                "background": "room"
+                "background": "room",
+                "speed": 0.1
         },
         {
                 "line": "Miy storms out.",
@@ -64,7 +70,8 @@
                 "line": "...",
                 "character": "berin-thinking",
                 "background": "room",
-                "wait": 5.0
+                "wait": 5.0,
+                "speed": 0.1
         },
         {
                 "line": "Oh yeah the trip.",

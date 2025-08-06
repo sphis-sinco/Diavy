@@ -8,7 +8,8 @@
                 "line": "TRIME!",
                 "character": "miy-excited",
                 "characterSettings": { "flipped": { "x": true } },
-                "background": "trip-intro-tree"
+                "background": "trip-intro-tree",
+                "speed": 0.025
         },
         {
                 "line": "Yo",
