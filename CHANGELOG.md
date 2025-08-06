@@ -1,4 +1,5 @@
 # r8 (8/2025)
+This is the release of 1.2 for base mod
 
 # r7 (8/6/2025)
 This is the release of 1.1 for base mod
