@@ -2,7 +2,7 @@ var fun:Int = 0;
 
 function generateFunValue()
 {
-	fun = FlxG.random.int(5, 8);
+	fun = FlxG.random.int(0, 250);
 	trace('Fun value: ' + fun);
 }
 
