@@ -1,0 +1,11 @@
+function gainControl()
+{
+	ScriptsManager.callScript('playSound', ['snd_noise']);
+	PlayState.instance.can_press_enter = true;
+}
+
+function loseControl()
+{
+	ScriptsManager.callScript('playSound', ['snd_noise']);
+	PlayState.instance.can_press_enter = false;
+}

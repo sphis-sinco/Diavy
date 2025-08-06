@@ -7,8 +7,7 @@ function Slash()
 		FlxFlicker.flicker(PlayState.instance.dialogue_character, 1);
 		FlxTimer.wait(1, () ->
 		{
-			ScriptsManager.callScript('playSound', ['snd_noise']);
-			PlayState.instance.can_press_enter = true;
+			ScriptsManager.callScript('gainControl');
 			PlayState.instance.nextDialogue();
 			PlayState.instance.dialogue_text = new DialogueTextInitalizer(PlayState.instance.dialogue_text).getValues();
 		});

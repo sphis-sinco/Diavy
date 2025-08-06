@@ -42,47 +42,7 @@ class DialogueTextInitalizer extends Initalizer
 		};
 		dialogue_text.completeCallback = () ->
 		{
-			if (PlayState.instance != null)
-			{
-				PlayState.instance.dialogue_text_typing_complete = true;
-				PlayState.instance.can_press_enter = true;
-
-				if (PlayState.instance.dialogue_proceed_icon != null)
-					PlayState.instance.dialogue_proceed_icon.visible = true;
-
-				try
-				{
-					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
-					{
-						if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
-							PlayState.instance.can_press_enter = false;
-					}
-
-					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait != null)
-					{
-						if (PlayState.instance.dialogue_proceed_icon != null)
-							PlayState.instance.dialogue_proceed_icon.visible = false;
-						PlayState.instance.can_press_enter = false;
-						PlayState.instance.dialogue_text_typing_complete = false;
-						FlxTimer.wait(PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait, () ->
-						{
-							PlayState.instance.dialogue_text_typing_complete = true;
-							PlayState.instance.can_press_enter = true;
-							if (PlayState.instance.dialogue_proceed_icon != null)
-								PlayState.instance.dialogue_proceed_icon.visible = true;
-							PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
-						});
-					}
-					else
-					{
-						PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
-					}
-				}
-				catch (e)
-				{
-					trace(e);
-				}
-			}
+			dialogueTextDefaultCallback();
 		};
 
 		ScriptsManager.callScript(PlayState.instance.scriptEventNames.dialogueTextInit, [dialogue_text]);
@@ -91,5 +51,50 @@ class DialogueTextInitalizer extends Initalizer
 	override function getValues():FlxTypeText
 	{
 		return dialogue_text;
+	}
+
+	public function dialogueTextDefaultCallback()
+	{
+		if (PlayState.instance != null)
+		{
+			PlayState.instance.dialogue_text_typing_complete = true;
+			PlayState.instance.can_press_enter = true;
+
+			if (PlayState.instance.dialogue_proceed_icon != null)
+				PlayState.instance.dialogue_proceed_icon.visible = true;
+
+			try
+			{
+				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices != null)
+				{
+					if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].choices.length > 0)
+						PlayState.instance.can_press_enter = false;
+				}
+
+				if (PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait != null)
+				{
+					if (PlayState.instance.dialogue_proceed_icon != null)
+						PlayState.instance.dialogue_proceed_icon.visible = false;
+					PlayState.instance.can_press_enter = false;
+					PlayState.instance.dialogue_text_typing_complete = false;
+					FlxTimer.wait(PlayState.instance.dialogue[PlayState.instance.dialogue_progress].wait, () ->
+					{
+						PlayState.instance.dialogue_text_typing_complete = true;
+						PlayState.instance.can_press_enter = true;
+						if (PlayState.instance.dialogue_proceed_icon != null)
+							PlayState.instance.dialogue_proceed_icon.visible = true;
+						PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
+					});
+				}
+				else
+				{
+					PlayState.instance.choice_text.start(PlayState.instance.controlsLine);
+				}
+			}
+			catch (e)
+			{
+				trace(e);
+			}
+		}
 	}
 }

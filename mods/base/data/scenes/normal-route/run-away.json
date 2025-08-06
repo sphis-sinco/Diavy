@@ -1,15 +1,122 @@
 [
         {
-                
                 "line": "",
                 "character": "berin-back",
                 "background": ""
         },
         {
-                
                 "line": "COME ON.",
                 "character": "berin-back-turnt-screaming",
                 "background": "gijujakiBase",
                 "script_event": { "name": "BG_FadeIn" }
+        },
+        {
+                "line": "Okay!?",
+                "character": "miy-shocked",
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "Berin. Miy. and Trime run away.",
+                "character": "",
+                "background": "gijujakiBase",
+                "script_events": [
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        },
+                        { "name": "BG_FadeOut" },
+                        { "name": "Disable_Text_Sound" }
+                ]
+        },
+        {
+                "line": "Berin has ripped himself free from your control.",
+                "character": "",
+                "background": "",
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                }
+        },
+        {
+                "line": "Right?",
+                "character": "",
+                "background": "",
+                "speed": 0.1,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                }
+        },
+        {
+                "script_event": { "name": "Enable_Text_Sound" },
+                "line": "...",
+                "character": "",
+                "background": "",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Yes",
+                                "script_event": "gainControl"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Yes",
+                                "script_event": "gainControl"
+                        }
+                ]
+        },
+        {
+                "line": "Good. You know.",
+                "character": "berin-possessed",
+                "background": "",
+                "backgroundSettings": { "scaleOffsets": { "x": 2, "y": 2.2 } },
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                },
+                "script_events": [
+                        {
+                                "name": "animatedBackground",
+                                "args": [
+                                        "dialogue/backgrounds/manipulationOfControl",
+                                        200,
+                                        200,
+                                        [0, 1, 2, 3, 4]
+                                ]
+                        },
+                        {
+                                "name": "playSound",
+                                "args": ["snd_knight_laugh"]
+                        },
+                        {
+                                "name": "setChangeValue_Character",
+                                "args": [10]
+                        },
+                        { "name": "decrease_Character_Hue" },
+                        { "name": "decrease_Character_Hue" },
+                        { "name": "decrease_Character_Hue" },
+                        { "name": "decrease_Character_Saturation" },
+                        { "name": "decrease_Character_Saturation" },
+                        { "name": "auto_skip", "args": [3.65] }
+                ],
+                "wait": 3
+        },
+        {
+                "line": "",
+                "character": "berin-back",
+                "background": "",
+                "script_events": [
+                        { "name": "removeAnimatedBackground" },
+                        { "name": "increase_Character_Hue" },
+                        { "name": "increase_Character_Hue" },
+                        { "name": "increase_Character_Hue" },
+                        { "name": "increase_Character_Saturation" },
+                        { "name": "increase_Character_Saturation" }
+                ]
+        },
+        {
+                "line": "Asshole.",
+                "character": "berin-back-turnt-mad",
+                "background": "",
+                "speed": 0.1
         }
 ]

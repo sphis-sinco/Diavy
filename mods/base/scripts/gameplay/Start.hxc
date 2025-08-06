@@ -2,7 +2,7 @@ function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
 	if (is_debug)
-		PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
+		PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
 	else
 		PlayState.instance.addDialogueJsonPath('start');
 

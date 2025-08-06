@@ -13,7 +13,7 @@ function initalizeBackgroundShader()
 	PlayState.instance.dialogue_background.shader = coolioShader;
 }
 
-function setChangeValue(newcv = 0)
+function setChangeValue_Background(newcv = 0)
 {
 	changeVal = newcv;
 }

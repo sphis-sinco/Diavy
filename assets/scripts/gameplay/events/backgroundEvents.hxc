@@ -13,3 +13,42 @@ function BG_FadeOut()
 		ease: FlxEase.sineOut,
 	});
 }
+
+var animBG:FlxSprite;
+
+function animatedBackground(name:String, width:Int, height:Int, frames:Array<Int>)
+{
+	animBG = new FlxSprite();
+	animBG.loadGraphic(Assets.getAssetPath('images/' + name + '.png'), true, width, height);
+	animBG.animation.add('anim', frames);
+	animBG.animation.play('anim');
+	animBG.screenCenter();
+
+	var curDia = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
+
+	if (curDia.backgroundSettings != null)
+	{
+		if (curDia.backgroundSettings.positionOffsets != null)
+		{
+			animBG.x += curDia.backgroundSettings.positionOffsets.x;
+			animBG.y += curDia.backgroundSettings.positionOffsets.y;
+		}
+		if (curDia.backgroundSettings.scaleOffsets != null)
+		{
+			animBG.scale.x += curDia.backgroundSettings.scaleOffsets.x;
+			animBG.scale.y += curDia.backgroundSettings.scaleOffsets.y;
+		}
+		if (curDia.backgroundSettings.flipped != null)
+		{
+			animBG.flipX = curDia.backgroundSettings.flipped.x;
+			animBG.flipY = curDia.backgroundSettings.flipped.y;
+		}
+	}
+
+	PlayState.instance.backLayer.add(animBG);
+}
+
+function removeAnimatedBackground()
+{
+	PlayState.instance.backLayer.remove(animBG);
+}
