@@ -1,13 +1,6 @@
 function gameplay_setDialogue()
 {
-	PlayState.instance.deleteAllDialogue();
-	if (is_debug)
-		PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
-	else
-		PlayState.instance.addDialogueJsonPath('start');
-
-
-	PlayState.instance.dialogue_end_callback = () ->
+        PlayState.instance.dialogue_end_callback = () ->
 	{
 		trace(PlayState.instance.lastLoadedJSONPath);
 
@@ -70,6 +63,4 @@ function gameplay_setDialogue()
 		waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
 		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');
 	}
-
-	ScriptsManager.callScript('generateFunValue');
 }
