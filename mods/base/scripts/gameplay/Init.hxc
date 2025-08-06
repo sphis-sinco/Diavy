@@ -1,8 +1,11 @@
 function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
-	PlayState.instance.addDialogueJsonPath('start');
-	// PlayState.instance.addDialogueJsonPath('scenes/trip/fu/trip-forest-fu');
+	if (is_debug)
+		PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
+	else
+		PlayState.instance.addDialogueJsonPath('start');
+
 
 	PlayState.instance.dialogue_end_callback = () ->
 	{

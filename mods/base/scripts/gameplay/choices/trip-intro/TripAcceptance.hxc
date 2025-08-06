@@ -2,7 +2,7 @@ function acceptTrip()
 {
 	PlayState.instance.addDialogueJsonPath('choices/trip/accept-trip');
 	PlayState.instance.addDialogueJsonPath('scenes/trip/normal/trip-forest');
-	// PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
+	PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
 }
 
 function declineTrip()
