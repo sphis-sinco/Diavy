@@ -1,0 +1,19 @@
+function YouArentInControlForThis()
+{
+        centerText = true;
+        var blackScreen:FlxSprite = new FlxSprite();
+        blackScreen.makeGraphic(FlxG.width, FlxG.height, 0xFFFFFFFF); // white looks better
+        PlayState.instance.backLayer.add(blackScreen);
+        PlayState.instance.dialogue_character.visible = false;
+        PlayState.instance.can_press_enter = false;
+
+        PlayState.instance.dialogue_text.completeCallback = () -> {
+                FlxTimer.wait(1, () -> {
+                        PlayState.instance.can_press_enter = true;
+                        PlayState.instance.backLayer.remove(blackScreen);
+                        PlayState.instance.dialogue_character.visible = true;
+                        PlayState.instance.nextDialogue();
+                        PlayState.instance.dialogue_text = new DialogueTextInitalizer(PlayState.instance.dialogue_text).getValues();
+                });
+        }
+}

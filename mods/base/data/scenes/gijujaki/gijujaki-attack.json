@@ -41,17 +41,129 @@
                 "line": "YOU!",
                 "character": "gijujakiMember/gm-hurt-mad",
                 "characterSettings": { "flipped": { "x": true } },
-                "background": "gijujakiBase"
+                "background": "gijujakiBase",
+                "text_speed": 0.1
         },
         {
                 "line": "Y-YOU!",
                 "character": "berin-pissed",
                 "characterSettings": { "flipped": { "x": true } },
-                "background": "gijujakiBase"
+                "background": "gijujakiBase",
+                "text_speed": 0.025
         },
         {
                 "line": "Berin rushes the gijujaki member but then they pull out a gun.",
                 "character": "",
                 "background": "gijujakiBase"
+        },
+        {
+                "line": "!!",
+                "character": "berin-pissed-scared",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase"
+        },
+        {
+                "line": "NO!",
+                "character": "gijujakiMember/gm-hurt-pissed",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase",
+                "text_speed": 0.25
+        },
+        {
+                "line": "I AM NOT DOING THIS.",
+                "character": "gijujakiMember/gm-hurt-pissed",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase",
+                "text_speed": 0.1
+        },
+        {
+                "line": "SO HERE IS WHAT IS GOING TO HAPPEN.",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "background": "gijujakiBase",
+                "text_speed": 0.1
+        },
+        {
+                "line": "YOU.",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase",
+                "text_speed": 0.1
+        },
+        {
+                "line": "ARE GOING TO TAKE THAT BAG.",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase",
+                "text_speed": 0.1
+        },
+        {
+                "line": "AND PUT GIVE IT TO ME.",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "gijujakiBase",
+                "text_speed": 0.1
+        },
+        {
+                "line": "GOT IT!?",
+                "character": "gijujakiMember/gm-hurt-mad",
+                "background": "gijujakiBase",
+                "text_speed": 0.025
+        },
+        {
+                "line": "...",
+                "character": "berin-pissed-scared",
+                "background": "gijujakiBase",
+                "text_speed": 1
+        },
+        {
+                "line": "...",
+                "character": "berin-pissed",
+                "background": "gijujakiBase",
+                "text_speed": 1
+        },
+        {
+                "line": "...",
+                "character": "berin-pissed",
+                "background": "gijujakiBase",
+                "text_speed": 1,
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Obey",
+                                "script_event": "YouArentInControlForThis"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Disobey",
+                                "script_event": "YouArentInControlForThis"
+                        }
+                ]
+        },
+        {
+                
+                "line": "(This isn't your choice.)",
+                "character": "berin-back",
+                "background": ""
+        },
+        {
+                
+                "line": "",
+                "character": "berin-back",
+                "background": "",
+                "script_event": {
+                        "name": "Slash"
+                }
+        },
+        {
+                
+                "line": "!",
+                "character": "miy-shocked",
+                "background": ""
+        },
+        {
+                
+                "line": "!",
+                "character": "trime-holyfuck",
+                "background": ""
         }
 ]
