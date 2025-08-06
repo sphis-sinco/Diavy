@@ -7,5 +7,4 @@ function acceptTrip()
 function declineTrip()
 {
 	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip');
-	PlayState.instance.addDialogueJsonPath('scenes/trip/home/home-intruders');
 }

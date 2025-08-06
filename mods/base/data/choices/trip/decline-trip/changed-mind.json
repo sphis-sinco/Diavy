@@ -1,0 +1,22 @@
+[
+        {
+                "line": "I just changed my mind!",
+                "character": "berin-shaddup",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Leave me alone!",
+                "character": "berin-rush",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Whatever bro! Get your stuff.",
+                "character": "miy-laughing",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Fine.",
+                "character": "berin-shaddup",
+                "background": "trip-intro-tree"
+        }
+]

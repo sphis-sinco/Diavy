@@ -11,11 +11,16 @@ function gameplay_setDialogue()
 		ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 
 		PlayState.instance.remove(PlayState.instance.backLayer);
-		if (PlayState.instance.dialogue_character != null) PlayState.instance.remove(PlayState.instance.dialogue_character);
-		if (PlayState.instance.dialogue_proceed_icon != null) PlayState.instance.remove(PlayState.instance.dialogue_proceed_icon);
-		if (PlayState.instance.dialogue_box != null) PlayState.instance.remove(PlayState.instance.dialogue_box);
-		if (PlayState.instance.choice_text != null) PlayState.instance.remove(PlayState.instance.choice_text);
-		if (PlayState.instance.dialogue_text != null) PlayState.instance.remove(PlayState.instance.dialogue_text);
+		if (PlayState.instance.dialogue_character != null)
+			PlayState.instance.remove(PlayState.instance.dialogue_character);
+		if (PlayState.instance.dialogue_proceed_icon != null)
+			PlayState.instance.remove(PlayState.instance.dialogue_proceed_icon);
+		if (PlayState.instance.dialogue_box != null)
+			PlayState.instance.remove(PlayState.instance.dialogue_box);
+		if (PlayState.instance.choice_text != null)
+			PlayState.instance.remove(PlayState.instance.choice_text);
+		if (PlayState.instance.dialogue_text != null)
+			PlayState.instance.remove(PlayState.instance.dialogue_text);
 		PlayState.instance.can_press_enter = false;
 		PlayState.instance.choices_keys = [];
 		PlayState.instance.choices_events = [];

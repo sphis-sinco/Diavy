@@ -44,6 +44,14 @@ path: accept-trip
  | trip-forest
 
 path: decline-trip
+ - choice: changedMind:
+   | changed-mind
+ - choice: didItForTheRoute:
+   | did-it-for-the-route / Maybe a Sentience Route /
+ - choice: dontFeelLikeIt:
+   | dont-feel-like-it
+ - choice: neverWantedToGo:
+   | never-wanted-to-go
  | home-intruders
 
 path: trimeArrival-fu

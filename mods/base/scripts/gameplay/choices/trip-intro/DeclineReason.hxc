@@ -1,0 +1,28 @@
+function newRoute()
+{
+	PlayState.instance.addDialogueJsonPath('scenes/trip/home/home-intruders');
+}
+
+function changedMind()
+{
+	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip/changed-mind');
+	newRoute();
+}
+
+function didItForTheRoute()
+{
+	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip/did-it-for-the-route');
+	newRoute(); // Maybe I could add a Sentience Route LOL!
+}
+
+function dontFeelLikeIt()
+{
+	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip/dont-feel-like-it');
+	newRoute();
+}
+
+function neverWantedToGo()
+{
+	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip/never-wanted-to-go');
+	newRoute();
+}

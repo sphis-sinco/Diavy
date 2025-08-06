@@ -3,5 +3,57 @@
                 "line": "I'm not going.",
                 "character": "berin-shaddup",
                 "background": "trip-intro-tree"
+        },
+        {
+                "line": "...",
+                "character": "miy-annoyed",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Really?",
+                "character": "miy-annoyed",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "Oh please. Just leave it Miy.",
+                "character": "trime-smirk",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "He's probably just jealous that he doesn't have a girlfriend.",
+                "character": "trime-smirk",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "HA! You're still mad about that?",
+                "character": "miy-laughing",
+                "background": "trip-intro-tree"
+        },
+        {
+                "line": "N-No!",
+                "character": "berin-embarassed",
+                "background": "trip-intro-tree",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "I just changed my mind!",
+                                "script_event": "changedMind"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "I did it for the route!",
+                                "script_event": "didItForTheRoute"
+                        },
+                        {
+                                "keyString": "3",
+                                "name": "I just don't feel like it anymore",
+                                "script_event": "dontFeelLikeIt"
+                        },
+                        {
+                                "keyString": "4",
+                                "name": "I never wanted to go!",
+                                "script_event": "neverWantedToGo"
+                        }
+                ]
         }
 ]

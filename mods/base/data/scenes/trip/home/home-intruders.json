@@ -1,3 +1,55 @@
 [
-        
+        {
+                "line": "...",
+                "character": "",
+                "background": "room-bed"
+        },
+        {
+                "line": "Im tired",
+                "character": "berin-yo",
+                "background": "room-bed"
+        },
+        {
+                "line": "They are probably already doing it...",
+                "character": "berin-yo",
+                "background": "room-bed"
+        },
+        {
+                "line": "And probably won't be done til morning...",
+                "character": "berin-yo",
+                "background": "room-bed"
+        },
+        {
+                "line": "I'm sure I can enjoy some shut-eye",
+                "character": "berin-yo",
+                "background": "room-bed"
+        },
+        {
+                "line": "!!",
+                "character": "berin-wtf",
+                "background": "room-bed",
+                "script_event": { "name": "playSound", "args": ["vase_crash"] }
+        },
+        {
+                "line": "...",
+                "character": "berin-wtf",
+                "background": "room",
+                "script_event": { "name": "playSound", "args": ["snd_step1"] }
+        },
+        {
+                "line": "...",
+                "character": "berin-wtf",
+                "background": "home-hall",
+                "script_event": { "name": "playSound", "args": ["snd_step2"] }
+        },
+        {
+                "line": "...",
+                "character": "",
+                "background": "home-hall"
+        },
+        {
+                "line": "(oh shit.)",
+                "character": "berin-wtf",
+                "background": "home-hall"
+        }
 ]
