@@ -25,7 +25,7 @@
 - Added `wait` field to dialogue entries (optional)
 ## Script functions
 - Added `addDialogueJsonPath` PlayState function for scripts
-- Added readDialogueJsonPath` PlayState function for scripts
+- Added `readDialogueJsonPath` PlayState function for scripts
 - Added `addDialogueJson` PlayState function for scripts
 - Added `readDialogueJson` PlayState function for scripts
 
