@@ -1,3 +1,6 @@
+# r5 (8/6/2025)
+- Removed the version label from the `Project.xml` (Shouldn't keep it if I'm just going to forget about it)
+
 # r4 (8/5/2025)
 ## Other
 - Changed size of mod menu text
