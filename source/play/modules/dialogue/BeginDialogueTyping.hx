@@ -11,7 +11,7 @@ class BeginDialogueTyping
 
 			PlayState.instance.dialogue_text.setBorderStyle((dialogue.text_outline != null && dialogue.text_outline ? OUTLINE : NONE), FlxColor.BLACK, 2, 8);
 			PlayState.instance.dialogue_text.color = FlxColor.fromString(dialogue.text_color ?? 'BLACK');
-			PlayState.instance.dialogue_text.borderColor = FlxColor.fromString(dialogue.text_color ?? 'BLACK');
+			PlayState.instance.dialogue_text.borderColor = FlxColor.fromString(dialogue.text_outline_color ?? 'BLACK');
 
 			PlayState.instance.choices_keys = [];
 			PlayState.instance.choices_events = [];
