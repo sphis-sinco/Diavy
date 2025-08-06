@@ -148,7 +148,7 @@
         {
                 
                 "line": "",
-                "character": "gm-hurt-stabbed",
+                "character": "gijujakiMember/gm-hurt-stabbed",
                 "background": "",
                 "script_event": {
                         "name": "Slash"
