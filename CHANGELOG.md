@@ -1,4 +1,6 @@
 # r5 (8/6/2025)
+- Removed `socials` field from the playtesters credit in the base mod
+- Added Paul leps to the list of playtesters in the base mod credits.
 - Added preference for `choiceTextSounds` (disabled by default, modifyable by scripts)
 - Removed the version label from the `Project.xml` (Shouldn't keep it if I'm just going to forget about it)
 
