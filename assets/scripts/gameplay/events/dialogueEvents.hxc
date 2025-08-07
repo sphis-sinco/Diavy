@@ -1,15 +1,17 @@
 function auto_skip(wait:Float)
 {
-        FlxTimer.wait(wait, () -> {
-                PlayState.instance.nextDialogue();
-        });
+	FlxTimer.wait(wait, () ->
+	{
+		PlayState.instance.nextDialogue();
+	});
 }
 
 function Disable_Text_Sound()
 {
-        PlayState.instance.dialogue_text.useDefaultSound = false;
+	PlayState.instance.dialogue_text.useDefaultSound = false;
 }
+
 function Enable_Text_Sound()
 {
-        PlayState.instance.dialogue_text.useDefaultSound = true;
+	PlayState.instance.dialogue_text.useDefaultSound = true;
 }
