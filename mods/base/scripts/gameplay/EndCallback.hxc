@@ -7,27 +7,32 @@ function gameplay_initalize()
 		var endingText = new FlxText(0, 0, 0, 'TO\nBE\nCONTINUED', 16);
 		endingText.alignment = 'center';
 		endingText.screenCenter();
+
+		var prefix = 'Normal Route (Part 1)';
+
 		if (PlayState.instance.lastLoadedJSONPath == 'trip-forest-fu')
 		{
 			ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
-			endingText.text = 'F.U. Route:\n\n' + endingText.text;
+			prefix = 'F.U. Route (Part 1)'
 			FlxG.save.data.endings.push('FU_Route');
 		}
 		else
 		{
 			if (PlayState.instance.lastLoadedJSONPath == 'home-intruders')
 			{
-				endingText.text = 'Home Route:\n\n' + endingText.text;
+				prefix = 'Home Route (Part 1)'
 				FlxG.save.data.endings.push('Home_Route');
 			}
 			else
 			{
-				endingText.text = 'Normal Route:\n\n' + endingText.text;
+				if (PlayState.instance.lastLoadedJSONPath == 'run-away')
+					prefix = 'Normal Route (Part 2)'
 				FlxG.save.data.endings.push('Normal_Route');
 			}
 			ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 		}
 
+		endingText.text = prefix + ':\n\n' + endingText.text;
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)
 			PlayState.instance.remove(PlayState.instance.dialogue_character);

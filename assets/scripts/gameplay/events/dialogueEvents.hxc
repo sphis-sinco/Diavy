@@ -32,7 +32,6 @@ function DialogueText_FadeOut()
 	});
 }
 
-
 function DialogueBox_FadeIn()
 {
 	PlayState.instance.dialogue_box.alpha = 0.0;

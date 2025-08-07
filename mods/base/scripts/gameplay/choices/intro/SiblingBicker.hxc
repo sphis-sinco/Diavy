@@ -8,7 +8,7 @@ function lastEnding(offset:Int = 0)
 
 function FUFUFU_NewRoute()
 {
-	if ([lastEnding(),lastEnding(1),lastEnding(2)] == ['FU_Route','FU_Route','FU_Route'])
+	if ([lastEnding(), lastEnding(1), lastEnding(2)] == ['FU_Route', 'FU_Route', 'FU_Route'])
 		PlayState.instance.addDialogueJsonPath('scenes/saves/move-from-fu-route');
 }
 
