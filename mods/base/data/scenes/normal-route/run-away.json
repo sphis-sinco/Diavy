@@ -55,12 +55,12 @@
                 "choices": [
                         {
                                 "keyString": "1",
-                                "name": "Yes",
+                                "name": "No",
                                 "script_event": "gainControl"
                         },
                         {
                                 "keyString": "2",
-                                "name": "Yes",
+                                "name": "No",
                                 "script_event": "gainControl"
                         }
                 ]
@@ -88,6 +88,10 @@
                                 "args": ["snd_knight_laugh"]
                         },
                         {
+                                "name": "playSound",
+                                "args": ["snd_fountain_make"]
+                        },
+                        {
                                 "name": "setChangeValue_Character",
                                 "args": [10]
                         },
@@ -96,9 +100,9 @@
                         { "name": "decrease_Character_Hue" },
                         { "name": "decrease_Character_Saturation" },
                         { "name": "decrease_Character_Saturation" },
-                        { "name": "auto_skip", "args": [3.65] }
+                        { "name": "auto_skip", "args": [10.65] }
                 ],
-                "wait": 3
+                "wait": 10
         },
         {
                 "line": "",
@@ -117,6 +121,10 @@
                 "line": "Asshole.",
                 "character": "berin-back-turnt-mad",
                 "background": "",
-                "speed": 0.1
+                "speed": 0.1,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["snd_ominous"]
+                }
         }
 ]
