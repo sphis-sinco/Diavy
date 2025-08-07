@@ -1,5 +1,6 @@
 # r10 (8/7/2025)
 ## Base mod (1.3)
+- In debug builds you will be sent to the `gijujaki-home-attack` scene from the home route
 ## Engine
 - `blank_update` gives the `elapsed` argument
 - Added `GoodCacheMessage` compiler flag that enables the traces of "Cached ${file}"
