@@ -12,6 +12,7 @@ import flixel.math.*;
 import flixel.text.*;
 import flixel.tweens.*;
 import flixel.util.*;
+import flixel.util.typeLimit.NextState;
 import haxe.PosInfos;
 import play.*;
 import play.dialogue.*;
@@ -63,8 +64,8 @@ class ScriptsManager
 				}
 			}
 		}
-		readDirectory('assets/scripts');
 		readDirectory(Assets.getAssetPath('scripts'));
+		readDirectory('assets/scripts');
 
 		for (path in scriptPaths)
 		{
@@ -85,6 +86,7 @@ class ScriptsManager
 		setScript('PlayState', PlayState);
 		setScript('DialogueTextInitalizer', DialogueTextInitalizer);
 		setScript('BlankState', BlankState);
+		setScript('ModMenu', ModMenu);
 
 		setScript('Assets', Assets);
 		setScript('ScriptsManager', ScriptsManager);
@@ -146,6 +148,10 @@ class ScriptsManager
 		setScript('colorFromString', function(string:String)
 		{
 			return FlxColor.fromString(string);
+		});
+		setScript('switchState', function(nextState:NextState)
+		{
+			FlxG.switchState(nextState);
 		});
 
 		// init mod

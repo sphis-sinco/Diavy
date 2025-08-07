@@ -13,20 +13,20 @@ function gameplay_initalize()
 		if (PlayState.instance.lastLoadedJSONPath == 'trip-forest-fu')
 		{
 			ScriptsManager.callScript('playSound', ['snd_ominous_worse']);
-			prefix = 'F.U. Route (Part 1)'
+			prefix = 'F.U. Route (Part 1)';
 			FlxG.save.data.endings.push('FU_Route');
 		}
 		else
 		{
 			if (PlayState.instance.lastLoadedJSONPath == 'home-intruders')
 			{
-				prefix = 'Home Route (Part 1)'
+				prefix = 'Home Route (Part 1)';
 				FlxG.save.data.endings.push('Home_Route');
 			}
 			else
 			{
 				if (PlayState.instance.lastLoadedJSONPath == 'run-away')
-					prefix = 'Normal Route (Part 2)'
+					prefix = 'Normal Route (Part 2)';
 				FlxG.save.data.endings.push('Normal_Route');
 			}
 			ScriptsManager.callScript('playSound', ['TOBECONTINUED']);

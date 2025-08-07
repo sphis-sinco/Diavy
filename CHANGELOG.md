@@ -1,8 +1,14 @@
 # r9 (8/7/2025)
-This is the release of 1.3 for base mod
-## Base mod
+## Base mod (1.2.1)
+- Fixed missing semicolons (this is why I need fucking playtesters that actually fucking *PLAYTEST*)
 
 ## Engine
+- Scripts can now reference `ModMenu`
+- Added `goToGameplay` variable to the `ModMenu` so that scripts can modify it and send players to `BlankState` (and do what they want there)
+- Added new `switchState` function for scripts
+- Added new `blank_update` function for scripts
+- Added new `blank_create` function for scripts
+- Added new `BlankState` class for scripts
 
 # r8 (8/6/2025)
 This is the release of 1.2 for base mod

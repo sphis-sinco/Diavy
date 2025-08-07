@@ -12,6 +12,7 @@ class ModMenu extends FlxState
 
 	static var page:FlxTypedGroup<FlxText>;
 
+	public static var goToGameplay:Bool = true;
 	public static var instance:ModMenu;
 
 	var descriptionText:FlxText;
@@ -107,7 +108,11 @@ class ModMenu extends FlxState
 			@:privateAccess {
 				ScriptsManager.loadScripts();
 			}
-			FlxG.switchState(() -> new PlayState());
+
+			if (!goToGameplay)
+				FlxG.switchState(() -> new BlankState());
+			if (goToGameplay)
+				FlxG.switchState(() -> new PlayState());
 		}
 
 		fixyfixfix();
@@ -186,7 +191,6 @@ class ModMenu extends FlxState
 
 			x_mod.updateMetadata();
 		}
-
 		FileTypeTracer.traceFileTypes();
 	}
 }
