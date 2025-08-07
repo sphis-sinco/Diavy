@@ -1,0 +1,52 @@
+[
+        {
+                "line": "Glad you decided to change your mind.",
+                "character": "berin-back",
+                "background": "room",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "BG_FadeOut" },
+                        { "name": "Disable_Text_Sound" },
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        }
+                ]
+        },
+        {
+                "line": "I grow more and more tired of watching the same things happen over and over...",
+                "character": "berin-back",
+                "background": "room",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                }
+        },
+        {
+                "line": "...to her.",
+                "character": "berin-back",
+                "background": "room",
+                "text_color": "RED",
+                "text_outline_color": "BLUE",
+                "text_outline": true,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                },
+                "speed": 0.1
+        },
+        {
+                "line": "...",
+                "character": "berin-back",
+                "background": "sky-orange",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "BG_FadeIn" },
+                        { "name": "Enable_Text_Sound" }
+                ]
+        }
+]

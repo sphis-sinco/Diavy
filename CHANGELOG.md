@@ -1,6 +1,9 @@
 # r8 (8/2025)
 This is the release of 1.2 for base mod
 - Added chapter 2 of the normal route (base mod)
+- Added message for if you repeat an FU_Route 3 times and then not doing a 4th
+- Added message for if you repeat an FU_Route after doing one previously
+- Added saves to base mod
 - Fixed typo in after Backing up from Miy
 - Added new `gameplay_initalize` function for scripts
 - Added `characterEvents` script

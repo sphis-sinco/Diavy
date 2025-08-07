@@ -1,0 +1,28 @@
+[
+        {
+                "line": "Why did you make me do this again...?",
+                "character": "berin-back",
+                "background": "room",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "BG_FadeOut" },
+                        { "name": "Disable_Text_Sound" },
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        }
+                ]
+        },
+        {
+                "line": "...",
+                "character": "berin-back",
+                "background": "sky-orange",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "BG_FadeIn" },
+                        { "name": "Enable_Text_Sound" }
+                ]
+        }
+]

@@ -4,7 +4,9 @@ function gameplay_setDialogue()
 	if (is_debug)
 		PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
 	else
+	{
 		PlayState.instance.addDialogueJsonPath('start');
+	}
 
 	FlxG.save.bind('Diavy-BaseGame', 'Sinco');
 	FlxG.save.data.unlocks ??= [];

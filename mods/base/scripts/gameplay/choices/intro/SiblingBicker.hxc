@@ -1,29 +1,28 @@
+function lastEnding(offset:Int = 0)
+{
+	if (FlxG.save.data.endings != null)
+		return FlxG.save.data.endings[FlxG.save.data.endings.length - (1 + offset)];
+
+	return null;
+}
+
+function FUFUFU_NewRoute()
+{
+	if ([lastEnding(),lastEnding(1),lastEnding(2)] == ['FU_Route','FU_Route','FU_Route'])
+		PlayState.instance.addDialogueJsonPath('scenes/saves/move-from-fu-route');
+}
+
 function tripIntro()
 {
+	FUFUFU_NewRoute();
 	PlayState.instance.addDialogueJsonPath('scenes/trip/intro');
 }
 
 function sayFuckYou()
 {
 	PlayState.instance.addDialogueJsonPath('choices/intro-siblingBickering/say-fuck-you');
-	if (FlxG.save.data.endings.contains('FU_Route'))
-	{
-		PlayState.instance.addDialogueJson([{
-			line: 'Why did you make me do this again...?',
-			character: 'berin-back',
-			background: 'room',
-			text_color: 'RED',
-			text_outline: true,
-			script_events: [{name: 'BG_FadeOut'},{name: 'Disable_Text_Sound'},{name: 'playSound', args: ['spr_kris_phone_message']}]
-		},{
-			line: '...',
-			character: 'berin-back',
-			background: 'sky-orange',
-			text_color: 'RED',
-			text_outline: true,
-			script_events: [{name: 'BG_FadeIn'},{name: 'Enable_Text_Sound'}]
-		}]);
-	}
+	if (lastEnding(0) == 'FU_Route')
+		PlayState.instance.addDialogueJsonPath('scenes/saves/repeat-fu-route');
 	PlayState.instance.addDialogueJsonPath('scenes/trip/intro-fu');
 }
 
