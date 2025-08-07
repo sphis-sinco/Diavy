@@ -15,3 +15,15 @@ function turnOnLight()
 	}
 	ScriptsManager.callScript('turnOnLightEvent');
 }
+
+function acceptTrip()
+{
+	PlayState.instance.addDialogueJsonPath('choices/trip/accept-trip');
+	PlayState.instance.addDialogueJsonPath('scenes/trip/normal/trip-forest');
+	if (fun > 60 && fun < 65)
+	{
+		PlayState.instance.addDialogueJsonPath('fub/gijujaki-gun');
+	}
+	else
+		PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
+}

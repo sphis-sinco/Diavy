@@ -17,9 +17,19 @@ function YouArentInControlForThis()
 		});
 	}
 
-	if ([lastEnding(), lastEnding(1), lastEnding(2), lastEnding(3)] == ['Normal_Route', 'Normal_Route', 'Normal_Route', 'Normal_Route'])
+	if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun') return;
+
+	if ([lastEnding(0), lastEnding(1), lastEnding(2), lastEnding(3)] == ['Normal_Route', 'Normal_Route', 'Normal_Route', 'Normal_Route'])
 		PlayState.instance.addDialogueJsonPath('scenes/saves/4-normal-routes');
-	else if ([lastEnding(), lastEnding(1), lastEnding(2)] == ['Normal_Route', 'Normal_Route', 'Normal_Route'])
+	else if ([lastEnding(0), lastEnding(1), lastEnding(2)] == ['Normal_Route', 'Normal_Route', 'Normal_Route'])
 		PlayState.instance.addDialogueJsonPath('scenes/saves/repeated-normal-route');
 	PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
+}
+
+function lastEnding(offset:Int = 0)
+{
+	if (FlxG.save.data.endings != null)
+		return FlxG.save.data.endings[FlxG.save.data.endings.length - (1 + offset)];
+
+	return null;
 }

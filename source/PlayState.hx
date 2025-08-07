@@ -4,6 +4,7 @@ import flixel.addons.text.FlxTypeText;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.input.keyboard.FlxKey;
 import flixel.sound.FlxSound;
+import flixel.util.FlxTimer;
 import play.*;
 import play.dialogue.*;
 import play.modules.*;
@@ -225,4 +226,58 @@ class PlayState extends FlxState
 
 	public function beginDialogueTyping()
 		BeginDialogueTyping.execute();
+
+	#if hxvlc
+	public var video:Null<FlxVideoSprite>;
+
+	public function playVideo(id:String)
+	{
+		function finishVideo():Void
+		{
+			if (video != null)
+			{
+				remove(video);
+				video.destroy();
+				video = null;
+			}
+		}
+
+		video = new FlxVideoSprite(0, 0);
+		video.active = false;
+		video.antialiasing = true;
+		video.bitmap.onEncounteredError.add(function(message:String):Void
+		{
+			trace('VLC Error: $message');
+		});
+		video.bitmap.onEndReached.add(finishVideo);
+		video.bitmap.onFormatSetup.add(function():Void
+		{
+			if (video.bitmap != null && video.bitmap.bitmapData != null)
+			{
+				final scale:Float = Math.min(FlxG.width / video.bitmap.bitmapData.width, FlxG.height / video.bitmap.bitmapData.height);
+
+				video.setGraphicSize(video.bitmap.bitmapData.width * scale, video.bitmap.bitmapData.height * scale);
+				video.updateHitbox();
+				video.screenCenter();
+			}
+		});
+
+		try
+		{
+			final file:String = Assets.getVideoPath(id);
+
+			if (file != null && file.length > 0)
+				video.load(file);
+			else
+				trace('Where\'s the file?');
+		}
+		catch (e:Dynamic)
+			trace(e);
+
+		FlxTimer.wait(0.001, function():Void
+		{
+			video.play();
+		});
+	}
+	#end
 }

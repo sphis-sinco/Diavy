@@ -1,11 +1,6 @@
-function acceptTrip()
-{
-	PlayState.instance.addDialogueJsonPath('choices/trip/accept-trip');
-	PlayState.instance.addDialogueJsonPath('scenes/trip/normal/trip-forest');
-	PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-attack');
-}
-
 function declineTrip()
 {
 	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip');
 }
+
+// accept trip is in FunValue.hxc

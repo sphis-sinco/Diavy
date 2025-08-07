@@ -33,10 +33,16 @@ function gameplay_initalize()
 					prefix = 'Normal Route (Part 2)';
 				FlxG.save.data.endings.push('Normal_Route');
 			}
-			ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
+                        if (PlayState.instance.lastLoadedJSONPath != 'gijujaki-gun')
+                                ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 		}
 
 		endingText.text = prefix + ':\n\n' + endingText.text;
+		if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun')
+                {
+                        endingText.text = 'YOU DIED.';
+                        PlayState.playVideo('undertale');
+                }
 		endingText.screenCenter();
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)
@@ -68,6 +74,7 @@ function gameplay_initalize()
 		var startingNumber = 5;
 		var increamentNumber = .05;
 
+		if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-fun'){
 		waitAndSetText(startingNumber + increamentNumber, 'You');
 		waitAndSetText(startingNumber + increamentNumber * 2, 'You can');
 		waitAndSetText(startingNumber + increamentNumber * 3, 'You can press');
@@ -78,6 +85,6 @@ function gameplay_initalize()
 		waitAndSetText(startingNumber + increamentNumber * 8, 'You can press [BACKSPACE]\nto go to the');
 		waitAndSetText(startingNumber + increamentNumber * 9, 'You can press [BACKSPACE]\nto go to the mods');
 		waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
-		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');
+		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');}
 	}
 }

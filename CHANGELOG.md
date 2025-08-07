@@ -1,5 +1,8 @@
 # r10 (8/7/2025)
 ## Base mod (1.3)
+- Fixed the Fake Choice not being able to read your last few endings.
+- Fixed "AND PUT GIVE IT TO ME." line.
+- Added fun value event for if it's between 60 and 65
 - The To-Be-Continued message is screen-centered properly
 - Character shaders are applied to animated characters via merging `CharacterShader.hxc` with `characterEvents.hxc`
 - Background shaders are applied to animated backgrounds via merging `BackgroundShader.hxc` with `backgroundEvents.hxc`

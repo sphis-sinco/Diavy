@@ -148,22 +148,9 @@
         {
                 
                 "line": "",
-                "character": "gijujakiMember/gm-hurt-stabbed",
+                "character": "berin-shot",
                 "background": "",
-                "script_event": {
-                        "name": "Slash"
-                }
-        },
-        {
-                
-                "line": "!",
-                "character": "miy-shocked",
-                "background": ""
-        },
-        {
-                
-                "line": "!",
-                "character": "trime-holyfuck",
-                "background": ""
+                "script_event": {"name": "playSound", "args": ["vase_crash"]},
+                "script_events": [{"name": "auto_skip", "args": [0.2]}]
         }
 ]

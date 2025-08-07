@@ -1,8 +1,9 @@
 function gameplay_setDialogue()
 {
 	PlayState.instance.deleteAllDialogue();
+		// PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-home-attack');
 	if (is_debug)
-		PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-home-attack');
+		PlayState.instance.addDialogueJsonPath('fun/gijujaki-gun');
 	else
 	{
 		PlayState.instance.addDialogueJsonPath('start');

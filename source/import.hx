@@ -11,3 +11,6 @@ using StringTools;
 import sys.FileSystem;
 import sys.io.File;
 #end
+#if hxvlc
+import hxvlc.flixel.FlxVideoSprite;
+#end
