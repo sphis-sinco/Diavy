@@ -11,6 +11,7 @@ function turnOnLight()
 	if (fun == 6 || fun == 7)
 	{
 		PlayState.instance.addDialogueJsonPath('fun/turn-on-light');
+		FlxG.save.data.unlocks.push('FunValueEvent_LightIssues');
 	}
 	ScriptsManager.callScript('turnOnLightEvent');
 }
