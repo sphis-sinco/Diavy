@@ -141,7 +141,10 @@
         {
                 "line": "Huh?",
                 "character": "miy-confused",
-                "background": "tripForest/Motoia2"
+                "background": "tripForest/Motoia2",
+                "script_event": {
+                        "name": "BG_FadeIn"
+                }
         },
         {
                 "line": "Talking about that dude.",
@@ -167,5 +170,182 @@
                 "line": "Experience.",
                 "character": "trime-meh",
                 "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "Whatev.",
+                "character": "berin-back",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "HEY!",
+                "character": "miy-annoyed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "What's with all this serious talk?",
+                "character": "miy-annoyed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "You're normally the goofy one!",
+                "character": "miy-annoyed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "...",
+                "character": "berin-back",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "Are you fucking kidding me?",
+                "character": "berin-back-turnt-screaming",
+                "background": "tripForest/Motoia2",
+                "script_event": {
+                        "name": "BG_FadeOut"
+                }
+        },
+        {
+                "line": "!",
+                "character": "miy-shocked",
+                "background": ""
+        },
+        {
+                "line": "I just saved our lives from apparently this giant criminal organization apparently.",
+                "character": "berin-possessed",
+                "background": "",
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                }
+        },
+        {
+                "line": "AND YOU'RE SAYING I CAN'T BE SERIOUS ABOUT IT!?",
+                "character": "",
+                "background": "",
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                },
+                "script_event": {
+                        "name": "animatedCharacter",
+                        "args": [
+                                "berin-possessed-animated",
+                                200,
+                                200,
+                                [0, 1],
+                                20
+                        ]
+                }
+        },
+        {
+                "line": "THEY COULD'VE FUCKING KILLED YOU.",
+                "character": "",
+                "background": "",
+                "script_event": {
+                        "name": "auto_skip",
+                        "args": [1.66]
+                }
+        },
+        {
+                "line": "RAPED YOU.",
+                "character": "",
+                "background": "",
+                "script_event": {
+                        "name": "auto_skip",
+                        "args": [0.5]
+                }
+        },
+        {
+                "line": "AND YOUR MAD ABOUT ME BEING MAD TOWARDS YOUR FUCKING GIRLFRIEND!?",
+                "character": "",
+                "background": "",
+                "script_events": {
+                        "name": "auto_skip",
+                        "args": [3.25]
+                }
+        },
+        {
+                "line": "WHO DIDN'T DO SHIT TO HELP YOU!?",
+                "character": "",
+                "background": "",
+                "script_events": {
+                        "name": "auto_skip",
+                        "args": [1.6]
+                }
+        },
+        {
+                "line": "Boyfri--!",
+                "character": "",
+                "background": "",
+                "script_events": [
+                        {
+                                "name": "auto_skip",
+                                "args": [0.4]
+                        },
+                        { "name": "removeAnimatedCharacter" }
+                ]
+        },
+        {
+                "line": "SHUT UP!",
+                "character": "",
+                "background": "",
+                "backgroundSettings": { "scaleOffsets": { "x": 2, "y": 2.2 } },
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                },
+                "script_events": [
+                        {
+                                "name": "animatedCharacter",
+                                "args": [
+                                        "berin-possessed-animated",
+                                        200,
+                                        200,
+                                        [0, 1],
+                                        20
+                                ]
+                        },
+                        {
+                                "name": "animatedBackground",
+                                "args": [
+                                        "manipulationOfControl",
+                                        200,
+                                        200,
+                                        [0, 1, 2, 3, 4],
+                                        20
+                                ]
+                        },
+                        {
+                                "name": "playSound",
+                                "args": ["snd_fountain_make"]
+                        },
+                        { "name": "decrease_Character_Saturation" },
+                        { "name": "decrease_Character_Saturation" },
+                        { "name": "auto_skip", "args": [7.65] }
+                ],
+                "wait": 7
+        },
+        {
+                "line": "...",
+                "character": "berin-possessed",
+                "background": "",
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                },
+                "script_events": [
+                        { "name": "removeAnimatedBackground" },
+                        { "name": "removeAnimatedCharacter" }
+                ],
+                "speed": 0.5
+        },
+        {
+                "line": "...",
+                "character": "berin-back",
+                "background": "",
+                "characterSettings": {
+                        "positionOffsets": { "x": -12, "y": -4 }
+                },
+                "script_events": [
+                        { "name": "removeAnimatedBackground" },
+                        { "name": "removeAnimatedCharacter" }
+                ],
+                "speed": 0.5
         }
 ]
