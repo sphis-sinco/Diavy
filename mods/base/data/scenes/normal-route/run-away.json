@@ -85,10 +85,6 @@
                         },
                         {
                                 "name": "playSound",
-                                "args": ["snd_knight_laugh"]
-                        },
-                        {
-                                "name": "playSound",
                                 "args": ["snd_fountain_make"]
                         },
                         {
