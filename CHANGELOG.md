@@ -1,10 +1,10 @@
 # r8 (8/6/2025)
 This is the release of 1.2 for base mod
 - Added part 2 of the normal route (base mod)
-- Added message for if you repeat an Normal Route 4 times in a row.
-- Added message for if you repeat an Normal Route 3 times in a row.
-- Added message for if you repeat an F. U. Route 3 times and then not doing a 4th
-- Added message for if you repeat an F. U. Route after doing one previously
+- Added message for if you repeat an Normal Route 4 times in a row. (base mod)
+- Added message for if you repeat an Normal Route 3 times in a row. (base mod)
+- Added message for if you repeat an F. U. Route 3 times and then not doing a 4th (base mod)
+- Added message for if you repeat an F. U. Route after doing one previously (base mod)
 - Added saves to base mod
 - Fixed typo in after Backing up from Miy
 - Added new `gameplay_initalize` function for scripts
