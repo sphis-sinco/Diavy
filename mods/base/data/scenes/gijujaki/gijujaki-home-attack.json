@@ -1,0 +1,30 @@
+[
+        {
+                "line": "Alright. We can look for it. No one's here.",
+                "character": "gijujakiMember/gm-regular",
+                "background": "home-wideHall"
+        },
+        {
+                "line": "'Kay.",
+                "character": "gijujakiMember/gm-regular",
+                "characterSettings": { "flipped": { "x": true } },
+                "background": "home-wideHall"
+        },
+        {
+                "line": "(WHAT THE FUCK!?)",
+                "character": "berin-wtf",
+                "background": "home-hall-empty",
+                "choices": [
+                        {
+                                "keyString": "1",
+                                "name": "Hide",
+                                "script_event": "HideFromGijujaki"
+                        },
+                        {
+                                "keyString": "2",
+                                "name": "Attack",
+                                "script_event": "AttackGijujaki"
+                        }
+                ]
+        }
+]
