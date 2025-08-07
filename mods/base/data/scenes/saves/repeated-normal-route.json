@@ -1,0 +1,53 @@
+[
+        {
+                "line": "Somehow each time you've made me do that.",
+                "character": "berin-back",
+                "background": "",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "Disable_Text_Sound" },
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        }
+                ]
+        },
+        {
+                "line": "I don't get tired of it.",
+                "character": "berin-back",
+                "background": "",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                },
+                "speed": 0.1
+        },
+        {
+                "line": "...",
+                "character": "berin-back",
+                "background": "",
+                "text_color": "RED",
+                "text_outline": true
+        },
+        {
+                "line": "We should do it again.",
+                "character": "berin-insane",
+                "background": "",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_event": {
+                        "name": "playSound",
+                        "args": ["spr_kris_phone_message"]
+                },
+                "speed": 0.1
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "",
+                "script_events": [{ "name": "Enable_Text_Sound"}, { "name": "auto_skip", "args": [0]}]
+        }
+]

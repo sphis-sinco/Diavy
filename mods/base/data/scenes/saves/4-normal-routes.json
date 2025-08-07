@@ -1,0 +1,22 @@
+[
+        {
+                "line": "Thanks",
+                "character": "berin-insane",
+                "background": "",
+                "text_color": "RED",
+                "text_outline": true,
+                "script_events": [
+                        { "name": "Disable_Text_Sound" },
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        }
+                ]
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "",
+                "script_events": [{ "name": "Enable_Text_Sound"}, { "name": "auto_skip", "args": [0]}]
+        }
+]

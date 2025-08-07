@@ -17,5 +17,9 @@ function YouArentInControlForThis()
 		});
 	}
 
+	if ([lastEnding(),lastEnding(1),lastEnding(2),lastEnding(3)] == ['Normal_Route','Normal_Route','Normal_Route','Normal_Route'])
+		PlayState.instance.addDialogueJsonPath('scenes/saves/4-normal-routes');
+	else if ([lastEnding(),lastEnding(1),lastEnding(2)] == ['Normal_Route','Normal_Route','Normal_Route'])
+		PlayState.instance.addDialogueJsonPath('scenes/saves/repeated-normal-route');
 	PlayState.instance.addDialogueJsonPath('scenes/normal-route/run-away');
 }
