@@ -6,7 +6,7 @@ import play.defines.DefineManager;
 
 class Main extends Sprite
 {
-	public static var gameRelease:Int = 9;
+	public static var gameRelease:Int = 10;
 
 	public function new()
 	{
