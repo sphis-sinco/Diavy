@@ -1,0 +1,54 @@
+function Char_FadeIn()
+{
+	PlayState.instance.dialogue_character.alpha = 0.0;
+	FlxTween.tween(PlayState.instance.dialogue_character, {alpha: 1}, 1, {
+		ease: FlxEase.sineIn,
+	});
+}
+
+function Char_FadeOut()
+{
+	PlayState.instance.dialogue_character.alpha = 1.0;
+	FlxTween.tween(PlayState.instance.dialogue_character, {alpha: 0}, 1, {
+		ease: FlxEase.sineOut,
+	});
+}
+
+var animChar:FlxSprite;
+
+function animatedCharacter(name:String, width:Int, height:Int, frames:Array<Int>, ?fps:Int)
+{
+	animChar = new FlxSprite();
+	animChar.loadGraphic(Assets.getAssetPath('images/dialogue/characters/' + name + '.png'), true, width, height);
+	animChar.animation.add('anim', frames, fps ?? 24);
+	animChar.animation.play('anim');
+	animChar.screenCenter();
+
+	var curDia = PlayState.instance.dialogue[PlayState.instance.dialogue_progress];
+
+	if (curDia.characterSettings != null)
+	{
+		if (curDia.characterSettings.positionOffsets != null)
+		{
+			animChar.x += curDia.characterSettings.positionOffsets.x;
+			animChar.y += curDia.characterSettings.positionOffsets.y;
+		}
+		if (curDia.characterSettings.scaleOffsets != null)
+		{
+			animChar.scale.x += curDia.characterSettings.scaleOffsets.x;
+			animChar.scale.y += curDia.characterSettings.scaleOffsets.y;
+		}
+		if (curDia.characterSettings.flipped != null)
+		{
+			animChar.flipX = curDia.characterSettings.flipped.x;
+			animChar.flipY = curDia.characterSettings.flipped.y;
+		}
+	}
+
+	PlayState.instance.addObject(animChar);
+}
+
+function removeAnimatedCharacter()
+{
+	PlayState.instance.remove(animChar);
+}

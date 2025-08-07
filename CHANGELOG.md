@@ -1,39 +1,51 @@
 # r8 (8/2025)
 This is the release of 1.2 for base mod
 - Added chapter 2 of the normal route (base mod)
+- Added `characterEvents` script
+- - new event: `Char_FadeIn`
+- - new event: `Char_FadeOut`
+- - new event: `animatedCharacter`
+- - - args: `name` (String)
+- - - args: `width` (Int)
+- - - args: `height` (Int)
+- - - args: `frames` (Array of Integers)
+- - - args: `fps` (Int)
+- - new event: `removeAnimatedCharacter`
 - Added `dialogueEvents` script
-- - new event: Enable_Text_Sound
-- - new event: Disable_Text_Sound
-- - new event: auto_skip
-- - - arg: wait (Float)
+- - new event: `Enable_Text_Sound`
+- - new event: `Disable_Text_Sound`
+- - new event: `auto_skip`
+- - - arg: `wait` (Float)
 - Added `CharacterShader` script
-- - new event: initalizeCharacterShader
-- - new event: setChangeValue_Character
-- - - arg: newcv (Int)
-- - new event: decrease_Character_Saturation
-- - new event: increase_Character_Saturation
-- - new event: decrease_Character_Hue
-- - new event: increase_Character_Hue
-- - new event: decrease_Character_contrast
-- - new event: increase_Character_contrast
+- - new event: `initalizeCharacterShader`
+- - new event: `setChangeValue_Character`
+- - - arg: `newcv` (Int)
+- - new event: `decrease_Character_Saturation`
+- - new event: `increase_Character_Saturation`
+- - new event: `decrease_Character_Hue`
+- - new event: `increase_Character_Hue`
+- - new event: `decrease_Character_contrast`
+- - new event: `increase_Character_contrast`
 - Moved `BackgroundShader` scripts from base mod to the main engine
-- - new event: initalizeBackgroundShader
-- - new event: setChangeValue_Background
-- - - arg: newcv
-- - new event: decrease_Background_Saturation
-- - new event: increase_Background_Saturation
-- - new event: decrease_Background_Hue
-- - new event: increase_Background_Hue
-- - new event: decrease_Background_contrast
-- - new event: increase_Background_contrast
-- Added `removeAnimatedBackground` event for scripts
-- Added `animatedBackground` event for scripts
-- - args: name
-- - args: width
-- - args: height
-- - args: frames
-- Added `BG_FadeOut` event for scripts
-- Added `BG_FadeIn` event for scripts
+- - new event: `initalizeBackgroundShader`
+- - new event: `setChangeValue_Background`
+- - - arg: `newcv` (Int)
+- - new event: `decrease_Background_Saturation`
+- - new event: `increase_Background_Saturation`
+- - new event: `decrease_Background_Hue`
+- - new event: `increase_Background_Hue`
+- - new event: `decrease_Background_contrast`
+- - new event: `increase_Background_contrast`
+- Added `backgroundEvents` script
+- - new event: `BG_FadeIn`
+- - new event: `BG_FadeOut`
+- - new event: `animatedBackground`
+- - - args: `name` (String)
+- - - args: `width` (Int)
+- - - args: `height` (Int)
+- - - args: `frames` (Array of Integers)
+- - - args: `fps` (Int)
+- - new event: `removeAnimatedBackground`
 - Some changes has been made to chapter 1 of the F.U. route (base mod)
 - Some changes has been made to chapter 1 of the normal route (base mod)
 - `Init.hxc` has been split into `Start.hxc` and `EndCallback.hxc` (base mod)

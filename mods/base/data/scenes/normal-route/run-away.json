@@ -39,18 +39,21 @@
         },
         {
                 "line": "Right?",
-                "character": "",
+                "character": "berin-back",
                 "background": "",
                 "speed": 0.1,
-                "script_event": {
-                        "name": "playSound",
-                        "args": ["spr_kris_phone_message"]
-                }
+                "script_events": [
+                        {
+                                "name": "playSound",
+                                "args": ["spr_kris_phone_message"]
+                        },
+                        { "name": "Char_FadeIn" }
+                ]
         },
         {
                 "script_event": { "name": "Enable_Text_Sound" },
                 "line": "...",
-                "character": "",
+                "character": "berin-back",
                 "background": "",
                 "choices": [
                         {
@@ -67,7 +70,7 @@
         },
         {
                 "line": "Good. You know.",
-                "character": "berin-possessed",
+                "character": "",
                 "background": "",
                 "backgroundSettings": { "scaleOffsets": { "x": 2, "y": 2.2 } },
                 "characterSettings": {
@@ -75,9 +78,18 @@
                 },
                 "script_events": [
                         {
+                                "name": "animatedCharacter",
+                                "args": [
+                                        "berin-possessed-animated",
+                                        200,
+                                        200,
+                                        [0, 1]
+                                ]
+                        },
+                        {
                                 "name": "animatedBackground",
                                 "args": [
-                                        "dialogue/backgrounds/manipulationOfControl",
+                                        "manipulationOfControl",
                                         200,
                                         200,
                                         [0, 1, 2, 3, 4]
@@ -106,6 +118,7 @@
                 "background": "",
                 "script_events": [
                         { "name": "removeAnimatedBackground" },
+                        { "name": "removeAnimatedCharacter" },
                         { "name": "increase_Character_Hue" },
                         { "name": "increase_Character_Hue" },
                         { "name": "increase_Character_Hue" },

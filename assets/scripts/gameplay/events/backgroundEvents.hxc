@@ -16,11 +16,11 @@ function BG_FadeOut()
 
 var animBG:FlxSprite;
 
-function animatedBackground(name:String, width:Int, height:Int, frames:Array<Int>)
+function animatedBackground(name:String, width:Int, height:Int, frames:Array<Int>, fps:Int)
 {
 	animBG = new FlxSprite();
-	animBG.loadGraphic(Assets.getAssetPath('images/' + name + '.png'), true, width, height);
-	animBG.animation.add('anim', frames);
+	animBG.loadGraphic(Assets.getAssetPath('images/dialogue/backgrounds/' + name + '.png'), true, width, height);
+	animBG.animation.add('anim', frames, fps ?? 24);
 	animBG.animation.play('anim');
 	animBG.screenCenter();
 
