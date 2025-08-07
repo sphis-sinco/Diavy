@@ -11,6 +11,6 @@ class BlankState extends FlxState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		ScriptsManager.callScript('blank_update');
+		ScriptsManager.callScript('blank_update', [elapsed]);
 	}
 }

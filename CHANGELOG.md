@@ -1,6 +1,7 @@
 # r10 (8/7/2025)
 ## Base mod (1.3)
 ## Engine
+- `blank_update` gives the `elapsed` argument
 - Added `GoodCacheMessage` compiler flag that enables the traces of "Cached ${file}"
 
 # r9 (8/7/2025)
