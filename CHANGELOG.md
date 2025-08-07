@@ -1,5 +1,5 @@
 # r10 (8/7/2025)
-## Base mod (1.3)
+## Base mod (1.2.2)
 - There is now a video of the undertale game over in the files.
 - Fixed the Fake Choice not being able to read your last few endings.
 - Fixed "AND PUT GIVE IT TO ME." line.
