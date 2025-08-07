@@ -357,5 +357,16 @@
                         { "name": "removeAnimatedCharacter" }
                 ],
                 "speed": 0.5
+        },
+        {
+                "line": "",
+                "character": "",
+                "background": "",
+                "script_events": [
+                        { "name": "walk_steps", "args": [10] },
+                        { "name": "DialogueBox_FadeOut" },
+                        { "name": "DialogueText_FadeOut" }
+                ],
+                "wait": 5
         }
 ]

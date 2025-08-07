@@ -19,6 +19,10 @@ This is the release of 1.2 for base mod
 - - - args: `fps` (Int)
 - - new event: `removeAnimatedCharacter`
 - Added `dialogueEvents` script
+- - new event: `DialogueBox_FadeIn`
+- - new event: `DialogueBox_FadeOut`
+- - new event: `DialogueText_FadeIn`
+- - new event: `DialogueText_FadeOut`
 - - new event: `Enable_Text_Sound`
 - - new event: `Disable_Text_Sound`
 - - new event: `auto_skip`

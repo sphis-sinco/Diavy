@@ -1,0 +1,18 @@
+function walk_steps(steps:Int = 0)
+{
+	var stepSnd = 1;
+
+	for (i in 0...steps)
+	{
+		FlxTimer.wait(.4 * i, () ->
+		{
+			trace('' + (.4 * i));
+
+			ScriptsManager.callScript('playSound', ['snd_step' + stepSnd]);
+
+			stepSnd++;
+			if (stepSnd >= 3)
+				stepSnd = 1;
+		});
+	}
+}

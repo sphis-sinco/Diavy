@@ -15,3 +15,36 @@ function Enable_Text_Sound()
 {
 	PlayState.instance.dialogue_text.useDefaultSound = true;
 }
+
+function DialogueText_FadeIn()
+{
+	PlayState.instance.dialogue_text.alpha = 0.0;
+	FlxTween.tween(PlayState.instance.dialogue_text, {alpha: 1}, 1, {
+		ease: FlxEase.sineIn,
+	});
+}
+
+function DialogueText_FadeOut()
+{
+	PlayState.instance.dialogue_text.alpha = 1.0;
+	FlxTween.tween(PlayState.instance.dialogue_text, {alpha: 0}, 1, {
+		ease: FlxEase.sineOut,
+	});
+}
+
+
+function DialogueBox_FadeIn()
+{
+	PlayState.instance.dialogue_box.alpha = 0.0;
+	FlxTween.tween(PlayState.instance.dialogue_box, {alpha: 1}, 1, {
+		ease: FlxEase.sineIn,
+	});
+}
+
+function DialogueBox_FadeOut()
+{
+	PlayState.instance.dialogue_box.alpha = 1.0;
+	FlxTween.tween(PlayState.instance.dialogue_box, {alpha: 0}, 1, {
+		ease: FlxEase.sineOut,
+	});
+}
