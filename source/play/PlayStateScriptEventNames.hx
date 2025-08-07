@@ -3,6 +3,7 @@ package play;
 class PlayStateScriptEventNames
 {
 	public static var list = {
+		initalize: 'gameplay_initalize',
 		create: 'gameplay_create',
 		setdialogue: 'gameplay_setDialogue',
 		update: 'gameplay_update',

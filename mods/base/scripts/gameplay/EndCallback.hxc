@@ -1,4 +1,4 @@
-function gameplay_setDialogue()
+function gameplay_initalize()
 {
 	PlayState.instance.dialogue_end_callback = () ->
 	{

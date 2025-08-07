@@ -67,6 +67,15 @@ class PlayState extends FlxState
 
 		can_press_enter = true;
 
+		initalizePreferences();
+
+		dialogue = [
+			{line: 'Yo!'},
+			{line: 'Coolswag Coolswag'},
+			{line: 'You should probably add a mod or something.'}
+		];
+		ScriptsManager.callScript(scriptEventNames.initalize);
+
 		addObject = function(object:FlxBasic) add(object);
 		addDialogue = function(dia:DialogueEntry) this.dialogue.push(dia);
 		deleteAllDialogue = function() dialogue = [];
@@ -90,13 +99,6 @@ class PlayState extends FlxState
 		addDialogueJson = function(json:Array<DialogueEntry>) for (dia in json)
 			dialogue.push(dia);
 
-		initalizePreferences();
-
-		dialogue = [
-			{line: 'Yo!'},
-			{line: 'Coolswag Coolswag'},
-			{line: 'You should probably add a mod or something.'}
-		];
 		ScriptsManager.callScript(scriptEventNames.setdialogue);
 		dialogueEntryNullChecks();
 
