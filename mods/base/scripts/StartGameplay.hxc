@@ -1,4 +1,0 @@
-function blank_create()
-{
-        trace('no');
-}
