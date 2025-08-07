@@ -1,7 +1,7 @@
 function newRoute()
 {
 	PlayState.instance.addDialogueJsonPath('scenes/trip/home/home-intruders');
-	// PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-home-attack');
+	PlayState.instance.addDialogueJsonPath('scenes/gijujaki/gijujaki-home-attack');
 }
 
 function changedMind()
