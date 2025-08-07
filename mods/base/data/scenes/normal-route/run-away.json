@@ -368,5 +368,15 @@
                         { "name": "DialogueText_FadeOut" }
                 ],
                 "wait": 5
+        },
+        {
+                "line": "I'm sorry.",
+                "character": "",
+                "background": "",
+                "text_color": "YELLOW",
+                "script_events": [
+                        { "name": "DialogueText_FadeIn" }
+                ],
+                "speed": 0.1
         }
 ]
