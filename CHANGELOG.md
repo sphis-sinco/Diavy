@@ -1,3 +1,6 @@
+# r11 (8/7/2025)
+This just fixes compiling by removing video stuff
+
 # r10 (8/7/2025)
 ## Base mod (1.2.2)
 - There is now a video of the undertale game over in the files.

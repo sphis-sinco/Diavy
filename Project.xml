@@ -66,10 +66,6 @@
 	<haxelib name="hscript-iris" />
 	<define name="hscriptPos" />
 
-	<section if="cpp">
-		<haxelib name="hxvlc" if="desktop || mobile" unless="hl" />
-	</section>
-
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Allows
