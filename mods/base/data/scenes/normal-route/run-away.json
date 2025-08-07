@@ -137,5 +137,35 @@
                         "name": "playSound",
                         "args": ["snd_ominous"]
                 }
+        },
+        {
+                "line": "Huh?",
+                "character": "miy-confused",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "Talking about that dude.",
+                "character": "berin-pissed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "I agree.",
+                "character": "trime-pissed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "He was defenitely looking at Miy lustfully.",
+                "character": "trime-pissed",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "How can you tell?",
+                "character": "berin-ew",
+                "background": "tripForest/Motoia2"
+        },
+        {
+                "line": "Experience.",
+                "character": "trime-meh",
+                "background": "tripForest/Motoia2"
         }
 ]
