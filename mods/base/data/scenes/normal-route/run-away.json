@@ -202,7 +202,8 @@
                 "background": "tripForest/Motoia2",
                 "script_event": {
                         "name": "BG_FadeOut"
-                }
+                },
+                "speed": 0.25
         },
         {
                 "line": "!",
@@ -239,41 +240,50 @@
                 "line": "THEY COULD'VE FUCKING KILLED YOU.",
                 "character": "",
                 "background": "",
-                "script_event": {
-                        "name": "auto_skip",
-                        "args": [1.66]
-                }
-        },
-        {
-                "line": "RAPED YOU.",
-                "character": "",
-                "background": "",
-                "script_event": {
-                        "name": "auto_skip",
-                        "args": [0.5]
-                }
+                "script_events": [
+                        {
+                                "name": "auto_skip",
+                                "args": [1.66]
+                        },
+                        {
+                                "name": "playSound",
+                                "args": ["snd_step1"]
+                        }
+                ]
         },
         {
                 "line": "AND YOUR MAD ABOUT ME BEING MAD TOWARDS YOUR FUCKING GIRLFRIEND!?",
                 "character": "",
                 "background": "",
-                "script_events": {
-                        "name": "auto_skip",
-                        "args": [3.25]
-                }
+                "script_events": [
+                        {
+                                "name": "auto_skip",
+                                "args": [3.25]
+                        },
+                        {
+                                "name": "playSound",
+                                "args": ["snd_step2"]
+                        }
+                ]
         },
         {
                 "line": "WHO DIDN'T DO SHIT TO HELP YOU!?",
                 "character": "",
                 "background": "",
-                "script_events": {
-                        "name": "auto_skip",
-                        "args": [1.6]
-                }
+                "script_events": [
+                        {
+                                "name": "auto_skip",
+                                "args": [1.6]
+                        },
+                        {
+                                "name": "playSound",
+                                "args": ["snd_step1"]
+                        }
+                ]
         },
         {
                 "line": "Boyfri--!",
-                "character": "",
+                "character": "miy-confused",
                 "background": "",
                 "script_events": [
                         {
