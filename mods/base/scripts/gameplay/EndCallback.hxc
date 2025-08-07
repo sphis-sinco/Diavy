@@ -6,7 +6,6 @@ function gameplay_initalize()
 
 		var endingText = new FlxText(0, 0, 0, 'TO\nBE\nCONTINUED', 16);
 		endingText.alignment = 'center';
-		endingText.screenCenter();
 
 		var prefix = 'Normal Route (Part 1)';
 
@@ -33,6 +32,7 @@ function gameplay_initalize()
 		}
 
 		endingText.text = prefix + ':\n\n' + endingText.text;
+		endingText.screenCenter();
 		PlayState.instance.remove(PlayState.instance.backLayer);
 		if (PlayState.instance.dialogue_character != null)
 			PlayState.instance.remove(PlayState.instance.dialogue_character);

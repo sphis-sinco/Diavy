@@ -1,5 +1,6 @@
 # r10 (8/7/2025)
 ## Base mod (1.3)
+- The To-Be-Continued message is screen-centered properly
 - Character shaders are applied to animated characters via merging `CharacterShader.hxc` with `characterEvents.hxc`
 - Background shaders are applied to animated backgrounds via merging `BackgroundShader.hxc` with `backgroundEvents.hxc`
 - In debug builds you will be sent to the `gijujaki-home-attack` scene from the home route
