@@ -6,5 +6,7 @@ function gameplay_setDialogue()
 	else
 		PlayState.instance.addDialogueJsonPath('start');
 
+	FlxG.save.bind('Diavy-BaseGame', 'Sinco');
+
 	ScriptsManager.callScript('generateFunValue');
 }
