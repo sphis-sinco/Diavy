@@ -84,6 +84,7 @@ class ScriptsManager
 		setScript('AdjustColorShader', AdjustColorShader);
 		setScript('PlayState', PlayState);
 		setScript('DialogueTextInitalizer', DialogueTextInitalizer);
+		setScript('BlankState', BlankState);
 
 		setScript('Assets', Assets);
 		setScript('ScriptsManager', ScriptsManager);
