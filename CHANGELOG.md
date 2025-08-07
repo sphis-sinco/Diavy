@@ -1,6 +1,7 @@
 # r8 (8/2025)
 This is the release of 1.2 for base mod
 - Added chapter 2 of the normal route (base mod)
+- Fixed typo in after Backing up from Miy
 - Added new `gameplay_initalize` function for scripts
 - Added `characterEvents` script
 - - new event: `Char_FadeIn`
