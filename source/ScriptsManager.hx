@@ -54,13 +54,13 @@ class ScriptsManager
 			{
 				if (file.endsWith(Assets.HSCRIPT_EXT))
 				{
-					// trace(file);
-					if (!scriptPaths.contains('$dir/$file') && !scriptPaths.contains('$file'))
-						scriptPaths.push('$dir/$file');
+					trace('$dir/$file');
+					if (scriptPaths.contains(file))
+						trace('Have: $file');
 					else
 					{
-						if (scriptPaths.contains(file))
-							trace(file);
+						if (!scriptPaths.contains('$dir/$file'))
+							scriptPaths.push('$dir/$file');
 					}
 				}
 				else if (!file.contains('.'))

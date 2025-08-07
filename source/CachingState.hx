@@ -44,7 +44,11 @@ class CachingState extends FlxState
 			{
 				cachingProgress++;
 				if (currentCachedTextures.exists(image))
+				{
+					#if GoodCacheMessage
 					trace('Cached $image');
+					#end
+				}
 				else
 					trace('Didn\'t cache $image');
 			});
