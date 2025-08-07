@@ -52,3 +52,61 @@ function removeAnimatedCharacter()
 {
 	PlayState.instance.remove(animChar);
 }
+
+var sat = 0;
+var hue = 0;
+var con = 0;
+var changeVal = 15;
+
+function initalizeCharacterShader()
+{
+	var coolioShader:AdjustColorShader = new AdjustColorShader();
+	coolioShader.saturation = sat;
+	coolioShader.hue = hue;
+	coolioShader.contrast = con;
+
+	PlayState.instance.dialogue_character.shader = coolioShader;
+	if (animChar != null)
+		animChar.shader = coolioShader;
+}
+
+function setChangeValue_Character(newcv = 0)
+{
+	changeVal = newcv;
+}
+
+function decrease_Character_Saturation()
+{
+	sat -= changeVal;
+	initalizeCharacterShader();
+}
+
+function increase_Character_Saturation()
+{
+	sat += changeVal;
+	initalizeCharacterShader();
+}
+
+function decrease_Character_Hue()
+{
+	hue -= changeVal;
+	initalizeCharacterShader();
+}
+
+function increase_Character_Hue()
+{
+	hue += changeVal;
+	initalizeCharacterShader();
+}
+
+function decrease_Character_contrast()
+{
+	con -= changeVal;
+	initalizeCharacterShader();
+}
+
+function increase_Character_contrast()
+{
+	con += changeVal;
+	initalizeCharacterShader();
+}
