@@ -2,6 +2,7 @@ function AttackGijujaki()
 {
 	PlayState.instance.addDialogueJsonPath('choices/gijujaki/attack-gijujaki');
 }
+
 function HideFromGijujaki()
 {
 	PlayState.instance.addDialogueJsonPath('choices/gijujaki/hide-from-gijujaki');

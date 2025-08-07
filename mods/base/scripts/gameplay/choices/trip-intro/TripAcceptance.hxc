@@ -2,5 +2,4 @@ function declineTrip()
 {
 	PlayState.instance.addDialogueJsonPath('choices/trip/decline-trip');
 }
-
 // accept trip is in FunValue.hxc

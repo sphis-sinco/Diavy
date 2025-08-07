@@ -1,5 +1,6 @@
 # r10 (8/7/2025)
 ## Base mod (1.3)
+- There is now a video of the undertale game over in the files.
 - Fixed the Fake Choice not being able to read your last few endings.
 - Fixed "AND PUT GIVE IT TO ME." line.
 - Added fun value event for if it's between 60 and 65
@@ -8,6 +9,8 @@
 - Background shaders are applied to animated backgrounds via merging `BackgroundShader.hxc` with `backgroundEvents.hxc`
 - In debug builds you will be sent to the `gijujaki-home-attack` scene from the home route
 ## Engine
+- Added `playVideo` function in PlayState (BUGGY. DO NOT USE. IT WILL CRASH.)
+- Added `hxvlc` library for video files
 - `blank_update` gives the `elapsed` argument
 - Added `GoodCacheMessage` compiler flag that enables the traces of "Cached ${file}"
 

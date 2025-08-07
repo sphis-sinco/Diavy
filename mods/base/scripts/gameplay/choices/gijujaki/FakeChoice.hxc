@@ -17,7 +17,8 @@ function YouArentInControlForThis()
 		});
 	}
 
-	if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun') return;
+	if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun')
+		return;
 
 	if ([lastEnding(0), lastEnding(1), lastEnding(2), lastEnding(3)] == ['Normal_Route', 'Normal_Route', 'Normal_Route', 'Normal_Route'])
 		PlayState.instance.addDialogueJsonPath('scenes/saves/4-normal-routes');

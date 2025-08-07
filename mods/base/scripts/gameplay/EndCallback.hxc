@@ -33,20 +33,29 @@ function gameplay_initalize()
 					prefix = 'Normal Route (Part 2)';
 				FlxG.save.data.endings.push('Normal_Route');
 			}
-                        if (PlayState.instance.lastLoadedJSONPath != 'gijujaki-gun')
-                                ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
+			if (PlayState.instance.lastLoadedJSONPath != 'gijujaki-gun')
+				ScriptsManager.callScript('playSound', ['TOBECONTINUED']);
 		}
 
 		endingText.text = prefix + ':\n\n' + endingText.text;
 		if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun')
-                {
-                        endingText.text = 'YOU DIED.';
-                        PlayState.playVideo('undertale');
-                }
+		{
+			endingText.text = '';
+			// This ends up in a game crash :/
+			// PlayState.playVideo('undertale');
+		}
 		endingText.screenCenter();
 		PlayState.instance.remove(PlayState.instance.backLayer);
-		if (PlayState.instance.dialogue_character != null)
-			PlayState.instance.remove(PlayState.instance.dialogue_character);
+		if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-gun')
+		{
+			PlayState.instance.dialogue_character.loadGraphic(Assets.getImagePath('dialogue/characters/berin-dead'));
+			PlayState.instance.dialogue_character.screenCenter();
+		}
+		else
+		{
+			if (PlayState.instance.dialogue_character != null)
+				PlayState.instance.remove(PlayState.instance.dialogue_character);
+		}
 		if (PlayState.instance.dialogue_proceed_icon != null)
 			PlayState.instance.remove(PlayState.instance.dialogue_proceed_icon);
 		if (PlayState.instance.dialogue_box != null)
@@ -74,17 +83,19 @@ function gameplay_initalize()
 		var startingNumber = 5;
 		var increamentNumber = .05;
 
-		if (PlayState.instance.lastLoadedJSONPath == 'gijujaki-fun'){
-		waitAndSetText(startingNumber + increamentNumber, 'You');
-		waitAndSetText(startingNumber + increamentNumber * 2, 'You can');
-		waitAndSetText(startingNumber + increamentNumber * 3, 'You can press');
-		waitAndSetText(startingNumber + increamentNumber * 4, 'You can press [BACKSPACE]');
-		waitAndSetText(startingNumber + increamentNumber * 5, 'You can press [BACKSPACE]\nto');
-		waitAndSetText(startingNumber + increamentNumber * 6, 'You can press [BACKSPACE]\nto go');
-		waitAndSetText(startingNumber + increamentNumber * 7, 'You can press [BACKSPACE]\nto go to');
-		waitAndSetText(startingNumber + increamentNumber * 8, 'You can press [BACKSPACE]\nto go to the');
-		waitAndSetText(startingNumber + increamentNumber * 9, 'You can press [BACKSPACE]\nto go to the mods');
-		waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
-		waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');}
+		if (PlayState.instance.lastLoadedJSONPath != 'gijujaki-gun')
+		{
+			waitAndSetText(startingNumber + increamentNumber, 'You');
+			waitAndSetText(startingNumber + increamentNumber * 2, 'You can');
+			waitAndSetText(startingNumber + increamentNumber * 3, 'You can press');
+			waitAndSetText(startingNumber + increamentNumber * 4, 'You can press [BACKSPACE]');
+			waitAndSetText(startingNumber + increamentNumber * 5, 'You can press [BACKSPACE]\nto');
+			waitAndSetText(startingNumber + increamentNumber * 6, 'You can press [BACKSPACE]\nto go');
+			waitAndSetText(startingNumber + increamentNumber * 7, 'You can press [BACKSPACE]\nto go to');
+			waitAndSetText(startingNumber + increamentNumber * 8, 'You can press [BACKSPACE]\nto go to the');
+			waitAndSetText(startingNumber + increamentNumber * 9, 'You can press [BACKSPACE]\nto go to the mods');
+			waitAndSetText(startingNumber + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu');
+			waitAndSetText((startingNumber + 1) + increamentNumber * 10, 'You can press [BACKSPACE]\nto go to the mods menu.');
+		}
 	}
 }
